@@ -1,0 +1,44 @@
+{
+  "name": "clocktower-local",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm-run-all build:packages build:apps",
+    "build:packages": "npm-run-all build:protocol build:domain build:content",
+    "build:protocol": "npm run build -w @clocktower/protocol",
+    "build:domain": "npm run build -w @clocktower/domain",
+    "build:content": "npm run build -w @clocktower/content",
+    "build:apps": "npm-run-all build:web build:server",
+    "build:web": "npm run build -w @clocktower/web",
+    "build:server": "npm run build -w @clocktower/server",
+    "dev": "npm run dev:packages && npm run dev:apps",
+    "dev:packages": "npm run build -w @clocktower/domain && npm run build -w @clocktower/protocol && npm run build -w @clocktower/content",
+    "dev:apps": "npm-run-all --parallel dev:web dev:server",
+    "dev:web": "npm run dev -w @clocktower/web",
+    "dev:server": "npm run dev -w @clocktower/server",
+    "start": "npm run start -w @clocktower/server",
+    "test": "npm-run-all build:packages test:workspaces",
+    "test:workspaces": "npm run test --workspaces --if-present",
+    "sync:content": "npm run sync:content -w @clocktower/server"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^24.8.1",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.0.4",
+    "jsdom": "^26.1.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9",
+    "vitest": "^3.2.4"
+  }
+}

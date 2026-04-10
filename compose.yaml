@@ -1,0 +1,10 @@
+services:
+  clocktower:
+    build: .
+    ports:
+      - "3100:3100"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped

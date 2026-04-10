@@ -1,0 +1,17 @@
+{
+  "name": "@clocktower/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@clocktower/domain": "0.1.0",
+    "@clocktower/protocol": "0.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}

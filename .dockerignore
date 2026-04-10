@@ -1,0 +1,8 @@
+node_modules
+apps/web/dist
+apps/server/dist
+packages/*/dist
+染·钟楼谜团官方魔典_files
+染·钟楼谜团官方魔典.html
+.DS_Store
+coverage
