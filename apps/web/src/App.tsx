@@ -131,6 +131,69 @@ function sanitizeText(value: string): string {
   return value.trim();
 }
 
+function seatWidth(total: number): string {
+  if (total <= 6) {
+    return "18vh";
+  }
+  if (total <= 10) {
+    return "16vh";
+  }
+  if (total <= 15) {
+    return "14vh";
+  }
+  return "12vh";
+}
+
+function seatOrbitStyle(index: number, total: number): React.CSSProperties {
+  const count = Math.max(total, 1);
+  const rotation = (360 / count) * index;
+  return {
+    width: seatWidth(count),
+    transform: `rotate(${rotation}deg)`
+  };
+}
+
+function seatCounterStyle(index: number, total: number): React.CSSProperties {
+  const count = Math.max(total, 1);
+  const rotation = (360 / count) * index;
+  return {
+    transform: `rotate(${-rotation}deg)`
+  };
+}
+
+function roleImageUrl(role?: RoleDefinition | FabledDefinition | null): string | undefined {
+  if (!role) {
+    return undefined;
+  }
+  return role.image ?? `https://oss.gstonegames.com/data_file/clocktower/role_icon/${role.imageAlt ?? role.id}.png`;
+}
+
+function teamCounts(
+  room: ExportedRoomState | null,
+  rolesById: Map<string, RoleDefinition>
+): Record<"townsfolk" | "outsider" | "minion" | "demon" | "traveler", number> {
+  const counts = {
+    townsfolk: 0,
+    outsider: 0,
+    minion: 0,
+    demon: 0,
+    traveler: 0
+  };
+
+  if (!room) {
+    return counts;
+  }
+
+  room.players.forEach((player) => {
+    const role = player.roleId ? rolesById.get(player.roleId) : undefined;
+    if (role && role.team in counts) {
+      counts[role.team as keyof typeof counts] += 1;
+    }
+  });
+
+  return counts;
+}
+
 function useRoomState() {
   const [catalog, setCatalog] = useState<ContentCatalog | null>(null);
   const [room, setRoom] = useState<ExportedRoomState | null>(null);
@@ -380,6 +443,31 @@ export function App() {
     ? Object.values(nomination.votes).filter((vote) => vote === "yes").length
     : 0;
   const canHost = session?.role === "host";
+  const [controlsOpen, setControlsOpen] = useState(false);
+  const [panelMode, setPanelMode] = useState<"seat" | "host" | "reference" | "night" | "history" | null>(null);
+  const aliveCount = room?.players.filter((player) => !player.isDead).length ?? 0;
+  const availableVotes = room?.players.filter((player) => !player.isVoteless).length ?? 0;
+  const roleCounts = useMemo(() => teamCounts(room, rolesById), [room, rolesById]);
+  const selectedSeatRole = selectedSeat?.roleId ? rolesById.get(selectedSeat.roleId) : undefined;
+  const panelTitleMap: Record<NonNullable<typeof panelMode>, string> = {
+    seat: "座位详情",
+    host: canHost ? "主持控制台" : "房间信息",
+    reference: "角色能力表",
+    night: "夜晚顺序表",
+    history: "投票历史"
+  };
+  const connectionLabel =
+    status === "connected"
+      ? "已连接"
+      : status === "reconnecting"
+        ? "重连中"
+        : status === "loading"
+          ? "载入中"
+          : status === "error"
+            ? "错误"
+            : "空闲";
+  const sessionLabel =
+    session?.role === "host" ? "主持人" : session?.role === "spectator" ? "观战" : "玩家";
 
   const handleJoinRoom = async () => {
     if (!joinRoomId.trim()) {
@@ -503,589 +591,860 @@ export function App() {
   }
 
   return (
-    <main className="app-shell">
-      <header className="topbar">
-        <div>
-          <div className="topbar__eyebrow">房间 {room.id}</div>
-          <h1>{room.edition?.name ?? "未选择剧本"}</h1>
-          <p>
-            当前阶段: <strong>{room.phase === "day" ? "白天" : "夜晚"}</strong>
-            {" · "}
-            连接状态: <strong>{status}</strong>
-          </p>
-        </div>
-        <div className="topbar__actions">
-          <button className="btn" onClick={() => navigator.clipboard.writeText(session.guestUrl)}>
-            复制玩家链接
-          </button>
-          {session.hostUrl ? (
-            <button className="btn" onClick={() => navigator.clipboard.writeText(session.hostUrl!)}>
-              复制主持链接
-            </button>
-          ) : null}
-          <button className="btn" onClick={handleExportState}>
-            导出状态
-          </button>
-          {canHost ? (
-            <>
-              <button
-                className="btn"
-                onClick={() =>
-                  sendMessage({
-                    type: "set_phase",
-                    phase: room.phase === "day" ? "night" : "day"
-                  })
-                }
-              >
-                切换昼夜
-              </button>
-              <label className="btn btn--file">
-                导入状态
-                <input
-                  hidden
-                  type="file"
-                  accept="application/json"
-                  onChange={(event) => {
-                    const file = event.target.files?.[0];
-                    if (file) {
-                      void handleImportState(file);
-                    }
-                    event.currentTarget.value = "";
-                  }}
-                />
-              </label>
-            </>
-          ) : null}
-        </div>
-      </header>
+    <main className={`grimoire-root ${room.phase === "night" ? "is-night" : "is-day"}`}>
+      <section
+        className="grimoire-shell"
+        style={
+          room.backgroundUrl
+            ? {
+                backgroundImage: room.backgroundUrl.startsWith("linear-gradient")
+                  ? room.backgroundUrl
+                  : `url("${room.backgroundUrl}")`,
+                backgroundPosition: "center",
+                backgroundSize: "cover"
+              }
+            : undefined
+        }
+      >
+        <ul className="info">
+          <li
+            className="edition edition-current"
+            style={
+              room.edition?.image
+                ? { backgroundImage: `url("${room.edition.image}")` }
+                : undefined
+            }
+          >
+            <span className="edition-fallback">{room.edition?.name ?? "未选择剧本"}</span>
+          </li>
+        </ul>
 
-      {error ? <p className="error-banner">{error}</p> : null}
-      {contentIssues.length ? (
-        <div className="issue-strip">
-          {contentIssues.map((issue) => (
-            <span key={issue}>{issue}</span>
-          ))}
-        </div>
-      ) : null}
-
-      <section className="dashboard">
-        <aside className="panel panel--tall">
-          <div className="panel__section">
-            <h2>主持面板</h2>
-            <p>{canHost ? "你当前持有房主管理权限。" : "你当前是玩家/观战视角。"}</p>
-            {canHost ? (
-              <div className="stack">
-                <button className="btn" onClick={() => sendMessage({ type: "set_vote_history_allowed", value: !room.isVoteHistoryAllowed })}>
-                  投票历史: {room.isVoteHistoryAllowed ? "开启" : "关闭"}
-                </button>
-                <button className="btn" onClick={() => sendMessage({ type: "set_background", backgroundUrl: room.backgroundUrl ? null : "linear-gradient(160deg,#211712 0%,#5a2f1d 100%)" })}>
-                  {room.backgroundUrl ? "清除背景" : "切换背景"}
-                </button>
-                <button className="btn" onClick={() => sendMessage({ type: "set_edition", edition: null })}>
-                  清空剧本
-                </button>
-                <button className="btn" onClick={() => sendMessage({ type: "clear_custom_script" })}>
-                  清除自定义剧本
-                </button>
-              </div>
+        <div className="playerMarked">
+          {room.edition ? (
+            <span className="meta">
+              {room.edition.name}
+              {room.edition.author ? ` by ${room.edition.author}` : ""}
+            </span>
+          ) : null}
+          <li title="当前房间概览">
+            <span>
+              {roleCounts.townsfolk} <a className="townsfolk">民</a>
+            </span>
+            <span>
+              {roleCounts.outsider} <a className="outsider">外</a>
+            </span>
+            <span>
+              {roleCounts.minion} <a className="minion">爪</a>
+            </span>
+            <span>
+              {roleCounts.demon} <a className="demon">恶</a>
+            </span>
+            {roleCounts.traveler ? (
+              <span>
+                {roleCounts.traveler} <a className="traveler">旅</a>
+              </span>
             ) : null}
-          </div>
+          </li>
+          <li className="editionLi">
+            <span className="iconsImg">
+              {room.players.length} <strong className="players">人</strong>
+            </span>
+            <span className="iconsImg">
+              {aliveCount} <strong className="alive">活</strong>
+            </span>
+            <span className="iconsImg">
+              {availableVotes} <strong className="votes">票</strong>
+            </span>
+          </li>
+        </div>
 
-          <div className="panel__section">
-            <h2>剧本与角色</h2>
-            <select
-              value={room.edition?.id ?? ""}
-              onChange={(event) => {
-                const edition = catalog?.editions.find((item) => item.id === event.target.value) ?? null;
-                sendMessage({ type: "set_edition", edition });
-                setSelectedRoleIds(edition?.roles.slice(0, room.players.length) ?? []);
-              }}
-              disabled={!canHost}
+        <div id="controls">
+          <span
+            className={`session ${session.role === "spectator" ? "spectator" : ""} ${
+              status === "reconnecting" ? "reconnecting" : ""
+            }`}
+            title={`当前为${sessionLabel}视角`}
+          >
+            {sessionLabel} · {connectionLabel}
+          </span>
+          {nomination ? (
+            <span
+              className="nomlog-summary"
+              title={`${yesVotes} 票赞成，处决门槛 ${threshold}`}
             >
-              <option value="">选择剧本</option>
-              {catalog?.editions.map((edition) => (
-                <option key={edition.id} value={edition.id}>
-                  {edition.name}
-                </option>
-              ))}
-            </select>
-            <div className="token-grid">
-              {editionRoles.map((role) => {
-                const selected = selectedRoleIds.includes(role.id);
-                return (
-                  <button
-                    key={role.id}
-                    className={`token ${selected ? "token--selected" : ""}`}
-                    onClick={() => {
-                      if (!canHost) {
-                        return;
-                      }
-                      setSelectedRoleIds((current) =>
-                        current.includes(role.id)
-                          ? current.filter((item) => item !== role.id)
-                          : [...current, role.id]
-                      );
-                    }}
-                  >
-                    <strong>{role.name}</strong>
-                    <span>{role.team}</span>
-                  </button>
-                );
-              })}
-            </div>
-            {canHost ? (
-              <div className="stack">
-                <button
-                  className="btn btn--primary"
+              {yesVotes}/{threshold}
+            </span>
+          ) : null}
+          <div className={`menu ${controlsOpen ? "open" : ""}`}>
+            <button
+              type="button"
+              className="menu-toggle"
+              onClick={() => setControlsOpen((current) => !current)}
+              aria-label="切换控制菜单"
+            >
+              ⚙
+            </button>
+            <ul>
+              <li className="tabs grimoire">
+                <button type="button" className="svg" onClick={() => setPanelMode("reference")}>
+                  魔典
+                </button>
+                <button type="button" className="svg" onClick={() => setPanelMode("host")}>
+                  房间
+                </button>
+                <button type="button" className="svg" onClick={() => setPanelMode("night")}>
+                  夜序
+                </button>
+                <button type="button" className="svg" onClick={() => setPanelMode("history")}>
+                  历史
+                </button>
+              </li>
+              <li className="headline">游戏</li>
+              {canHost ? (
+                <li
                   onClick={() =>
                     sendMessage({
-                      type: "distribute_roles",
-                      roleIds:
-                        selectedRoleIds.length > 0
-                          ? selectedRoleIds
-                          : editionRoles.slice(0, room.players.length).map((role) => role.id)
+                      type: "set_phase",
+                      phase: room.phase === "day" ? "night" : "day"
                     })
                   }
                 >
-                  分发角色
-                </button>
-                <label className="btn btn--file">
-                  导入自定义剧本
-                  <input
-                    hidden
-                    type="file"
-                    accept="application/json"
-                    onChange={(event) => {
-                      const file = event.target.files?.[0];
-                      if (file) {
-                        void handleCustomScriptImport(file);
-                      }
-                      event.currentTarget.value = "";
-                    }}
-                  />
-                </label>
-              </div>
-            ) : null}
+                  进入{room.phase === "day" ? "夜晚" : "白天"}
+                  <em>[Q]</em>
+                </li>
+              ) : null}
+              <li onClick={() => setPanelMode("reference")}>
+                角色能力表
+                <em>[R]</em>
+              </li>
+              <li onClick={() => setPanelMode("night")}>
+                夜晚顺序表
+                <em>[N]</em>
+              </li>
+              <li onClick={() => setPanelMode("host")}>
+                {canHost ? "主持控制台" : "房间信息"}
+              </li>
+              <li onClick={handleExportState}>导出状态</li>
+              <li
+                onClick={() => {
+                  window.history.replaceState({}, "", "/");
+                  window.location.reload();
+                }}
+              >
+                离开小镇
+                <em>{room.id}</em>
+              </li>
+            </ul>
           </div>
+        </div>
 
-          <div className="panel__section">
-            <h2>奇遇与伪装</h2>
-            <div className="token-grid token-grid--dense">
-              {fabled.map((item) => {
-                const active = room.fabledIds.includes(item.id);
-                return (
-                  <button
-                    key={item.id}
-                    className={`token ${active ? "token--selected" : ""}`}
-                    disabled={!canHost}
-                    onClick={() =>
-                      canHost &&
-                      sendMessage({
-                        type: "set_fabled",
-                        fabledIds: active
-                          ? room.fabledIds.filter((entry) => entry !== item.id)
-                          : [...room.fabledIds, item.id]
-                      })
-                    }
-                  >
-                    <strong>{item.name}</strong>
-                  </button>
-                );
-              })}
-            </div>
-            <div className="token-grid token-grid--dense">
-              {roles
-                .filter((role) => role.team === "demon" || role.team === "minion")
-                .map((role) => {
-                  const active = room.bluffRoleIds.includes(role.id);
-                  return (
-                    <button
-                      key={role.id}
-                      className={`token ${active ? "token--selected" : ""}`}
-                      disabled={!canHost}
-                      onClick={() => {
-                        if (!canHost) {
-                          return;
-                        }
-                        const next = active
-                          ? room.bluffRoleIds.filter((entry) => entry !== role.id)
-                          : [...room.bluffRoleIds, role.id].slice(0, 3);
-                        sendMessage({ type: "set_bluffs", bluffRoleIds: next });
-                      }}
-                    >
-                      <strong>{role.name}</strong>
-                      <span>{role.team}</span>
-                    </button>
-                  );
-                })}
-            </div>
-          </div>
-        </aside>
-
-        <section className="board panel">
-          <div className="board__header">
-            <div>
-              <h2>镇广场</h2>
-              <p>{room.players.length} 个座位 · 已认领 {room.players.filter((player) => player.clientId).length} 个</p>
-            </div>
-            {canHost ? (
-              <div className="stack stack--inline">
-                <button className="btn" onClick={() => sendMessage({ type: "add_seat" })}>
-                  添加座位
-                </button>
-                {selectedSeat ? (
-                  <button className="btn" onClick={() => sendMessage({ type: "remove_seat", seatId: selectedSeat.seatId })}>
-                    移除选中座位
-                  </button>
-                ) : null}
-              </div>
-            ) : null}
-          </div>
-
-          <div className="table-wrap">
-            <div className="table-center">
-              <div className="table-center__clock">{room.phase === "day" ? "DAY" : "NIGHT"}</div>
-              <span>{room.edition?.name ?? "请先选择剧本"}</span>
-            </div>
-
+        <div
+          id="townsquare"
+          className={`${session.role === "spectator" ? "spectator" : ""} ${nomination ? "vote" : ""}`}
+        >
+          <ul className={`circle size-${Math.min(Math.max(room.players.length, 1), 15)}`}>
             {room.players.map((player, index) => {
               const role = player.roleId ? rolesById.get(player.roleId) : undefined;
               const isClaimedByMe = player.seatId === session.claimedSeatId;
+              const revealRole = canHost || isClaimedByMe || room.isGrimoirePublic;
+              const visibleRole = revealRole ? role : undefined;
+              const teamClass = visibleRole?.team ?? "default";
+              const nightOrderValue =
+                canHost && role
+                  ? room.phase === "night"
+                    ? role.otherNight ?? role.firstNight
+                    : role.firstNight ?? role.otherNight
+                  : undefined;
+              const curveId = `curve-${player.seatId}`;
+              const displayLabel = visibleRole?.name ?? (player.clientId ? "保密" : "空位");
+              const tokenAbility = visibleRole?.ability ?? (player.clientId ? "该玩家的角色当前对你隐藏。" : "点击后可认领该座位。");
+              const reminderPreview = player.reminders.slice(0, 2);
+
               return (
-                <button
+                <li
                   key={player.seatId}
-                  className={`seat-card ${selectedSeatId === player.seatId ? "seat-card--active" : ""} ${isClaimedByMe ? "seat-card--claimed" : ""}`}
-                  style={roundPosition(index, room.players.length)}
-                  onClick={() => {
-                    setSelectedSeatId(player.seatId);
-                    if (canHost) {
-                      setNominationDraft((current) =>
-                        !current.nominatorSeatId
-                          ? { ...current, nominatorSeatId: player.seatId }
-                          : !current.nomineeSeatId || current.nomineeSeatId === current.nominatorSeatId
-                            ? { ...current, nomineeSeatId: player.seatId }
-                            : { nominatorSeatId: player.seatId, nomineeSeatId: "" }
-                      );
-                    }
-                  }}
+                  style={{ ...seatOrbitStyle(index, room.players.length), zIndex: selectedSeatId === player.seatId ? 40 : room.players.length - index }}
                 >
-                  <span className="seat-card__index">{index + 1}</span>
-                  <strong>{player.name}</strong>
-                  <small>{player.pronouns ?? "未设置称谓"}</small>
-                  <div className="seat-card__meta">
-                    <span>{player.clientId ? "已入座" : "空位"}</span>
-                    {player.isDead ? <span>死亡</span> : null}
-                    {player.isVoteless ? <span>无票</span> : null}
-                  </div>
-                  <div className="seat-card__role">
-                    {canHost || isClaimedByMe ? role?.name ?? "未分配角色" : player.clientId ? "角色已隐藏" : "空座"}
-                  </div>
-                  {room.markedSeatId === player.seatId ? <div className="seat-card__badge">待处决</div> : null}
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="mobile-seat-list">
-            {room.players.map((player, index) => {
-              const role = player.roleId ? rolesById.get(player.roleId) : undefined;
-              const isClaimedByMe = player.seatId === session.claimedSeatId;
-              return (
-                <button
-                  key={`mobile-${player.seatId}`}
-                  className={`seat-row ${selectedSeatId === player.seatId ? "seat-row--active" : ""}`}
-                  onClick={() => setSelectedSeatId(player.seatId)}
-                >
-                  <div>
-                    <strong>
-                      {index + 1}. {player.name}
-                    </strong>
-                    <small>{canHost || isClaimedByMe ? role?.name ?? "未分配角色" : "角色已隐藏"}</small>
-                  </div>
-                  <span>{player.clientId ? "已认领" : "空位"}</span>
-                </button>
-              );
-            })}
-          </div>
-        </section>
-
-        <aside className="panel panel--tall">
-          <div className="panel__section">
-            <h2>座位详情</h2>
-            {selectedSeat ? (
-              <>
-                <label>
-                  名称
-                  <input
-                    defaultValue={selectedSeat.name}
-                    onBlur={(event) =>
-                      handleUpdatePlayer(selectedSeat.seatId, {
-                        name: sanitizeText(event.target.value)
-                      })
-                    }
-                  />
-                </label>
-                <label>
-                  称谓
-                  <input
-                    defaultValue={selectedSeat.pronouns ?? ""}
-                    onBlur={(event) =>
-                      handleUpdatePlayer(selectedSeat.seatId, {
-                        pronouns: sanitizeText(event.target.value) || null
-                      })
-                    }
-                  />
-                </label>
-                {canHost ? (
-                  <>
-                    <label>
-                      角色
-                      <select
-                        value={selectedSeat.roleId ?? ""}
-                        onChange={(event) =>
-                          handleUpdatePlayer(selectedSeat.seatId, {
-                            roleId: event.target.value || null
-                          })
-                        }
-                      >
-                        <option value="">未分配</option>
-                        {roles.map((role) => (
-                          <option key={role.id} value={role.id}>
-                            {role.name}
-                          </option>
-                        ))}
-                      </select>
-                    </label>
-                    <div className="stack stack--inline">
+                  <div className="seat-shell" style={seatCounterStyle(index, room.players.length)}>
+                    <div
+                      className={`player ${teamClass} ${player.isDead ? "dead" : ""} ${
+                        player.isVoteless ? "no-vote" : ""
+                      } ${isClaimedByMe ? "you" : ""} ${
+                        room.markedSeatId === player.seatId ? "marked" : ""
+                      }`}
+                    >
+                      <div className="shroud" />
+                      <div className="life" />
+                      {nightOrderValue ? (
+                        <div className="night-order first">
+                          <em>{nightOrderValue}</em>
+                          <span>
+                            {room.phase === "night"
+                              ? role?.otherNightReminder ?? role?.ability
+                              : role?.firstNightReminder ?? role?.ability}
+                          </span>
+                        </div>
+                      ) : null}
                       <button
-                        className="btn"
-                        onClick={() =>
-                          handleUpdatePlayer(selectedSeat.seatId, {
-                            isDead: !selectedSeat.isDead
-                          })
-                        }
+                        type="button"
+                        className={`token ${visibleRole?.id ?? (player.clientId ? "hidden" : "empty")}`}
+                        onClick={() => {
+                          setSelectedSeatId(player.seatId);
+                          setPanelMode("seat");
+                        }}
                       >
-                        {selectedSeat.isDead ? "复活" : "标记死亡"}
+                        {visibleRole ? (
+                          <>
+                            <span
+                              className="icon"
+                              style={
+                                roleImageUrl(visibleRole)
+                                  ? { backgroundImage: `url("${roleImageUrl(visibleRole)}")` }
+                                  : undefined
+                              }
+                            />
+                            {visibleRole.firstNight || visibleRole.firstNightReminder ? <span className="leaf-left" /> : null}
+                            {visibleRole.otherNight || visibleRole.otherNightReminder ? <span className="leaf-right" /> : null}
+                            {visibleRole.setup ? <span className="leaf-orange" /> : null}
+                          </>
+                        ) : null}
+                        <svg viewBox="0 0 150 150" className="name">
+                          <path d="M 13 75 C 13 160, 138 160, 138 75" id={curveId} fill="transparent" />
+                          <text
+                            width="150"
+                            x="66.6%"
+                            textAnchor="middle"
+                            fontSize={displayLabel.length > 8 ? "90%" : "110%"}
+                            className="label mozilla"
+                          >
+                            <textPath href={`#${curveId}`}> {displayLabel} </textPath>
+                          </text>
+                        </svg>
+                        <div className={`edition edition-${teamClass}`} />
+                        <div className="ability">{tokenAbility}</div>
                       </button>
+                      <div className="overlay">
+                        {room.markedSeatId === player.seatId ? <span className="overlay-badge overlay-badge--marked">处</span> : null}
+                        {nomination?.votes[player.seatId] === "yes" ? <span className="overlay-badge overlay-badge--yes">赞</span> : null}
+                        {isClaimedByMe ? <span className="overlay-badge overlay-badge--seat">座</span> : null}
+                      </div>
                       <button
-                        className="btn"
-                        onClick={() =>
-                          handleUpdatePlayer(selectedSeat.seatId, {
-                            isVoteless: !selectedSeat.isVoteless
-                          })
-                        }
+                        type="button"
+                        className={`name1 ${selectedSeatId === player.seatId ? "active" : ""}`}
+                        title={player.pronouns ? `${player.name} · ${player.pronouns}` : player.name}
+                        onClick={() => {
+                          setSelectedSeatId(player.seatId);
+                          setPanelMode("seat");
+                        }}
                       >
-                        {selectedSeat.isVoteless ? "恢复票权" : "移除票权"}
+                        <span className="play_num">{index + 1}.</span>
+                        <span className="play_name">{player.name}</span>
                       </button>
+                      {reminderPreview.map((reminder, reminderIndex) => (
+                        <div
+                          key={reminder.id}
+                          className={`reminder ${reminder.isCustom ? "custom" : ""}`}
+                          title={reminder.name}
+                          style={{
+                            left: `${-14 + reminderIndex * 14}%`,
+                            bottom: `${reminderIndex * 14 - 2}%`
+                          }}
+                        >
+                          {reminder.iconUrl ? (
+                            <span className="icon" style={{ backgroundImage: `url("${reminder.iconUrl}")` }} />
+                          ) : null}
+                          <span className="text">{reminder.name}</span>
+                        </div>
+                      ))}
                     </div>
-                  </>
-                ) : null}
-                <div className="stack stack--inline">
-                  {!selectedSeat.clientId ? (
-                    <button className="btn btn--primary" onClick={() => handleClaimSeat(selectedSeat.seatId)}>
-                      认领座位
-                    </button>
-                  ) : isHostSeat(session, selectedSeat.seatId) ? (
-                    <button className="btn" onClick={() => handleReleaseSeat(selectedSeat.seatId)}>
-                      起身
-                    </button>
-                  ) : null}
-                </div>
-                <div className="reminders">
-                  <h3>备忘标记</h3>
-                  <div className="chip-wrap">
-                    {selectedSeat.reminders.map((reminder) => (
-                      <button
-                        key={reminder.id}
-                        className="chip"
-                        onClick={() =>
-                          canHost &&
-                          sendMessage({
-                            type: "update_player",
-                            seatId: selectedSeat.seatId,
-                            patch: {}
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+
+          {nomination ? (
+            <div className="vote-banner">
+              <strong>
+                {room.players.find((player) => player.seatId === nomination.nominatorSeatId)?.name}
+                {" → "}
+                {room.players.find((player) => player.seatId === nomination.nomineeSeatId)?.name}
+              </strong>
+              <span>
+                {yesVotes} / {threshold}
+              </span>
+            </div>
+          ) : null}
+        </div>
+
+        {panelMode ? (
+          <section className="grimoire-console">
+            <header className="grimoire-console__header">
+              <div>
+                <span className="grimoire-console__eyebrow">房间 {room.id}</span>
+                <h2>{panelTitleMap[panelMode]}</h2>
+              </div>
+              <button type="button" className="console-close" onClick={() => setPanelMode(null)}>
+                关闭
+              </button>
+            </header>
+
+            {error ? <p className="error-banner">{error}</p> : null}
+            {contentIssues.length ? (
+              <div className="issue-strip">
+                {contentIssues.map((issue) => (
+                  <span key={issue}>{issue}</span>
+                ))}
+              </div>
+            ) : null}
+
+            {panelMode === "seat" ? (
+              selectedSeat ? (
+                <div className="console-grid" key={selectedSeat.seatId}>
+                  <section className="console-section">
+                    <h3>座位信息</h3>
+                    <label>
+                      名称
+                      <input
+                        defaultValue={selectedSeat.name}
+                        onBlur={(event) =>
+                          handleUpdatePlayer(selectedSeat.seatId, {
+                            name: sanitizeText(event.target.value)
                           })
                         }
-                      >
-                        {reminder.name}
-                      </button>
-                    ))}
-                  </div>
-                  {canHost ? (
-                    <>
-                      <div className="chip-wrap">
-                        {(rolesById.get(selectedSeat.roleId ?? "")?.reminders ?? []).map((reminder) => (
+                      />
+                    </label>
+                    <label>
+                      称谓
+                      <input
+                        defaultValue={selectedSeat.pronouns ?? ""}
+                        onBlur={(event) =>
+                          handleUpdatePlayer(selectedSeat.seatId, {
+                            pronouns: sanitizeText(event.target.value) || null
+                          })
+                        }
+                      />
+                    </label>
+                    <div className="console-inline">
+                      <span>{selectedSeat.clientId ? "已入座" : "空位"}</span>
+                      <span>{selectedSeat.isDead ? "死亡" : "存活"}</span>
+                      <span>{selectedSeat.isVoteless ? "无票" : "有票"}</span>
+                    </div>
+                    <div className="console-actions">
+                      {!selectedSeat.clientId ? (
+                        <button className="btn btn--primary" onClick={() => handleClaimSeat(selectedSeat.seatId)}>
+                          认领座位
+                        </button>
+                      ) : isHostSeat(session, selectedSeat.seatId) ? (
+                        <button className="btn" onClick={() => handleReleaseSeat(selectedSeat.seatId)}>
+                          起身
+                        </button>
+                      ) : null}
+                      {canHost ? (
+                        <>
                           <button
-                            key={reminder}
-                            className="chip chip--ghost"
+                            className="btn"
                             onClick={() =>
+                              handleUpdatePlayer(selectedSeat.seatId, {
+                                isDead: !selectedSeat.isDead
+                              })
+                            }
+                          >
+                            {selectedSeat.isDead ? "复活" : "标记死亡"}
+                          </button>
+                          <button
+                            className="btn"
+                            onClick={() =>
+                              handleUpdatePlayer(selectedSeat.seatId, {
+                                isVoteless: !selectedSeat.isVoteless
+                              })
+                            }
+                          >
+                            {selectedSeat.isVoteless ? "恢复票权" : "移除票权"}
+                          </button>
+                          <button
+                            className="btn"
+                            onClick={() =>
+                              sendMessage({
+                                type: "set_marked",
+                                seatId: room.markedSeatId === selectedSeat.seatId ? null : selectedSeat.seatId
+                              })
+                            }
+                          >
+                            {room.markedSeatId === selectedSeat.seatId ? "取消处决标记" : "标记待处决"}
+                          </button>
+                        </>
+                      ) : null}
+                    </div>
+                  </section>
+
+                  <section className="console-section">
+                    <h3>角色与备忘</h3>
+                    <p className="console-copy">
+                      当前角色:{" "}
+                      <strong>
+                        {canHost || selectedSeat.seatId === session.claimedSeatId || room.isGrimoirePublic
+                          ? selectedSeatRole?.name ?? "未分配"
+                          : selectedSeat.clientId
+                            ? "保密"
+                            : "空位"}
+                      </strong>
+                    </p>
+                    {canHost ? (
+                      <label>
+                        角色
+                        <select
+                          value={selectedSeat.roleId ?? ""}
+                          onChange={(event) =>
+                            handleUpdatePlayer(selectedSeat.seatId, {
+                              roleId: event.target.value || null
+                            })
+                          }
+                        >
+                          <option value="">未分配</option>
+                          {roles.map((role) => (
+                            <option key={role.id} value={role.id}>
+                              {role.name}
+                            </option>
+                          ))}
+                        </select>
+                      </label>
+                    ) : null}
+                    {selectedSeatRole ? <p className="console-copy">{selectedSeatRole.ability}</p> : null}
+                    <div className="chip-wrap">
+                      {selectedSeat.reminders.map((reminder) => (
+                        <button
+                          key={reminder.id}
+                          className="chip"
+                          onClick={() =>
+                            canHost &&
+                            sendMessage({
+                              type: "set_reminders",
+                              seatId: selectedSeat.seatId,
+                              reminders: selectedSeat.reminders.filter((entry) => entry.id !== reminder.id)
+                            })
+                          }
+                        >
+                          {reminder.name}
+                        </button>
+                      ))}
+                    </div>
+                    {canHost ? (
+                      <>
+                        <div className="chip-wrap">
+                          {(rolesById.get(selectedSeat.roleId ?? "")?.reminders ?? []).map((reminder) => (
+                            <button
+                              key={reminder}
+                              className="chip chip--ghost"
+                              onClick={() =>
+                                sendMessage({
+                                  type: "set_reminders",
+                                  seatId: selectedSeat.seatId,
+                                  reminders: [
+                                    ...selectedSeat.reminders,
+                                    {
+                                      id: `${selectedSeat.seatId}:${reminder}`,
+                                      name: reminder,
+                                      roleId: selectedSeat.roleId
+                                    }
+                                  ]
+                                })
+                              }
+                            >
+                              + {reminder}
+                            </button>
+                          ))}
+                        </div>
+                        <label className="inline-form">
+                          <span>自定义标记</span>
+                          <input
+                            placeholder="输入文字后回车"
+                            onKeyDown={(event) => {
+                              if (event.key !== "Enter") {
+                                return;
+                              }
+                              const value = sanitizeText((event.target as HTMLInputElement).value);
+                              if (!value) {
+                                return;
+                              }
                               sendMessage({
                                 type: "set_reminders",
                                 seatId: selectedSeat.seatId,
                                 reminders: [
                                   ...selectedSeat.reminders,
                                   {
-                                    id: `${selectedSeat.seatId}:${reminder}`,
-                                    name: reminder,
-                                    roleId: selectedSeat.roleId
+                                    id: `${selectedSeat.seatId}:custom:${value}`,
+                                    name: value,
+                                    isCustom: true
                                   }
                                 ]
-                              })
+                              });
+                              (event.target as HTMLInputElement).value = "";
+                            }}
+                          />
+                        </label>
+                      </>
+                    ) : null}
+                  </section>
+
+                  <section className="console-section">
+                    <h3>提名与投票</h3>
+                    {nomination ? (
+                      <>
+                        <p className="console-copy">
+                          提名人:{" "}
+                          <strong>
+                            {room.players.find((player) => player.seatId === nomination.nominatorSeatId)?.name}
+                          </strong>
+                        </p>
+                        <p className="console-copy">
+                          被提名人:{" "}
+                          <strong>
+                            {room.players.find((player) => player.seatId === nomination.nomineeSeatId)?.name}
+                          </strong>
+                        </p>
+                        <p className="console-copy">
+                          赞成票 {yesVotes} / 门槛 {threshold}
+                        </p>
+                        <div className="console-actions">
+                          {canHost ? (
+                            <>
+                              <button className="btn" onClick={() => sendMessage({ type: "begin_vote" })}>
+                                开始投票
+                              </button>
+                              <button className="btn" onClick={() => sendMessage({ type: "lock_vote" })}>
+                                锁定下一票
+                              </button>
+                              <button
+                                className="btn btn--primary"
+                                onClick={() => sendMessage({ type: "finish_nomination" })}
+                              >
+                                结束提名
+                              </button>
+                            </>
+                          ) : null}
+                          {claimedSeat ? (
+                            <>
+                              <button
+                                className="btn"
+                                onClick={() =>
+                                  sendMessage({
+                                    type: "cast_vote",
+                                    seatId: claimedSeat.seatId,
+                                    vote: "yes"
+                                  })
+                                }
+                              >
+                                投赞成
+                              </button>
+                              <button
+                                className="btn"
+                                onClick={() =>
+                                  sendMessage({
+                                    type: "cast_vote",
+                                    seatId: claimedSeat.seatId,
+                                    vote: "no"
+                                  })
+                                }
+                              >
+                                投反对
+                              </button>
+                              <button
+                                className="btn"
+                                onClick={() =>
+                                  sendMessage({
+                                    type: "cast_vote",
+                                    seatId: claimedSeat.seatId,
+                                    vote: "abstain"
+                                  })
+                                }
+                              >
+                                弃权
+                              </button>
+                            </>
+                          ) : null}
+                        </div>
+                      </>
+                    ) : canHost ? (
+                      <>
+                        <label>
+                          提名人
+                          <select
+                            value={nominationDraft.nominatorSeatId}
+                            onChange={(event) =>
+                              setNominationDraft((current) => ({
+                                ...current,
+                                nominatorSeatId: event.target.value
+                              }))
                             }
                           >
-                            + {reminder}
-                          </button>
-                        ))}
-                      </div>
-                      <label className="inline-form">
-                        <span>自定义标记</span>
-                        <input
-                          placeholder="输入文字后回车"
-                          onKeyDown={(event) => {
-                            if (event.key !== "Enter") {
-                              return;
+                            <option value="">选择座位</option>
+                            {room.players.map((player) => (
+                              <option key={player.seatId} value={player.seatId}>
+                                {player.name}
+                              </option>
+                            ))}
+                          </select>
+                        </label>
+                        <label>
+                          被提名人
+                          <select
+                            value={nominationDraft.nomineeSeatId}
+                            onChange={(event) =>
+                              setNominationDraft((current) => ({
+                                ...current,
+                                nomineeSeatId: event.target.value
+                              }))
                             }
-                            const value = sanitizeText((event.target as HTMLInputElement).value);
-                            if (!value) {
-                              return;
-                            }
+                          >
+                            <option value="">选择座位</option>
+                            {room.players.map((player) => (
+                              <option key={player.seatId} value={player.seatId}>
+                                {player.name}
+                              </option>
+                            ))}
+                          </select>
+                        </label>
+                        <button
+                          className="btn btn--primary"
+                          onClick={() =>
                             sendMessage({
-                              type: "set_reminders",
-                              seatId: selectedSeat.seatId,
-                              reminders: [
-                                ...selectedSeat.reminders,
-                                {
-                                  id: `${selectedSeat.seatId}:custom:${value}`,
-                                  name: value,
-                                  isCustom: true
-                                }
-                              ]
-                            });
-                            (event.target as HTMLInputElement).value = "";
-                          }}
-                        />
-                      </label>
-                    </>
-                  ) : null}
+                              type: "start_nomination",
+                              nominatorSeatId: nominationDraft.nominatorSeatId,
+                              nomineeSeatId: nominationDraft.nomineeSeatId,
+                              votingSpeedMs: room.votingSpeedMsDefault
+                            })
+                          }
+                        >
+                          发起提名
+                        </button>
+                      </>
+                    ) : (
+                      <p className="console-copy">主持人发起提名后，你可以在这里投票。</p>
+                    )}
+                  </section>
                 </div>
-              </>
-            ) : (
-              <p>点击圆桌上的座位查看详情。</p>
-            )}
-          </div>
+              ) : (
+                <p className="console-copy">点击圆桌上的玩家座位查看详情。</p>
+              )
+            ) : null}
 
-          <div className="panel__section">
-            <h2>提名与投票</h2>
-            {nomination ? (
-              <>
-                <p>
-                  提名人: <strong>{room.players.find((player) => player.seatId === nomination.nominatorSeatId)?.name}</strong>
-                </p>
-                <p>
-                  被提名人: <strong>{room.players.find((player) => player.seatId === nomination.nomineeSeatId)?.name}</strong>
-                </p>
-                <p>
-                  赞成票 {yesVotes} / 门槛 {threshold}
-                </p>
-                <div className="stack stack--inline">
+            {panelMode === "host" ? (
+              <div className="console-grid console-grid--wide">
+                <section className="console-section">
+                  <h3>房间操作</h3>
+                  <div className="console-actions">
+                    <button className="btn" onClick={() => navigator.clipboard.writeText(session.guestUrl)}>
+                      复制玩家链接
+                    </button>
+                    {session.hostUrl ? (
+                      <button className="btn" onClick={() => navigator.clipboard.writeText(session.hostUrl!)}>
+                        复制主持链接
+                      </button>
+                    ) : null}
+                    <button className="btn" onClick={handleExportState}>
+                      导出状态
+                    </button>
+                    {canHost ? (
+                      <>
+                        <button className="btn" onClick={() => sendMessage({ type: "add_seat" })}>
+                          添加座位
+                        </button>
+                        {selectedSeat ? (
+                          <button
+                            className="btn"
+                            onClick={() => sendMessage({ type: "remove_seat", seatId: selectedSeat.seatId })}
+                          >
+                            移除选中座位
+                          </button>
+                        ) : null}
+                        <button
+                          className="btn"
+                          onClick={() =>
+                            sendMessage({
+                              type: "set_phase",
+                              phase: room.phase === "day" ? "night" : "day"
+                            })
+                          }
+                        >
+                          切换昼夜
+                        </button>
+                        <button
+                          className="btn"
+                          onClick={() =>
+                            sendMessage({
+                              type: "set_vote_history_allowed",
+                              value: !room.isVoteHistoryAllowed
+                            })
+                          }
+                        >
+                          投票历史: {room.isVoteHistoryAllowed ? "开启" : "关闭"}
+                        </button>
+                        <button className="btn" onClick={() => sendMessage({ type: "set_edition", edition: null })}>
+                          清空剧本
+                        </button>
+                        <button className="btn" onClick={() => sendMessage({ type: "clear_custom_script" })}>
+                          清除自定义剧本
+                        </button>
+                        <label className="btn btn--file">
+                          导入状态
+                          <input
+                            hidden
+                            type="file"
+                            accept="application/json"
+                            onChange={(event) => {
+                              const file = event.target.files?.[0];
+                              if (file) {
+                                void handleImportState(file);
+                              }
+                              event.currentTarget.value = "";
+                            }}
+                          />
+                        </label>
+                        <label className="btn btn--file">
+                          导入自定义剧本
+                          <input
+                            hidden
+                            type="file"
+                            accept="application/json"
+                            onChange={(event) => {
+                              const file = event.target.files?.[0];
+                              if (file) {
+                                void handleCustomScriptImport(file);
+                              }
+                              event.currentTarget.value = "";
+                            }}
+                          />
+                        </label>
+                      </>
+                    ) : null}
+                  </div>
+                </section>
+
+                <section className="console-section">
+                  <h3>剧本与角色</h3>
+                  <label>
+                    剧本
+                    <select
+                      value={room.edition?.id ?? ""}
+                      onChange={(event) => {
+                        const edition =
+                          catalog?.editions.find((item) => item.id === event.target.value) ?? null;
+                        sendMessage({ type: "set_edition", edition });
+                        setSelectedRoleIds(edition?.roles.slice(0, room.players.length) ?? []);
+                      }}
+                      disabled={!canHost}
+                    >
+                      <option value="">选择剧本</option>
+                      {catalog?.editions.map((edition) => (
+                        <option key={edition.id} value={edition.id}>
+                          {edition.name}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                  <div className="catalog-grid">
+                    {editionRoles.map((role) => {
+                      const selected = selectedRoleIds.includes(role.id);
+                      return (
+                        <button
+                          key={role.id}
+                          className={`catalog-pill ${selected ? "is-selected" : ""}`}
+                          disabled={!canHost}
+                          onClick={() =>
+                            canHost &&
+                            setSelectedRoleIds((current) =>
+                              current.includes(role.id)
+                                ? current.filter((item) => item !== role.id)
+                                : [...current, role.id]
+                            )
+                          }
+                        >
+                          <strong>{role.name}</strong>
+                          <span>{role.team}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
                   {canHost ? (
-                    <>
-                      <button className="btn" onClick={() => sendMessage({ type: "begin_vote" })}>
-                        开始投票
+                    <div className="console-actions">
+                      <button
+                        className="btn btn--primary"
+                        onClick={() =>
+                          sendMessage({
+                            type: "distribute_roles",
+                            roleIds:
+                              selectedRoleIds.length > 0
+                                ? selectedRoleIds
+                                : editionRoles.slice(0, room.players.length).map((role) => role.id)
+                          })
+                        }
+                      >
+                        分发角色
                       </button>
-                      <button className="btn" onClick={() => sendMessage({ type: "lock_vote" })}>
-                        锁定下一票
-                      </button>
-                      <button className="btn btn--primary" onClick={() => sendMessage({ type: "finish_nomination" })}>
-                        结束提名
-                      </button>
-                      <button className="btn" onClick={() => sendMessage({ type: "set_marked", seatId: nomination.nomineeSeatId })}>
-                        标记待处决
-                      </button>
-                    </>
+                    </div>
                   ) : null}
-                  {claimedSeat ? (
-                    <>
-                      <button className="btn" onClick={() => sendMessage({ type: "cast_vote", seatId: claimedSeat.seatId, vote: "yes" })}>
-                        投赞成
-                      </button>
-                      <button className="btn" onClick={() => sendMessage({ type: "cast_vote", seatId: claimedSeat.seatId, vote: "no" })}>
-                        投反对
-                      </button>
-                      <button className="btn" onClick={() => sendMessage({ type: "cast_vote", seatId: claimedSeat.seatId, vote: "abstain" })}>
-                        弃权
-                      </button>
-                    </>
-                  ) : null}
-                </div>
-              </>
-            ) : canHost ? (
-              <>
-                <label>
-                  提名人
-                  <select
-                    value={nominationDraft.nominatorSeatId}
-                    onChange={(event) =>
-                      setNominationDraft((current) => ({
-                        ...current,
-                        nominatorSeatId: event.target.value
-                      }))
-                    }
-                  >
-                    <option value="">选择座位</option>
-                    {room.players.map((player) => (
-                      <option key={player.seatId} value={player.seatId}>
-                        {player.name}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label>
-                  被提名人
-                  <select
-                    value={nominationDraft.nomineeSeatId}
-                    onChange={(event) =>
-                      setNominationDraft((current) => ({
-                        ...current,
-                        nomineeSeatId: event.target.value
-                      }))
-                    }
-                  >
-                    <option value="">选择座位</option>
-                    {room.players.map((player) => (
-                      <option key={player.seatId} value={player.seatId}>
-                        {player.name}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <button
-                  className="btn btn--primary"
-                  onClick={() =>
-                    sendMessage({
-                      type: "start_nomination",
-                      nominatorSeatId: nominationDraft.nominatorSeatId,
-                      nomineeSeatId: nominationDraft.nomineeSeatId,
-                      votingSpeedMs: room.votingSpeedMsDefault
-                    })
-                  }
-                >
-                  发起提名
-                </button>
-              </>
-            ) : (
-              <p>主持人发起提名后，你可以在这里投票。</p>
-            )}
-          </div>
+                </section>
 
-          <div className="panel__section">
-            <h2>夜晚顺序 / 参考</h2>
-            <div className="reference-list">
-              {editionRoles
-                .slice()
-                .sort((left, right) => (left.firstNight ?? 99) - (right.firstNight ?? 99))
-                .map((role) => (
-                  <article key={role.id} className="reference-card">
+                <section className="console-section">
+                  <h3>奇遇与伪装</h3>
+                  <div className="catalog-grid catalog-grid--dense">
+                    {fabled.map((item) => {
+                      const active = room.fabledIds.includes(item.id);
+                      return (
+                        <button
+                          key={item.id}
+                          className={`catalog-pill ${active ? "is-selected" : ""}`}
+                          disabled={!canHost}
+                          onClick={() =>
+                            canHost &&
+                            sendMessage({
+                              type: "set_fabled",
+                              fabledIds: active
+                                ? room.fabledIds.filter((entry) => entry !== item.id)
+                                : [...room.fabledIds, item.id]
+                            })
+                          }
+                        >
+                          <strong>{item.name}</strong>
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="catalog-grid catalog-grid--dense">
+                    {roles
+                      .filter((role) => role.team === "demon" || role.team === "minion")
+                      .map((role) => {
+                        const active = room.bluffRoleIds.includes(role.id);
+                        return (
+                          <button
+                            key={role.id}
+                            className={`catalog-pill ${active ? "is-selected" : ""}`}
+                            disabled={!canHost}
+                            onClick={() => {
+                              if (!canHost) {
+                                return;
+                              }
+                              const next = active
+                                ? room.bluffRoleIds.filter((entry) => entry !== role.id)
+                                : [...room.bluffRoleIds, role.id].slice(0, 3);
+                              sendMessage({ type: "set_bluffs", bluffRoleIds: next });
+                            }}
+                          >
+                            <strong>{role.name}</strong>
+                            <span>{role.team}</span>
+                          </button>
+                        );
+                      })}
+                  </div>
+                </section>
+              </div>
+            ) : null}
+
+            {panelMode === "reference" ? (
+              <div className="reference-list">
+                {editionRoles.map((role) => (
+                  <article key={role.id} className={`reference-card ${role.team}`}>
                     <header>
                       <strong>{role.name}</strong>
                       <span>{role.team}</span>
@@ -1096,10 +1455,30 @@ export function App() {
                     </small>
                   </article>
                 ))}
-            </div>
-            {room.voteHistory.length > 0 ? (
-              <>
-                <h3>投票历史</h3>
+              </div>
+            ) : null}
+
+            {panelMode === "night" ? (
+              <div className="reference-list reference-list--two">
+                {editionRoles
+                  .slice()
+                  .sort((left, right) => (left.firstNight ?? 99) - (right.firstNight ?? 99))
+                  .map((role) => (
+                    <article key={role.id} className={`reference-card ${role.team}`}>
+                      <header>
+                        <strong>{role.name}</strong>
+                        <span>
+                          {role.firstNight ?? "-"} / {role.otherNight ?? "-"}
+                        </span>
+                      </header>
+                      <p>{role.firstNightReminder ?? role.otherNightReminder ?? role.ability}</p>
+                    </article>
+                  ))}
+              </div>
+            ) : null}
+
+            {panelMode === "history" ? (
+              room.voteHistory.length > 0 ? (
                 <div className="reference-list">
                   {room.voteHistory.map((entry) => (
                     <article key={entry.nominationId} className="reference-card">
@@ -1112,15 +1491,18 @@ export function App() {
                         <span>{entry.passed ? "通过" : "未通过"}</span>
                       </header>
                       <small>
-                        {Object.values(entry.votes).filter((vote) => vote === "yes").length} 赞成
+                        {Object.values(entry.votes).filter((vote) => vote === "yes").length} 赞成 ·{" "}
+                        {new Date(entry.finishedAt).toLocaleString()}
                       </small>
                     </article>
                   ))}
                 </div>
-              </>
+              ) : (
+                <p className="console-copy">还没有已完成的投票记录。</p>
+              )
             ) : null}
-          </div>
-        </aside>
+          </section>
+        ) : null}
       </section>
     </main>
   );
