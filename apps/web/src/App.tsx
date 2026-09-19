@@ -131,36 +131,6 @@ function sanitizeText(value: string): string {
   return value.trim();
 }
 
-function seatWidth(total: number): string {
-  if (total <= 6) {
-    return "18vh";
-  }
-  if (total <= 10) {
-    return "16vh";
-  }
-  if (total <= 15) {
-    return "14vh";
-  }
-  return "12vh";
-}
-
-function seatOrbitStyle(index: number, total: number): React.CSSProperties {
-  const count = Math.max(total, 1);
-  const rotation = (360 / count) * index;
-  return {
-    width: seatWidth(count),
-    transform: `rotate(${rotation}deg)`
-  };
-}
-
-function seatCounterStyle(index: number, total: number): React.CSSProperties {
-  const count = Math.max(total, 1);
-  const rotation = (360 / count) * index;
-  return {
-    transform: `rotate(${-rotation}deg)`
-  };
-}
-
 function roleImageUrl(role?: RoleDefinition | FabledDefinition | null): string | undefined {
   if (!role) {
     return undefined;
@@ -404,6 +374,25 @@ function useRoomState() {
   };
 }
 
+function ClockEmblem({ className = "" }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 240 240" fill="none" aria-hidden="true">
+      <circle cx="120" cy="120" r="111" stroke="currentColor" strokeWidth="0.6" />
+      <circle cx="120" cy="120" r="101" stroke="currentColor" strokeWidth="0.6" strokeDasharray="1 5" />
+      <path d="M120 0v20M120 220v20M0 120h20M220 120h20" stroke="currentColor" />
+      <path d="M77 191h86M84 185V91h72v94M78 91h84L120 25 78 91ZM95 91V76m50 15V76M106 185v-35a14 14 0 0 1 28 0v35M97 185v-34m46 34v-34M91 135h58M120 14v15" stroke="currentColor" strokeWidth="1.5" />
+      <circle cx="120" cy="112" r="16" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M120 101v11l8 5M116 61h8M111 69h18" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M48 165V124l19-22 10 13m86 0 10-13 19 22v41M42 165h35m86 0h35" stroke="currentColor" opacity=".45" />
+      <path d="m120 210 3 5-3 5-3-5 3-5Z" fill="currentColor" />
+    </svg>
+  );
+}
+
+function Brand() {
+  return <div className="brand"><ClockEmblem /><span>血染钟楼<small>CLOCKTOWER LOCAL</small></span></div>;
+}
+
 export function App() {
   const {
     catalog,
@@ -444,7 +433,19 @@ export function App() {
     : 0;
   const canHost = session?.role === "host";
   const [controlsOpen, setControlsOpen] = useState(false);
+  const [entering, setEntering] = useState(false);
   const [panelMode, setPanelMode] = useState<"seat" | "host" | "reference" | "night" | "history" | null>(null);
+  useEffect(() => {
+    const dismissPanels = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setControlsOpen(false);
+        setPanelMode(null);
+      }
+    };
+    window.addEventListener("keydown", dismissPanels);
+    return () => window.removeEventListener("keydown", dismissPanels);
+  }, []);
+
   const aliveCount = room?.players.filter((player) => !player.isDead).length ?? 0;
   const availableVotes = room?.players.filter((player) => !player.isVoteless).length ?? 0;
   const roleCounts = useMemo(() => teamCounts(room, rolesById), [room, rolesById]);
@@ -556,36 +557,58 @@ export function App() {
     });
   };
 
+  const enterRoom = async (create: boolean) => {
+    setEntering(true);
+    setError(null);
+    try {
+      await (create ? createRoom() : handleJoinRoom());
+    } catch (reason) {
+      setError(formatClientError(reason, "暂时无法进入房间，请稍后重试。"));
+    } finally {
+      setEntering(false);
+    }
+  };
+
   if (!room || !session) {
     return (
       <main className="landing">
+        <header className="landing-header">
+          <Brand />
+          <span className="header-caption">一场关于信任与谎言的游戏</span>
+          <span className="connection"><i className={catalog ? "ready" : ""} />{catalog ? "魔典已就绪" : "正在准备魔典"}</span>
+        </header>
         <section className="hero">
-          <div className="hero__badge">Clocktower Local</div>
-          <h1>本地自托管的血染钟楼魔典</h1>
-          <p>
-            内容从本地内容仓读取，对局状态由本地 WebSocket 服务同步。房主持有管理密钥，玩家通过邀请链接入座。
-          </p>
-          <div className="hero__actions">
-            <button className="btn btn--primary" onClick={() => void createRoom()}>
-              创建房间
-            </button>
-            <div className="join-box">
-              <input
-                value={joinRoomId}
-                onChange={(event) => setJoinRoomId(event.target.value)}
-                placeholder="输入房间号"
-              />
-              <button className="btn" onClick={() => void handleJoinRoom()}>
-                加入
+          <div className="hero__story">
+            <span className="eyebrow"><span /> THE TOWN AWAITS</span>
+            <h1>夜幕将至，<br />故事由你<span>开启。</span></h1>
+            <p className="hero__description">钟声响起，小镇苏醒。<br />召集你的伙伴，在交谈与推理之间，找出藏匿的真相。</p>
+            <div className="hero__details"><span>社交推理</span><span>角色扮演</span><span>实时同步</span></div>
+          </div>
+          <div className="entry-card">
+            <div className="entry-card__art"><ClockEmblem /><span>每个座位，都有一个秘密。</span></div>
+            <div className="entry-card__body">
+              <div className="entry-card__title"><h2>欢迎来到小镇</h2><span>YOUR NEXT STORY</span></div>
+              <p>成为说书人，或赴一场朋友的邀约。</p>
+              <button className="btn btn--primary create-room" disabled={entering} onClick={() => void enterRoom(true)}>
+                <span>{entering ? "正在进入…" : "创建房间"}</span><span aria-hidden="true">↗</span>
               </button>
+              <div className="entry-divider"><span>已有邀约</span></div>
+              <form className="join-box" onSubmit={(event) => { event.preventDefault(); void enterRoom(false); }}>
+                <label className="sr-only" htmlFor="room-code">房间号</label>
+                <input id="room-code" value={joinRoomId} onChange={(event) => setJoinRoomId(event.target.value)} placeholder="输入房间号" autoCapitalize="characters" autoComplete="off" spellCheck={false} />
+                <button className="btn" disabled={entering} type="submit">加入 <span aria-hidden="true">→</span></button>
+              </form>
+              {error ? <p className="error-banner" role="alert">{error}</p> : null}
+              <div className="entry-note"><span aria-hidden="true">◇</span> 无需注册，入座即刻开始</div>
             </div>
           </div>
-          <div className="hero__meta">
-            <span>实时状态: {status}</span>
-            <span>内容源: {catalog?.sourceMode ?? "loading"}</span>
-          </div>
-          {error ? <p className="error-banner">{error}</p> : null}
         </section>
+        <section className="landing-features" aria-label="游戏体验">
+          <article><span className="feature-number">01</span><div><h3>准备你的魔典</h3><p>选择剧本，安排角色，让故事就位。</p></div></article>
+          <article><span className="feature-number">02</span><div><h3>邀请伙伴入座</h3><p>分享房间，与熟悉的声音再次相聚。</p></div></article>
+          <article><span className="feature-number">03</span><div><h3>让真相浮出水面</h3><p>从第一夜到最后一票，一同见证结局。</p></div></article>
+        </section>
+        <footer className="landing-footer"><span>本地自托管的血染钟楼魔典</span><span>好故事，始于同一张圆桌。 <span aria-hidden="true">✦</span></span></footer>
       </main>
     );
   }
@@ -593,7 +616,7 @@ export function App() {
   return (
     <main className={`grimoire-root ${room.phase === "night" ? "is-night" : "is-day"}`}>
       <section
-        className="grimoire-shell"
+        className={`grimoire-shell ${panelMode ? "has-panel" : ""}`}
         style={
           room.backgroundUrl
             ? {
@@ -606,142 +629,50 @@ export function App() {
             : undefined
         }
       >
-        <ul className="info">
-          <li
-            className="edition edition-current"
-            style={
-              room.edition?.image
-                ? { backgroundImage: `url("${room.edition.image}")` }
-                : undefined
-            }
-          >
-            <span className="edition-fallback">{room.edition?.name ?? "未选择剧本"}</span>
-          </li>
-        </ul>
-
-        <div className="playerMarked">
-          {room.edition ? (
-            <span className="meta">
-              {room.edition.name}
-              {room.edition.author ? ` by ${room.edition.author}` : ""}
-            </span>
-          ) : null}
-          <li title="当前房间概览">
-            <span>
-              {roleCounts.townsfolk} <a className="townsfolk">民</a>
-            </span>
-            <span>
-              {roleCounts.outsider} <a className="outsider">外</a>
-            </span>
-            <span>
-              {roleCounts.minion} <a className="minion">爪</a>
-            </span>
-            <span>
-              {roleCounts.demon} <a className="demon">恶</a>
-            </span>
-            {roleCounts.traveler ? (
-              <span>
-                {roleCounts.traveler} <a className="traveler">旅</a>
-              </span>
-            ) : null}
-          </li>
-          <li className="editionLi">
-            <span className="iconsImg">
-              {room.players.length} <strong className="players">人</strong>
-            </span>
-            <span className="iconsImg">
-              {aliveCount} <strong className="alive">活</strong>
-            </span>
-            <span className="iconsImg">
-              {availableVotes} <strong className="votes">票</strong>
-            </span>
-          </li>
-        </div>
-
-        <div id="controls">
-          <span
-            className={`session ${session.role === "spectator" ? "spectator" : ""} ${
-              status === "reconnecting" ? "reconnecting" : ""
-            }`}
-            title={`当前为${sessionLabel}视角`}
-          >
-            {sessionLabel} · {connectionLabel}
-          </span>
-          {nomination ? (
-            <span
-              className="nomlog-summary"
-              title={`${yesVotes} 票赞成，处决门槛 ${threshold}`}
-            >
-              {yesVotes}/{threshold}
-            </span>
-          ) : null}
-          <div className={`menu ${controlsOpen ? "open" : ""}`}>
-            <button
-              type="button"
-              className="menu-toggle"
-              onClick={() => setControlsOpen((current) => !current)}
-              aria-label="切换控制菜单"
-            >
-              ⚙
-            </button>
-            <ul>
-              <li className="tabs grimoire">
-                <button type="button" className="svg" onClick={() => setPanelMode("reference")}>
-                  魔典
-                </button>
-                <button type="button" className="svg" onClick={() => setPanelMode("host")}>
-                  房间
-                </button>
-                <button type="button" className="svg" onClick={() => setPanelMode("night")}>
-                  夜序
-                </button>
-                <button type="button" className="svg" onClick={() => setPanelMode("history")}>
-                  历史
-                </button>
-              </li>
-              <li className="headline">游戏</li>
-              {canHost ? (
-                <li
-                  onClick={() =>
-                    sendMessage({
-                      type: "set_phase",
-                      phase: room.phase === "day" ? "night" : "day"
-                    })
-                  }
-                >
-                  进入{room.phase === "day" ? "夜晚" : "白天"}
-                  <em>[Q]</em>
-                </li>
-              ) : null}
-              <li onClick={() => setPanelMode("reference")}>
-                角色能力表
-                <em>[R]</em>
-              </li>
-              <li onClick={() => setPanelMode("night")}>
-                夜晚顺序表
-                <em>[N]</em>
-              </li>
-              <li onClick={() => setPanelMode("host")}>
-                {canHost ? "主持控制台" : "房间信息"}
-              </li>
-              <li onClick={handleExportState}>导出状态</li>
-              <li
-                onClick={() => {
-                  window.history.replaceState({}, "", "/");
-                  window.location.reload();
-                }}
-              >
-                离开小镇
-                <em>{room.id}</em>
-              </li>
-            </ul>
+        <header className="game-header">
+          <Brand />
+          <nav className="game-nav" aria-label="魔典工具">
+            <button className={panelMode === "reference" ? "active" : ""} onClick={() => setPanelMode("reference")}>角色能力</button>
+            <button className={panelMode === "night" ? "active" : ""} onClick={() => setPanelMode("night")}>夜晚顺序</button>
+            <button className={panelMode === "history" ? "active" : ""} onClick={() => setPanelMode("history")}>投票历史</button>
+          </nav>
+          <div id="controls">
+            <span className="connection"><i className={status === "connected" ? "ready" : ""} />{sessionLabel} · {connectionLabel}</span>
+            <button className="menu-toggle" onClick={() => setControlsOpen(!controlsOpen)} aria-label="切换控制菜单" aria-expanded={controlsOpen} aria-controls="room-menu">•••</button>
+            {controlsOpen ? <div className="menu" id="room-menu">
+              <span className="eyebrow">房间 {room.id}</span>
+              <button onClick={() => { setPanelMode("host"); setControlsOpen(false); }}>{canHost ? "主持控制台" : "房间信息"}</button>
+              <button onClick={handleExportState}>导出状态</button>
+              <button onClick={() => { window.history.replaceState({}, "", "/"); window.location.reload(); }}>离开小镇 ↗</button>
+            </div> : null}
           </div>
-        </div>
-
+        </header>
+        <aside className="game-sidebar">
+          <div className="room-heading"><span className="eyebrow">THE GRIMOIRE</span><span className="room-code">#{room.id}</span></div>
+          <div className="script-card">
+            <div className="script-card__art">{room.edition?.image ? <img src={room.edition.image} alt="" /> : <ClockEmblem />}</div>
+            <span className="eyebrow">当前剧本</span>
+            <h2>{room.edition?.name ?? "故事尚未开启"}</h2>
+            <p>{room.edition?.author ? `作者 / ${room.edition.author}` : "选好剧本，等待第一声钟响。"}</p>
+            <button className="btn" onClick={() => setPanelMode("host")}>{canHost ? "设置剧本与房间" : "查看房间信息"} <span aria-hidden="true">↗</span></button>
+          </div>
+          <section className="town-overview" aria-label="小镇概览">
+            <h3>小镇概览</h3>
+            <div className="town-stats"><div><strong>{room.players.length}</strong><span>玩家</span></div><div><strong>{aliveCount}</strong><span>存活</span></div><div><strong>{availableVotes}</strong><span>可投票</span></div></div>
+            <div className="team-counts"><span className="townsfolk">镇民 <b>{roleCounts.townsfolk}</b></span><span className="outsider">外来者 <b>{roleCounts.outsider}</b></span><span className="minion">爪牙 <b>{roleCounts.minion}</b></span><span className="demon">恶魔 <b>{roleCounts.demon}</b></span>{roleCounts.traveler ? <span>旅行者 <b>{roleCounts.traveler}</b></span> : null}</div>
+          </section>
+          <div className="phase-card"><span className="phase-symbol" aria-hidden="true">{room.phase === "night" ? "☾" : "☼"}</span><div><strong>{room.phase === "night" ? "夜幕降临" : "白昼时分"}</strong><span>{room.phase === "night" ? "小镇沉睡，秘密苏醒。" : "倾听每一个人的故事。"}</span></div></div>
+          {canHost ? <button className="btn phase-action" onClick={() => sendMessage({ type: "set_phase", phase: room.phase === "day" ? "night" : "day" })}>进入{room.phase === "day" ? "夜晚" : "白天"}<span aria-hidden="true">→</span></button> : null}
+          <p className="sidebar-note">每一句话，都可能改变结局。</p>
+        </aside>
+        <section className="table-area" aria-label="小镇圆桌">
+          <div className="table-heading"><div><span className="eyebrow">TOWN SQUARE</span><h2>小镇圆桌</h2></div><span className="phase-tag">{room.phase === "night" ? "☾ 夜晚" : "☼ 白天"}</span></div>
+          {error && !panelMode ? <p className="error-banner" role="alert">{error}</p> : null}
         <div
           id="townsquare"
           className={`${session.role === "spectator" ? "spectator" : ""} ${nomination ? "vote" : ""}`}
         >
+          <div className="table-center"><ClockEmblem /><strong>{room.edition?.name ?? "静候开场"}</strong><span>{room.players.length ? "点击座位，翻开你的故事" : "添加座位，邀请伙伴入座"}</span>{!room.players.length && canHost ? <button className="btn" onClick={() => sendMessage({ type: "add_seat" })}>添加座位</button> : null}</div>
           <ul className={`circle size-${Math.min(Math.max(room.players.length, 1), 15)}`}>
             {room.players.map((player, index) => {
               const role = player.roleId ? rolesById.get(player.roleId) : undefined;
@@ -763,9 +694,9 @@ export function App() {
               return (
                 <li
                   key={player.seatId}
-                  style={{ ...seatOrbitStyle(index, room.players.length), zIndex: selectedSeatId === player.seatId ? 40 : room.players.length - index }}
+                  style={{ ...roundPosition(index, room.players.length), width: `${room.players.length <= 6 ? 18 : room.players.length <= 10 ? 15 : room.players.length <= 15 ? 12 : 10}%`, zIndex: selectedSeatId === player.seatId ? 40 : room.players.length - index }}
                 >
-                  <div className="seat-shell" style={seatCounterStyle(index, room.players.length)}>
+                  <div className="seat-shell">
                     <div
                       className={`player ${teamClass} ${player.isDead ? "dead" : ""} ${
                         player.isVoteless ? "no-vote" : ""
@@ -773,7 +704,6 @@ export function App() {
                         room.markedSeatId === player.seatId ? "marked" : ""
                       }`}
                     >
-                      <div className="shroud" />
                       <div className="life" />
                       {nightOrderValue ? (
                         <div className="night-order first">
@@ -788,11 +718,13 @@ export function App() {
                       <button
                         type="button"
                         className={`token ${visibleRole?.id ?? (player.clientId ? "hidden" : "empty")}`}
+                        aria-label={`${index + 1}号座位 ${player.name} · ${displayLabel}`}
                         onClick={() => {
                           setSelectedSeatId(player.seatId);
                           setPanelMode("seat");
                         }}
                       >
+                        {!visibleRole ? <span className="empty-symbol" aria-hidden="true">{player.clientId ? "◇" : "+"}</span> : null}
                         {visibleRole ? (
                           <>
                             <span
@@ -864,7 +796,7 @@ export function App() {
           </ul>
 
           {nomination ? (
-            <div className="vote-banner">
+            <button className="vote-banner" onClick={() => { setPanelMode("seat"); setSelectedSeatId(nomination.nomineeSeatId); }}>
               <strong>
                 {room.players.find((player) => player.seatId === nomination.nominatorSeatId)?.name}
                 {" → "}
@@ -873,12 +805,14 @@ export function App() {
               <span>
                 {yesVotes} / {threshold}
               </span>
-            </div>
+            </button>
           ) : null}
         </div>
+        <div className="table-footer"><span><i /> {room.players.filter((player) => player.clientId).length} 位玩家已入座</span><span>处决门槛 <strong>{threshold}</strong> 票</span></div>
+        </section>
 
         {panelMode ? (
-          <section className="grimoire-console">
+          <section className="grimoire-console" aria-label={panelTitleMap[panelMode]}>
             <header className="grimoire-console__header">
               <div>
                 <span className="grimoire-console__eyebrow">房间 {room.id}</span>
@@ -1350,6 +1284,7 @@ export function App() {
                         <button
                           key={role.id}
                           className={`catalog-pill ${selected ? "is-selected" : ""}`}
+                          aria-pressed={selected}
                           disabled={!canHost}
                           onClick={() =>
                             canHost &&
@@ -1395,6 +1330,7 @@ export function App() {
                         <button
                           key={item.id}
                           className={`catalog-pill ${active ? "is-selected" : ""}`}
+                          aria-pressed={active}
                           disabled={!canHost}
                           onClick={() =>
                             canHost &&
@@ -1420,6 +1356,7 @@ export function App() {
                           <button
                             key={role.id}
                             className={`catalog-pill ${active ? "is-selected" : ""}`}
+                          aria-pressed={active}
                             disabled={!canHost}
                             onClick={() => {
                               if (!canHost) {
