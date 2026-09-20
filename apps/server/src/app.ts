@@ -379,6 +379,10 @@ function mapHostMessageToCommand(message: ReturnType<typeof clientMessageSchema.
         seatId: message.seatId,
         reminders: message.reminders
       } as const;
+    case "upsert_reminder":
+      return { type: "upsert_reminder", seatId: message.seatId, reminder: message.reminder } as const;
+    case "remove_reminder":
+      return { type: "remove_reminder", seatId: message.seatId, reminderId: message.reminderId } as const;
     case "start_nomination":
       return {
         type: "start_nomination",

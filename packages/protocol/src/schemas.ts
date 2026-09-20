@@ -22,7 +22,7 @@ export const reminderTokenSchema = z.object({
   id: z.string().min(1),
   name: z.string().min(1),
   roleId: z.string().optional(),
-  iconUrl: z.string().url().optional(),
+  iconUrl: urlLikeSchema.optional(),
   color: z.string().optional(),
   isCustom: z.boolean().optional()
 });
@@ -253,6 +253,18 @@ const setRemindersMessageSchema = z.object({
   reminders: z.array(reminderTokenSchema)
 });
 
+const upsertReminderMessageSchema = z.object({
+  type: z.literal("upsert_reminder"),
+  seatId: z.string().min(1),
+  reminder: reminderTokenSchema
+});
+
+const removeReminderMessageSchema = z.object({
+  type: z.literal("remove_reminder"),
+  seatId: z.string().min(1),
+  reminderId: z.string().min(1)
+});
+
 const startNominationMessageSchema = z.object({
   type: z.literal("start_nomination"),
   nominatorSeatId: z.string().min(1),
@@ -340,6 +352,8 @@ export const clientMessageSchema = z.discriminatedUnion("type", [
   setFabledMessageSchema,
   setBluffsMessageSchema,
   setRemindersMessageSchema,
+  upsertReminderMessageSchema,
+  removeReminderMessageSchema,
   startNominationMessageSchema,
   beginVoteMessageSchema,
   castVoteMessageSchema,

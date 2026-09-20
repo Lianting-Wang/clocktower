@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
@@ -21,7 +22,11 @@ function fixture(count = 7) {
   room.edition = { id: "tb", name: "测试剧本", roles: roles.map(role => role.id) };
   room.players = Array.from({ length: count }, (_, i) => ({ seatId: `s${i}`, name: `玩家${i}`, isDead: false, isVoteless: false, reminders: [] }));
   const onSend = vi.fn();
-  render(<RolePicker open room={room} catalog={{ roles, editions: [room.edition], fabled: [], sourceMode: "local", issues: [], assetsBaseUrl: "/" }} onClose={vi.fn()} onSend={onSend} serverError={null} />);
+  function Picker() {
+    const [show, setShow] = useState(false);
+    return <RolePicker showTravelers={show} onShowTravelersChange={setShow} open room={room} catalog={{ roles, editions: [room.edition!], fabled: [], sourceMode: "local", issues: [], assetsBaseUrl: "/" }} onClose={vi.fn()} onSend={onSend} serverError={null} />;
+  }
+  render(<Picker />);
   return { user: userEvent.setup(), onSend };
 }
 
@@ -44,7 +49,7 @@ describe("role selection workflow", () => {
     expect(document.querySelectorAll('.role-option.is-selected')).toHaveLength(6);
     expect(screen.getByRole("button", { name: "分发角色 · 6 人" })).toBeDisabled();
     await user.click(selectedGood);
-    await user.click(screen.getByRole("button", { name: "随机选皮" }));
+    await user.click(screen.getByRole("button", { name: "随机选择伪装" }));
     expect(onSend).not.toHaveBeenCalled();
     await user.click(screen.getByRole("button", { name: "分发角色 · 7 人" }));
     expect(onSend).toHaveBeenCalledTimes(1);

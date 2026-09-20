@@ -73,6 +73,18 @@ describe("role privacy across transports", () => {
     const exported = await command(guest, { type: "export_state" }, "export_state");
     expect(exported.state.players.filter((seat: any) => seat.roleId)).toHaveLength(1);
     await expect(command(guest, { type: "distribute_roles", roleIds: ["test-good", "test-demon"] })).rejects.toThrow("Only the host");
+    const reminder = { id: "source:death", name: "死亡", roleId: "test-demon", iconUrl: "/content/assets/demon.png" };
+    const markedGuest = next(guest, "room_event");
+    const marked = await command(host, { type: "upsert_reminder", seatId: "s2", reminder });
+    expect(marked.room.players.find((seat: any) => seat.seatId === "s2").reminders).toEqual([reminder]);
+    expect((await markedGuest).room.players.every((seat: any) => seat.reminders.length === 0)).toBe(true);
+    const repeated = await command(host, { type: "upsert_reminder", seatId: "s2", reminder });
+    expect(repeated.room.players.find((seat: any) => seat.seatId === "s2").reminders).toHaveLength(1);
+    await command(host, { type: "upsert_reminder", seatId: "s2", reminder: { ...reminder, id: "source:poison", name: "中毒" } });
+    await expect(command(guest, { type: "remove_reminder", seatId: "s2", reminderId: reminder.id })).rejects.toThrow("Only the host");
+    const removed = await command(host, { type: "remove_reminder", seatId: "s2", reminderId: reminder.id });
+    expect(removed.room.players.find((seat: any) => seat.seatId === "s2").reminders.map((token: any) => token.name)).toEqual(["中毒"]);
+    expect((await bootstrap("player-b")).players.every((seat: any) => seat.reminders.length === 0)).toBe(true);
     const hidden = next(guest, "room_event");
     await command(host, { type: "hide_roles" });
     expect((await hidden).room.players.every((seat: any) => !seat.roleId)).toBe(true);

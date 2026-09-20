@@ -8,6 +8,12 @@ import {
 } from "../src/index.js";
 
 describe("protocol schemas", () => {
+  it("accepts atomic reminder changes with local source icons", () => {
+    expect(clientMessageSchema.parse({ type: "upsert_reminder", seatId: "s2", reminder: { id: "death", name: "死亡", roleId: "no_dashii", iconUrl: "/content/assets/no_dashii.png" } }).type).toBe("upsert_reminder");
+    expect(clientMessageSchema.parse({ type: "remove_reminder", seatId: "s2", reminderId: "death" }).type).toBe("remove_reminder");
+    expect(clientMessageSchema.safeParse({ type: "remove_reminder", seatId: "s2", reminderId: "" }).success).toBe(false);
+  });
+
   it("parses a valid room request", () => {
     const payload = createRoomRequestSchema.parse({ roomId: "ROOM_01" });
     expect(payload.roomId).toBe("ROOM_01");

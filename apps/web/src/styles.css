@@ -1093,7 +1093,7 @@ input[type="checkbox"] {
 }
 
 .overlay-badge--marked {
-  top: -4px;
+  top: 32%;
   right: -3px;
   color: #efb9b3;
   background: #673e3f;
@@ -1113,9 +1113,12 @@ input[type="checkbox"] {
 
 .night-order {
   position: absolute;
-  left: -7px;
   top: -6px;
   z-index: 5;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
 }
 
 .night-order em {
@@ -1132,22 +1135,10 @@ input[type="checkbox"] {
   font-size: 10px;
 }
 
-.night-order > span {
-  display: none;
-  position: absolute;
-  top: 28px;
-  left: 0;
-  width: 220px;
-  font-size: 11px;
-  padding: 10px;
-  background: #262c24;
-  border: 1px solid #646a55;
-  border-radius: 6px;
-}
-
-.night-order:hover > span {
-  display: block;
-}
+.night-order.first { left: -7px; }
+.night-order.other { right: -7px; }
+.night-order.other em { border-color: #9d815a; background: #393429; }
+.night-order:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
 .player .reminder {
   position: absolute;
@@ -1179,6 +1170,7 @@ input[type="checkbox"] {
 
 .table-footer {
   width: 100%;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1839,3 +1831,31 @@ input[type="checkbox"] {
 }
 .role-picker__header > div { min-width: 0; }
 .role-picker__header .console-close { flex-shrink: 0; white-space: nowrap; }
+
+/* Night sequences share their ordinal numbers with the table tokens. */
+.night-schedule .picker-tabs { margin-bottom: 12px; }
+.night-schedule__list { display: grid; gap: 10px; margin: 18px 0 0; padding: 0; list-style: none; }
+.night-step { display: grid; grid-template-columns: 28px 46px minmax(0, 1fr); align-items: start; gap: 12px; padding: 16px 14px; background: var(--panel-soft); border: 1px solid var(--line); border-radius: 8px; }
+.night-step__number { display: grid; place-items: center; width: 28px; height: 28px; margin-top: 7px; border-radius: 50%; background: #393d30; color: var(--gold); font-size: 12px; font-variant-numeric: tabular-nums; }
+.night-step > .role-image { width: 46px; height: 46px; object-fit: contain; }
+.night-step header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px; margin: 5px 0 9px; }
+.night-step header strong { font-size: 14px; color: #e0d7c1; }
+.night-step header span { font-size: 10px; color: var(--muted); }
+.night-step p { margin: 0; color: #b9bda8; font-size: 12px; line-height: 1.8; overflow-wrap: anywhere; }
+.reminder-editor { margin-top: 24px; }
+.reminder-editor__current { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 0 16px; }
+.reminder-empty { color: var(--muted); font-size: 12px; }
+.reminder-chip { display: flex; gap: 8px; align-items: center; text-align: left; }
+.reminder-chip img { width: 30px; height: 30px; object-fit: contain; }
+.reminder-chip small { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; }
+.reminder-sources { display: grid; gap: 10px; margin-bottom: 18px; }
+.reminder-source { padding: 10px 12px; border: 1px solid var(--line); border-radius: 6px; }
+.reminder-source header { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; font-size: 12px; color: #d7caaa; }
+.reminder-source .role-image { width: 30px; height: 30px; object-fit: contain; }
+.reminder-source .chip-wrap { margin-bottom: 0; }
+.reminder-source button:disabled { opacity: .5; cursor: default; }
+@media (max-width: 600px) {
+  .night-step { grid-template-columns: 24px 34px minmax(0, 1fr); gap: 8px; padding: 12px 10px; }
+  .night-step > .role-image { width: 34px; height: 34px; }
+  .night-step__number { width: 24px; height: 24px; margin-top: 4px; }
+}

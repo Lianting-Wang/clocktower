@@ -17,6 +17,9 @@ import {
 
 import { RoleImage, RolePicker, teamNames } from "./RolePicker";
 import { RoleTooltip } from "./RoleTooltip";
+import { buildNightOrder } from "./nightOrder";
+import { NightOrderPanel } from "./NightOrderPanel";
+import { ReminderPanel } from "./ReminderPanel";
 
 type SessionRole = "host" | "guest" | "spectator";
 
@@ -429,6 +432,13 @@ export function App() {
     : 0;
   const canHost = session?.role === "host";
   const [pickerOpen, setPickerOpen] = useState(false);
+  const [showTravelers, setShowTravelers] = useState(false);
+  const firstNightPositions = useMemo(() => new Map(buildNightOrder(editionRoles, "first", showTravelers).map(entry => [entry.role.id, entry.position])), [editionRoles, showTravelers]);
+  const otherNightPositions = useMemo(() => new Map(buildNightOrder(editionRoles, "other", showTravelers).map(entry => [entry.role.id, entry.position])), [editionRoles, showTravelers]);
+  const reminderSources = useMemo(() => {
+    const inPlay = new Set(room?.players.flatMap(player => player.roleId ? [player.roleId] : []));
+    return [...roles.filter(role => inPlay.has(role.id)), ...fabled.filter(role => room?.fabledIds.includes(role.id))];
+  }, [roles, fabled, room?.players, room?.fabledIds]);
   const [tooltip, setTooltip] = useState<{ anchor: HTMLElement | null; text: string }>({ anchor: null, text: "" });
   const [controlsOpen, setControlsOpen] = useState(false);
   const [entering, setEntering] = useState(false);
@@ -678,12 +688,8 @@ export function App() {
               const revealRole = canHost || (room.rolesDistributed && (isClaimedByMe || room.isGrimoirePublic));
               const visibleRole = revealRole ? role : undefined;
               const teamClass = visibleRole?.team ?? "default";
-              const nightOrderValue =
-                canHost && role
-                  ? room.phase === "night"
-                    ? role.otherNight ?? role.firstNight
-                    : role.firstNight ?? role.otherNight
-                  : undefined;
+              const firstPosition = canHost && role ? firstNightPositions.get(role.id) : undefined;
+              const otherPosition = canHost && role ? otherNightPositions.get(role.id) : undefined;
               const curveId = `curve-${player.seatId}`;
               const displayLabel = visibleRole?.name ?? (player.clientId ? "保密" : "空位");
               const tokenAbility = visibleRole?.ability ?? (player.clientId ? "该玩家的角色当前对你隐藏。" : "点击后可认领该座位。");
@@ -703,16 +709,19 @@ export function App() {
                       }`}
                     >
                       <div className="life" />
-                      {nightOrderValue ? (
-                        <div className="night-order first">
-                          <em>{nightOrderValue}</em>
-                          <span>
-                            {room.phase === "night"
-                              ? role?.otherNightReminder ?? role?.ability
-                              : role?.firstNightReminder ?? role?.ability}
-                          </span>
-                        </div>
-                      ) : null}
+                      {([
+                        { period: "first", label: "首个夜晚", position: firstPosition, reminder: role?.firstNightReminder },
+                        { period: "other", label: "其他夜晚", position: otherPosition, reminder: role?.otherNightReminder }
+                      ]).map(({ period, label, position, reminder }) => position ? <button
+                        key={period}
+                        type="button"
+                        className={`night-order ${period}`}
+                        aria-label={`${label}第 ${position} 位行动`}
+                        onMouseEnter={event => setTooltip({ anchor: event.currentTarget, text: `${label} · 第 ${position} 位行动。${reminder || role?.ability || ""}` })}
+                        onMouseLeave={() => setTooltip({ anchor: null, text: "" })}
+                        onFocus={event => setTooltip({ anchor: event.currentTarget, text: `${label} · 第 ${position} 位行动。${reminder || role?.ability || ""}` })}
+                        onBlur={() => setTooltip({ anchor: null, text: "" })}
+                      ><em>{position}</em></button> : null)}
                       <button
                         type="button"
                         className={`token ${visibleRole?.id ?? (player.clientId ? "hidden" : "empty")}`}
@@ -777,7 +786,7 @@ export function App() {
                         <div
                           key={reminder.id}
                           className={`reminder ${reminder.isCustom ? "custom" : ""}`}
-                          title={reminder.name}
+                          title={`${reminder.name}${reminder.roleId ? ` · ${rolesById.get(reminder.roleId)?.name ?? reminderSources.find(role => role.id === reminder.roleId)?.name ?? ""}` : ""}`}
                           style={{
                             left: `${-14 + reminderIndex * 14}%`,
                             bottom: `${reminderIndex * 14 - 2}%`
@@ -809,11 +818,11 @@ export function App() {
             </button>
           ) : null}
         </div>
-        <div className="table-footer"><span><i /> {room.players.filter((player) => player.clientId).length} 位玩家已入座</span><span>处决门槛 <strong>{threshold}</strong> 票</span></div>
+        <div className="table-footer"><span><i /> {room.players.filter((player) => player.clientId).length} 位玩家已入座</span><span>处决门槛 <strong>{threshold}</strong> 票</span>{canHost ? <span>夜序 · 左：首夜 / 右：其他夜晚</span> : null}</div>
         </section>
 
         {panelMode ? (
-          <section className="grimoire-console" aria-label={panelTitleMap[panelMode]}>
+          <section key={panelMode === "seat" ? `seat:${selectedSeatId}` : panelMode} className="grimoire-console" aria-label={panelTitleMap[panelMode]}>
             <header className="grimoire-console__header">
               <div>
                 <span className="grimoire-console__eyebrow">房间 {room.id}</span>
@@ -948,81 +957,8 @@ export function App() {
                     {selectedSeatRole ? <p className="console-copy">{selectedSeatRole.ability}</p> : null}
                     {!canHost && !room.rolesDistributed ? <p className="picker-help">主持人尚未发放身份。请确认座位后等待分发。</p> : null}
                     {canHost && selectedSeat.perceivedRoleId ? <p className="console-copy">玩家看到的身份：{rolesById.get(selectedSeat.perceivedRoleId)?.name}</p> : null}
-                    {(canHost || (selectedSeat.seatId === claimedSeat?.seatId && selectedSeatRole?.team === "demon")) && room.bluffRoleIds.length > 0 ? <section className="demon-bluffs"><h3>恶魔伪装（皮）</h3>{room.bluffRoleIds.map(id => { const bluff = rolesById.get(id); return bluff ? <article key={id}><RoleImage role={bluff} /><div><strong>{bluff.name}</strong><p>{bluff.ability}</p></div></article> : null; })}</section> : null}
-                    <div className="chip-wrap">
-                      {selectedSeat.reminders.map((reminder) => (
-                        <button
-                          key={reminder.id}
-                          className="chip"
-                          onClick={() =>
-                            canHost &&
-                            sendMessage({
-                              type: "set_reminders",
-                              seatId: selectedSeat.seatId,
-                              reminders: selectedSeat.reminders.filter((entry) => entry.id !== reminder.id)
-                            })
-                          }
-                        >
-                          {reminder.name}
-                        </button>
-                      ))}
-                    </div>
-                    {canHost ? (
-                      <>
-                        <div className="chip-wrap">
-                          {(rolesById.get(selectedSeat.roleId ?? "")?.reminders ?? []).map((reminder) => (
-                            <button
-                              key={reminder}
-                              className="chip chip--ghost"
-                              onClick={() =>
-                                sendMessage({
-                                  type: "set_reminders",
-                                  seatId: selectedSeat.seatId,
-                                  reminders: [
-                                    ...selectedSeat.reminders,
-                                    {
-                                      id: `${selectedSeat.seatId}:${reminder}`,
-                                      name: reminder,
-                                      roleId: selectedSeat.roleId
-                                    }
-                                  ]
-                                })
-                              }
-                            >
-                              + {reminder}
-                            </button>
-                          ))}
-                        </div>
-                        <label className="inline-form">
-                          <span>自定义标记</span>
-                          <input
-                            placeholder="输入文字后回车"
-                            onKeyDown={(event) => {
-                              if (event.key !== "Enter") {
-                                return;
-                              }
-                              const value = sanitizeText((event.target as HTMLInputElement).value);
-                              if (!value) {
-                                return;
-                              }
-                              sendMessage({
-                                type: "set_reminders",
-                                seatId: selectedSeat.seatId,
-                                reminders: [
-                                  ...selectedSeat.reminders,
-                                  {
-                                    id: `${selectedSeat.seatId}:custom:${value}`,
-                                    name: value,
-                                    isCustom: true
-                                  }
-                                ]
-                              });
-                              (event.target as HTMLInputElement).value = "";
-                            }}
-                          />
-                        </label>
-                      </>
-                    ) : null}
+                    {(selectedSeatRole?.team === "demon" && (canHost || selectedSeat.seatId === claimedSeat?.seatId)) && room.bluffRoleIds.length > 0 ? <section className="demon-bluffs"><h3>恶魔伪装</h3>{room.bluffRoleIds.map(id => { const bluff = rolesById.get(id); return bluff ? <article key={id}><RoleImage role={bluff} /><div><strong>{bluff.name}</strong><p>{bluff.ability}</p></div></article> : null; })}</section> : null}
+                    {canHost ? <ReminderPanel player={selectedSeat} sources={reminderSources} onSend={sendMessage} /> : null}
                   </section>
 
                   <section className="console-section">
@@ -1298,7 +1234,7 @@ export function App() {
 
             {panelMode === "reference" ? (
               <div className="reference-list">
-                {editionRoles.map((role) => (
+                {editionRoles.filter(role => showTravelers || role.team !== "traveler").map((role) => (
                   <article key={role.id} className={`reference-card ${role.team}`}>
                     <header>
                       <strong>{role.name}</strong>
@@ -1306,7 +1242,7 @@ export function App() {
                     </header>
                     <p>{role.ability}</p>
                     <small>
-                      首夜 {role.firstNight ?? "-"} · 其他夜晚 {role.otherNight ?? "-"}
+                      首夜 {firstNightPositions.has(role.id) ? `第 ${firstNightPositions.get(role.id)} 位` : "—"} · 其他夜晚 {otherNightPositions.has(role.id) ? `第 ${otherNightPositions.get(role.id)} 位` : "—"}
                     </small>
                   </article>
                 ))}
@@ -1314,22 +1250,7 @@ export function App() {
             ) : null}
 
             {panelMode === "night" ? (
-              <div className="reference-list reference-list--two">
-                {editionRoles
-                  .slice()
-                  .sort((left, right) => (left.firstNight ?? 99) - (right.firstNight ?? 99))
-                  .map((role) => (
-                    <article key={role.id} className={`reference-card ${role.team}`}>
-                      <header>
-                        <strong>{role.name}</strong>
-                        <span>
-                          {role.firstNight ?? "-"} / {role.otherNight ?? "-"}
-                        </span>
-                      </header>
-                      <p>{role.firstNightReminder ?? role.otherNightReminder ?? role.ability}</p>
-                    </article>
-                  ))}
-              </div>
+              <NightOrderPanel roles={editionRoles} showTravelers={showTravelers} />
             ) : null}
 
             {panelMode === "history" ? (
@@ -1359,7 +1280,7 @@ export function App() {
           </section>
         ) : null}
       </section>
-      {canHost ? <RolePicker open={pickerOpen} room={room} catalog={catalog} onClose={() => setPickerOpen(false)} onSend={sendMessage} serverError={error} /> : null}
+      {canHost ? <RolePicker showTravelers={showTravelers} onShowTravelersChange={setShowTravelers} open={pickerOpen} room={room} catalog={catalog} onClose={() => setPickerOpen(false)} onSend={sendMessage} serverError={error} /> : null}
       {!pickerOpen ? <RoleTooltip anchor={tooltip.anchor} text={tooltip.text} /> : null}
     </main>
   );

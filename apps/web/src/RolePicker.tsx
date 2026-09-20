@@ -9,6 +9,8 @@ export function RoleImage({ role }: { role: RoleDefinition }) {
 
 interface RolePickerProps {
   open: boolean;
+  showTravelers: boolean;
+  onShowTravelersChange: (show: boolean) => void;
   room: ExportedRoomState;
   catalog: ContentCatalog | null;
   onClose: () => void;
@@ -16,12 +18,11 @@ interface RolePickerProps {
   serverError: string | null;
 }
 
-export function RolePicker({ open, room, catalog, onClose, onSend, serverError }: RolePickerProps) {
+export function RolePicker({ open, room, catalog, onClose, onSend, serverError, showTravelers, onShowTravelersChange }: RolePickerProps) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [selected, setSelected] = useState<string[]>([]);
   const [bluffs, setBluffs] = useState<string[]>([]);
   const [drunkAs, setDrunkAs] = useState("");
-  const [showTravelers, setShowTravelers] = useState(false);
   const [mode, setMode] = useState<"roles" | "bluffs">("roles");
   const [query, setQuery] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -92,13 +93,13 @@ export function RolePicker({ open, room, catalog, onClose, onSend, serverError }
           </select></label>
           <label className="picker-search">搜索角色<input placeholder="角色名称或能力" value={query} onChange={event => setQuery(event.target.value)} /></label>
           <button className="btn picker-random-mobile" disabled={!room.edition || !standardSetup(playerCount)} onClick={randomize}>按人数随机预选</button>
-          <label className="traveler-toggle"><input type="checkbox" checked={showTravelers} onChange={event => setShowTravelers(event.target.checked)} />显示旅行者</label>
+          <label className="traveler-toggle"><input type="checkbox" checked={showTravelers} onChange={event => onShowTravelersChange(event.target.checked)} />显示旅行者</label>
         </div>
         <div className="role-picker__body">
           <section className="role-picker__catalog">
             <div className="picker-tabs" aria-label="选择内容">
               <button className={mode === "roles" ? "active" : ""} aria-pressed={mode === "roles"} onClick={() => setMode("roles")}>入场角色 <span>{selected.length}</span></button>
-              <button className={mode === "bluffs" ? "active" : ""} aria-pressed={mode === "bluffs"} onClick={() => setMode("bluffs")}>恶魔伪装（皮） <span>{bluffs.length}/3</span></button>
+              <button className={mode === "bluffs" ? "active" : ""} aria-pressed={mode === "bluffs"} onClick={() => setMode("bluffs")}>恶魔伪装 <span>{bluffs.length}/3</span></button>
             </div>
             {mode === "bluffs" ? <p className="picker-help">选择三个未入场的善良角色，分发时仅告知恶魔。酒鬼实际看到的身份不能用作伪装。</p> : null}
             {!room.edition ? <p className="picker-empty">请先选择剧本，再挑选本局的角色。</p> : null}
@@ -130,7 +131,7 @@ export function RolePicker({ open, room, catalog, onClose, onSend, serverError }
             <p className="picker-help">按人数预选，点击卡片可自由增减。特殊开局角色（男爵、酒鬼除外）请手动选择并校对配置。</p>
             <div className="chosen-roles">{selected.map(id => { const role = byId.get(id); return role ? <button key={id} className="chip" onClick={() => updateSelection(selected.filter(value => value !== id))}>{role.name} ×</button> : null; })}</div>
             {selected.includes("drunk") ? <label className="drunk-identity">酒鬼看到的镇民身份<select value={drunkAs} onChange={event => { setDrunkAs(event.target.value); setBluffs(bluffs.filter(id => id !== event.target.value)); }}><option value="">选择未入场镇民</option>{drunkChoices.map(role => <option key={role.id} value={role.id}>{role.name}</option>)}</select></label> : null}
-            <div className="bluff-summary"><h3>恶魔的三个皮</h3><div className="chosen-roles">{bluffs.map(id => <button className="chip" key={id} onClick={() => setBluffs(bluffs.filter(value => value !== id))}>{byId.get(id)?.name} ×</button>)}</div><button className="btn" onClick={() => setMode("bluffs")}>选择伪装 · {bluffs.length}/3</button><button className="btn" disabled={validBluffs.length < 3} onClick={() => { const pool = [...validBluffs]; for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; } setBluffs(pool.slice(0, 3).map(role => role.id)); }}>随机选皮</button></div>
+            <div className="bluff-summary"><h3>恶魔伪装</h3><div className="chosen-roles">{bluffs.map(id => <button className="chip" key={id} onClick={() => setBluffs(bluffs.filter(value => value !== id))}>{byId.get(id)?.name} ×</button>)}</div><button className="btn" onClick={() => setMode("bluffs")}>选择伪装 · {bluffs.length}/3</button><button className="btn" disabled={validBluffs.length < 3} onClick={() => { const pool = [...validBluffs]; for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; } setBluffs(pool.slice(0, 3).map(role => role.id)); }}>随机选择伪装</button></div>
             {playerCount <= 6 && playerCount >= 5 ? <p className="picker-help">5–6 人局默认无需恶魔伪装；主持人也可手动设置。</p> : null}
             {!countMatches ? <p className="picker-warning">已选 {selected.length} 个角色，需要与 {room.players.length} 个座位一致。</p> : null}
             {setupMismatch ? <p className="picker-warning">当前阵营人数与建议配置不同，请确认这是你的手动调整。</p> : null}
