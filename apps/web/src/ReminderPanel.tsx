@@ -9,14 +9,25 @@ interface ReminderPanelProps {
 
 export function ReminderPanel({ player, sources, onSend }: ReminderPanelProps) {
   const groups = [...new Map(sources.map(role => [role.id, role])).values()]
-    .map(role => ({ role, names: [...new Set([...(role.reminders ?? []), ...(role.remindersGlobal ?? [])])] }))
-    .filter(group => group.names.length);
+    .map(role => ({
+      role,
+      names: [...new Set([...(role.reminders ?? []), ...(role.remindersGlobal ?? [])])]
+        .filter(name => name !== "失去能力" || role.id === player.roleId)
+        .sort((left, right) => Number(right === "失去能力") - Number(left === "失去能力"))
+    }))
+    .filter(group => group.names.length)
+    .sort((left, right) => Number(right.role.id === player.roleId) - Number(left.role.id === player.roleId));
   const byId = new Map(sources.map(role => [role.id, role]));
+  const currentReminders = player.reminders.slice().sort((left, right) => {
+    const leftIsOwnAbility = left.roleId === player.roleId && left.name === "失去能力";
+    const rightIsOwnAbility = right.roleId === player.roleId && right.name === "失去能力";
+    return Number(rightIsOwnAbility) - Number(leftIsOwnAbility);
+  });
   return <section className="reminder-editor" aria-label="角色标记">
     <h3>角色标记</h3>
     <p className="picker-help">将本局角色提供的标记添加给 {player.name}。点击已有标记可移除。</p>
     <div className="reminder-editor__current" aria-label="已有标记">
-      {player.reminders.map(reminder => <button key={reminder.id} className="chip reminder-chip" aria-label={`移除${byId.get(reminder.roleId ?? "")?.name ?? (reminder.isCustom ? "自定义" : "")}标记：${reminder.name}`} onClick={() => onSend({ type: "remove_reminder", seatId: player.seatId, reminderId: reminder.id })}>
+      {currentReminders.map(reminder => <button key={reminder.id} className="chip reminder-chip" aria-label={`移除${byId.get(reminder.roleId ?? "")?.name ?? (reminder.isCustom ? "自定义" : "")}标记：${reminder.name}`} onClick={() => onSend({ type: "remove_reminder", seatId: player.seatId, reminderId: reminder.id })}>
         {reminder.iconUrl ? <img src={reminder.iconUrl} alt="" /> : null}
         <span>{reminder.name}<small>{byId.get(reminder.roleId ?? "")?.name ?? (reminder.isCustom ? "自定义" : "")}</small></span><span aria-hidden="true">×</span>
       </button>)}

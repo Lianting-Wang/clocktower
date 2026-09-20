@@ -1154,6 +1154,11 @@ input[type="checkbox"] {
   position: absolute;
   inset: 0;
   background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(1.2px) saturate(.75);
+  opacity: .3;
+  transform: scale(.92);
 }
 
 .reminder .text {
@@ -1164,8 +1169,11 @@ input[type="checkbox"] {
   text-align: center;
   color: #f1e3c8;
   font-size: clamp(7px, 1.2cqw, 9px);
+  font-weight: 600;
   line-height: 1.1;
   overflow-wrap: anywhere;
+  text-shadow: 0 1px 3px #111, 0 0 5px #20251d;
+  background: radial-gradient(circle, #292d23d9 0 34%, #292d2380 55%, transparent 75%);
 }
 
 .table-footer {
