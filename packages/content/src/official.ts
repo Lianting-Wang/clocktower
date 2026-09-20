@@ -5,6 +5,7 @@ import { contentCatalogSchema, type ContentCatalog } from "@clocktower/protocol"
 import type { RoleTeam } from "@clocktower/domain";
 
 import { type ContentPaths } from "./store.js";
+import { applyKnownContentCorrections } from "./corrections.js";
 
 export interface SyncOfficialOptions {
   paths: ContentPaths;
@@ -83,7 +84,7 @@ export async function syncOfficialCatalog(
     team: "fabled" as const
   }));
 
-  let catalog: ContentCatalog = {
+  let catalog: ContentCatalog = applyKnownContentCorrections({
     sourceMode: "mirror_official",
     syncedAt: new Date().toISOString(),
     assetsBaseUrl: options.assetsBaseUrl ?? "/content/assets",
@@ -92,7 +93,7 @@ export async function syncOfficialCatalog(
     roles: normalizedRoles,
     fabled: normalizedFabled,
     editions: [...officialEditions, ...remoteEditions]
-  };
+  });
 
   if (options.assetMirrorEnabled !== false) {
     catalog = await mirrorCatalogAssets(catalog, options.paths, fetchImpl, timeoutMs, issues);

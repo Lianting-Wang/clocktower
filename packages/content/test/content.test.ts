@@ -73,4 +73,27 @@ describe("content storage", () => {
     const raw = await readFile(paths.runtimeCatalogPath, "utf8");
     expect(raw).toContain("\"sourceMode\": \"local\"");
   });
+
+  it("applies the corrected Pit-Hag other-night order to local snapshots", async () => {
+    const root = await mkdtemp(path.join(os.tmpdir(), "clocktower-content-"));
+    const paths = resolveContentPaths(root);
+
+    await saveCatalog(paths, {
+      sourceMode: "local",
+      assetsBaseUrl: "/content/assets",
+      issues: [],
+      roles: [{
+        id: "pit-hag",
+        name: "麻脸巫婆",
+        team: "minion",
+        ability: "测试",
+        otherNight: 1390
+      }],
+      fabled: [],
+      editions: []
+    });
+
+    const result = await readLocalCatalog(root);
+    expect(result.catalog.roles[0]?.otherNight).toBe(2900);
+  });
 });

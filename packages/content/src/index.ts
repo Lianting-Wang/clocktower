@@ -12,6 +12,7 @@ import {
   type ContentPaths
 } from "./store.js";
 import { syncOfficialCatalog, type SyncOfficialOptions } from "./official.js";
+import { applyKnownContentCorrections } from "./corrections.js";
 
 export type SourceMode = ContentCatalog["sourceMode"];
 
@@ -34,7 +35,7 @@ export async function readLocalCatalog(rootDir: string): Promise<SyncCatalogResu
   const local = await loadCatalog(paths);
 
   return {
-    catalog: contentCatalogSchema.parse(local.catalog),
+    catalog: applyKnownContentCorrections(contentCatalogSchema.parse(local.catalog)),
     issues: local.issues,
     usedFallback: false,
     loadedFrom: local.loadedFrom
@@ -49,10 +50,10 @@ export async function syncCatalog(options: SyncCatalogOptions): Promise<SyncCata
 
   if (sourceMode === "local" || sourceMode === "import_only") {
     return {
-      catalog: {
+      catalog: applyKnownContentCorrections({
         ...local.catalog,
         sourceMode
-      },
+      }),
       issues: local.issues,
       usedFallback: false,
       loadedFrom: local.loadedFrom
@@ -61,10 +62,10 @@ export async function syncCatalog(options: SyncCatalogOptions): Promise<SyncCata
 
   if (sourceMode === "remote_proxy") {
     return {
-      catalog: {
+      catalog: applyKnownContentCorrections({
         ...local.catalog,
         sourceMode
-      },
+      }),
       issues: [
         ...local.issues,
         "remote_proxy mode is configured but no upstream proxy adapter is installed; using local snapshot."
@@ -98,7 +99,7 @@ export async function syncCatalog(options: SyncCatalogOptions): Promise<SyncCata
     );
 
     return {
-      catalog: local.catalog ?? { ...EMPTY_CATALOG },
+      catalog: applyKnownContentCorrections(local.catalog ?? { ...EMPTY_CATALOG }),
       syncedAt: local.catalog.syncedAt,
       issues: fallbackIssues,
       usedFallback: true,
