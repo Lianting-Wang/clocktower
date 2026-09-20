@@ -3,7 +3,8 @@ import crypto from "node:crypto";
 import {
   applyRoomCommand,
   createRoomState,
-  exportRoomState,
+  roomView,
+  type RoleDefinition,
   getSeatForClient,
   type RoomCommand,
   type RoomState
@@ -54,7 +55,7 @@ export class LocalRealtimeAdapter implements RealtimeAdapter {
       if (connection.connectionId === exceptConnectionId) {
         continue;
       }
-      connection.send(message);
+      connection.send(typeof message === "function" ? message(connection) : message);
     }
   }
 }
@@ -65,7 +66,8 @@ export class RoomHub {
   public constructor(
     private readonly store: RoomStore,
     private readonly realtime: RealtimeAdapter,
-    private readonly roomTtlHours: number
+    private readonly roomTtlHours: number,
+    private readonly roleCatalog: () => RoleDefinition[] = () => []
   ) {}
 
   public loadPersistedRooms(nowIso: string): void {
@@ -118,16 +120,17 @@ export class RoomHub {
   ): RoomState {
     const room = this.getRequiredRoom(roomId);
     const next = applyRoomCommand(room, command, {
+      roleCatalog: this.roleCatalog(),
       now: nowIso,
       expiresAt: addHours(nowIso, this.roomTtlHours)
     });
     this.rooms.set(roomId, next);
     this.store.saveRoom(next);
-    this.realtime.broadcast(roomId, {
+    this.realtime.broadcast(roomId, (connection: RoomConnection) => ({
       type: "room_event",
       event: command.type,
-      room: exportRoomState(next)
-    });
+      room: roomView(next, connection, this.roleCatalog())
+    }));
     return next;
   }
 

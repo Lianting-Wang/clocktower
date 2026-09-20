@@ -74,6 +74,7 @@ export const playerStateSchema = z.object({
   isDead: z.boolean(),
   isVoteless: z.boolean(),
   roleId: z.string().optional(),
+  perceivedRoleId: z.string().optional(),
   reminders: z.array(reminderTokenSchema)
 });
 
@@ -122,6 +123,7 @@ export const exportedRoomStateSchema = z.object({
   votingSpeedMsDefault: z.number().int().positive(),
   fabledIds: z.array(z.string()),
   bluffRoleIds: z.array(z.string()),
+  rolesDistributed: z.boolean().default(false),
   edition: editionSchema.nullable(),
   customScript: contentOverrideSchema.nullable(),
   backgroundUrl: z.string().nullable(),
@@ -228,8 +230,12 @@ const updatePlayerMessageSchema = z.object({
 
 const distributeRolesMessageSchema = z.object({
   type: z.literal("distribute_roles"),
-  roleIds: z.array(z.string().min(1))
+  roleIds: z.array(z.string().min(1)),
+  bluffRoleIds: z.array(z.string().min(1)).max(3).optional(),
+  drunkAsRoleId: z.string().min(1).optional()
 });
+
+const hideRolesMessageSchema = z.object({ type: z.literal("hide_roles") });
 
 const setFabledMessageSchema = z.object({
   type: z.literal("set_fabled"),
@@ -330,6 +336,7 @@ export const clientMessageSchema = z.discriminatedUnion("type", [
   releaseSeatMessageSchema,
   updatePlayerMessageSchema,
   distributeRolesMessageSchema,
+  hideRolesMessageSchema,
   setFabledMessageSchema,
   setBluffsMessageSchema,
   setRemindersMessageSchema,

@@ -15,6 +15,9 @@ import {
   type ServerMessage
 } from "@clocktower/protocol";
 
+import { RoleImage, RolePicker, teamNames } from "./RolePicker";
+import { RoleTooltip } from "./RoleTooltip";
+
 type SessionRole = "host" | "guest" | "spectator";
 
 interface SessionState {
@@ -177,7 +180,6 @@ function useRoomState() {
     nominatorSeatId: "",
     nomineeSeatId: ""
   });
-  const [selectedRoleIds, setSelectedRoleIds] = useState<string[]>([]);
   const wsRef = useRef<WebSocket | null>(null);
   const reconnectTimer = useRef<number | null>(null);
 
@@ -219,7 +221,6 @@ function useRoomState() {
       });
       setJoinRoomId(roomId);
       setSelectedSeatId(payload.claimedSeatId);
-      setSelectedRoleIds(payload.room.edition?.roles.slice(0, payload.room.players.length) ?? []);
       setContentIssues((prev) => [...new Set([...prev, ...payload.room.issues])]);
       setStatus("connected");
     });
@@ -283,9 +284,7 @@ function useRoomState() {
     const nextRoom = message.room;
     startTransition(() => {
       setRoom(nextRoom);
-      setSelectedRoleIds((current) =>
-        current.length ? current : nextRoom.edition?.roles.slice(0, nextRoom.players.length) ?? []
-      );
+      setSession(current => current ? { ...current, claimedSeatId: nextRoom.players.find(player => player.clientId === current.clientId)?.seatId ?? null } : current);
     });
   };
 
@@ -294,6 +293,7 @@ function useRoomState() {
       setError("实时连接尚未建立。");
       return;
     }
+    setError(null);
     wsRef.current.send(JSON.stringify(payload));
   };
 
@@ -360,11 +360,9 @@ function useRoomState() {
     error,
     contentIssues,
     nominationDraft,
-    selectedRoleIds,
     setSelectedSeatId,
     setJoinRoomId,
     setNominationDraft,
-    setSelectedRoleIds,
     createRoom,
     bootstrapRoom,
     sendMessage,
@@ -404,11 +402,9 @@ export function App() {
     error,
     contentIssues,
     nominationDraft,
-    selectedRoleIds,
     setSelectedSeatId,
     setJoinRoomId,
     setNominationDraft,
-    setSelectedRoleIds,
     createRoom,
     bootstrapRoom,
     sendMessage,
@@ -432,12 +428,16 @@ export function App() {
     ? Object.values(nomination.votes).filter((vote) => vote === "yes").length
     : 0;
   const canHost = session?.role === "host";
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [tooltip, setTooltip] = useState<{ anchor: HTMLElement | null; text: string }>({ anchor: null, text: "" });
   const [controlsOpen, setControlsOpen] = useState(false);
   const [entering, setEntering] = useState(false);
   const [panelMode, setPanelMode] = useState<"seat" | "host" | "reference" | "night" | "history" | null>(null);
   useEffect(() => {
     const dismissPanels = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        setTooltip({ anchor: null, text: "" });
+        setPickerOpen(false);
         setControlsOpen(false);
         setPanelMode(null);
       }
@@ -493,16 +493,12 @@ export function App() {
       seatId,
       name: claimedSeat?.name
     });
-    if (session) {
-      setSession({ ...session, claimedSeatId: seatId });
-    }
+
   };
 
   const handleReleaseSeat = (seatId: string) => {
     sendMessage({ type: "release_seat", seatId });
-    if (session) {
-      setSession({ ...session, claimedSeatId: null });
-    }
+
   };
 
   const handleUpdatePlayer = (
@@ -654,12 +650,14 @@ export function App() {
             <span className="eyebrow">当前剧本</span>
             <h2>{room.edition?.name ?? "故事尚未开启"}</h2>
             <p>{room.edition?.author ? `作者 / ${room.edition.author}` : "选好剧本，等待第一声钟响。"}</p>
-            <button className="btn" onClick={() => setPanelMode("host")}>{canHost ? "设置剧本与房间" : "查看房间信息"} <span aria-hidden="true">↗</span></button>
+            {canHost ? <button className="btn btn--primary" onClick={() => { setPickerOpen(true); setTooltip({ anchor: null, text: "" }); }}>选择剧本与角色 <span aria-hidden="true">↗</span></button> : null}
+            <button className="btn" onClick={() => setPanelMode("host")}>{canHost ? "房间设置" : "查看房间信息"} <span aria-hidden="true">↗</span></button>
+            {!canHost && claimedSeat ? <button className="btn btn--primary" onClick={() => { setSelectedSeatId(claimedSeat.seatId); setPanelMode("seat"); }}>查看我的身份</button> : null}
           </div>
           <section className="town-overview" aria-label="小镇概览">
             <h3>小镇概览</h3>
             <div className="town-stats"><div><strong>{room.players.length}</strong><span>玩家</span></div><div><strong>{aliveCount}</strong><span>存活</span></div><div><strong>{availableVotes}</strong><span>可投票</span></div></div>
-            <div className="team-counts"><span className="townsfolk">镇民 <b>{roleCounts.townsfolk}</b></span><span className="outsider">外来者 <b>{roleCounts.outsider}</b></span><span className="minion">爪牙 <b>{roleCounts.minion}</b></span><span className="demon">恶魔 <b>{roleCounts.demon}</b></span>{roleCounts.traveler ? <span>旅行者 <b>{roleCounts.traveler}</b></span> : null}</div>
+            {canHost || room.isGrimoirePublic ? <div className="team-counts"><span className="townsfolk">镇民 <b>{roleCounts.townsfolk}</b></span><span className="outsider">外来者 <b>{roleCounts.outsider}</b></span><span className="minion">爪牙 <b>{roleCounts.minion}</b></span><span className="demon">恶魔 <b>{roleCounts.demon}</b></span>{roleCounts.traveler ? <span>旅行者 <b>{roleCounts.traveler}</b></span> : null}</div> : null}
           </section>
           <div className="phase-card"><span className="phase-symbol" aria-hidden="true">{room.phase === "night" ? "☾" : "☼"}</span><div><strong>{room.phase === "night" ? "夜幕降临" : "白昼时分"}</strong><span>{room.phase === "night" ? "小镇沉睡，秘密苏醒。" : "倾听每一个人的故事。"}</span></div></div>
           {canHost ? <button className="btn phase-action" onClick={() => sendMessage({ type: "set_phase", phase: room.phase === "day" ? "night" : "day" })}>进入{room.phase === "day" ? "夜晚" : "白天"}<span aria-hidden="true">→</span></button> : null}
@@ -677,7 +675,7 @@ export function App() {
             {room.players.map((player, index) => {
               const role = player.roleId ? rolesById.get(player.roleId) : undefined;
               const isClaimedByMe = player.seatId === session.claimedSeatId;
-              const revealRole = canHost || isClaimedByMe || room.isGrimoirePublic;
+              const revealRole = canHost || (room.rolesDistributed && (isClaimedByMe || room.isGrimoirePublic));
               const visibleRole = revealRole ? role : undefined;
               const teamClass = visibleRole?.team ?? "default";
               const nightOrderValue =
@@ -719,6 +717,10 @@ export function App() {
                         type="button"
                         className={`token ${visibleRole?.id ?? (player.clientId ? "hidden" : "empty")}`}
                         aria-label={`${index + 1}号座位 ${player.name} · ${displayLabel}`}
+                        onMouseEnter={event => setTooltip({ anchor: event.currentTarget, text: tokenAbility })}
+                        onMouseLeave={() => setTooltip({ anchor: null, text: "" })}
+                        onFocus={event => setTooltip({ anchor: event.currentTarget, text: tokenAbility })}
+                        onBlur={() => setTooltip({ anchor: null, text: "" })}
                         onClick={() => {
                           setSelectedSeatId(player.seatId);
                           setPanelMode("seat");
@@ -753,7 +755,6 @@ export function App() {
                           </text>
                         </svg>
                         <div className={`edition edition-${teamClass}`} />
-                        <div className="ability">{tokenAbility}</div>
                       </button>
                       <div className="overlay">
                         {room.markedSeatId === player.seatId ? <span className="overlay-badge overlay-badge--marked">处</span> : null}
@@ -945,6 +946,9 @@ export function App() {
                       </label>
                     ) : null}
                     {selectedSeatRole ? <p className="console-copy">{selectedSeatRole.ability}</p> : null}
+                    {!canHost && !room.rolesDistributed ? <p className="picker-help">主持人尚未发放身份。请确认座位后等待分发。</p> : null}
+                    {canHost && selectedSeat.perceivedRoleId ? <p className="console-copy">玩家看到的身份：{rolesById.get(selectedSeat.perceivedRoleId)?.name}</p> : null}
+                    {(canHost || (selectedSeat.seatId === claimedSeat?.seatId && selectedSeatRole?.team === "demon")) && room.bluffRoleIds.length > 0 ? <section className="demon-bluffs"><h3>恶魔伪装（皮）</h3>{room.bluffRoleIds.map(id => { const bluff = rolesById.get(id); return bluff ? <article key={id}><RoleImage role={bluff} /><div><strong>{bluff.name}</strong><p>{bluff.ability}</p></div></article> : null; })}</section> : null}
                     <div className="chip-wrap">
                       {selectedSeat.reminders.map((reminder) => (
                         <button
@@ -1257,72 +1261,13 @@ export function App() {
 
                 <section className="console-section">
                   <h3>剧本与角色</h3>
-                  <label>
-                    剧本
-                    <select
-                      value={room.edition?.id ?? ""}
-                      onChange={(event) => {
-                        const edition =
-                          catalog?.editions.find((item) => item.id === event.target.value) ?? null;
-                        sendMessage({ type: "set_edition", edition });
-                        setSelectedRoleIds(edition?.roles.slice(0, room.players.length) ?? []);
-                      }}
-                      disabled={!canHost}
-                    >
-                      <option value="">选择剧本</option>
-                      {catalog?.editions.map((edition) => (
-                        <option key={edition.id} value={edition.id}>
-                          {edition.name}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-                  <div className="catalog-grid">
-                    {editionRoles.map((role) => {
-                      const selected = selectedRoleIds.includes(role.id);
-                      return (
-                        <button
-                          key={role.id}
-                          className={`catalog-pill ${selected ? "is-selected" : ""}`}
-                          aria-pressed={selected}
-                          disabled={!canHost}
-                          onClick={() =>
-                            canHost &&
-                            setSelectedRoleIds((current) =>
-                              current.includes(role.id)
-                                ? current.filter((item) => item !== role.id)
-                                : [...current, role.id]
-                            )
-                          }
-                        >
-                          <strong>{role.name}</strong>
-                          <span>{role.team}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                  {canHost ? (
-                    <div className="console-actions">
-                      <button
-                        className="btn btn--primary"
-                        onClick={() =>
-                          sendMessage({
-                            type: "distribute_roles",
-                            roleIds:
-                              selectedRoleIds.length > 0
-                                ? selectedRoleIds
-                                : editionRoles.slice(0, room.players.length).map((role) => role.id)
-                          })
-                        }
-                      >
-                        分发角色
-                      </button>
-                    </div>
-                  ) : null}
+                  <p className="console-copy">{room.edition?.name ?? "尚未选择剧本"}</p>
+                  <p className="console-copy">{room.rolesDistributed ? "身份已发放" : "身份未发放，玩家不可见"}</p>
+                  {canHost ? <button className="btn btn--primary" onClick={() => setPickerOpen(true)}>打开角色选择</button> : null}
                 </section>
 
                 <section className="console-section">
-                  <h3>奇遇与伪装</h3>
+                  <h3>奇遇</h3>
                   <div className="catalog-grid catalog-grid--dense">
                     {fabled.map((item) => {
                       const active = room.fabledIds.includes(item.id);
@@ -1347,33 +1292,6 @@ export function App() {
                       );
                     })}
                   </div>
-                  <div className="catalog-grid catalog-grid--dense">
-                    {roles
-                      .filter((role) => role.team === "demon" || role.team === "minion")
-                      .map((role) => {
-                        const active = room.bluffRoleIds.includes(role.id);
-                        return (
-                          <button
-                            key={role.id}
-                            className={`catalog-pill ${active ? "is-selected" : ""}`}
-                          aria-pressed={active}
-                            disabled={!canHost}
-                            onClick={() => {
-                              if (!canHost) {
-                                return;
-                              }
-                              const next = active
-                                ? room.bluffRoleIds.filter((entry) => entry !== role.id)
-                                : [...room.bluffRoleIds, role.id].slice(0, 3);
-                              sendMessage({ type: "set_bluffs", bluffRoleIds: next });
-                            }}
-                          >
-                            <strong>{role.name}</strong>
-                            <span>{role.team}</span>
-                          </button>
-                        );
-                      })}
-                  </div>
                 </section>
               </div>
             ) : null}
@@ -1384,7 +1302,7 @@ export function App() {
                   <article key={role.id} className={`reference-card ${role.team}`}>
                     <header>
                       <strong>{role.name}</strong>
-                      <span>{role.team}</span>
+                      <span>{teamNames[role.team]}</span>
                     </header>
                     <p>{role.ability}</p>
                     <small>
@@ -1441,6 +1359,8 @@ export function App() {
           </section>
         ) : null}
       </section>
+      {canHost ? <RolePicker open={pickerOpen} room={room} catalog={catalog} onClose={() => setPickerOpen(false)} onSend={sendMessage} serverError={error} /> : null}
+      {!pickerOpen ? <RoleTooltip anchor={tooltip.anchor} text={tooltip.text} /> : null}
     </main>
   );
 }

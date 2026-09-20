@@ -64,6 +64,7 @@ export interface PlayerState {
   isDead: boolean;
   isVoteless: boolean;
   roleId?: string;
+  perceivedRoleId?: string;
   reminders: ReminderToken[];
 }
 
@@ -115,6 +116,7 @@ export interface RoomState {
   votingSpeedMsDefault: number;
   fabledIds: string[];
   bluffRoleIds: string[];
+  rolesDistributed: boolean;
   edition: EditionSummary | null;
   customScript: ContentOverride | null;
   backgroundUrl: string | null;
@@ -157,7 +159,8 @@ export type RoomCommand =
       fabled?: FabledDefinition[];
     }
   | { type: "clear_custom_script" }
-  | { type: "distribute_roles"; roleIds: string[] }
+  | { type: "distribute_roles"; roleIds: string[]; bluffRoleIds?: string[]; drunkAsRoleId?: string }
+  | { type: "hide_roles" }
   | { type: "set_reminders"; seatId: string; reminders: ReminderToken[] }
   | { type: "upsert_reminder"; seatId: string; reminder: ReminderToken }
   | { type: "remove_reminder"; seatId: string; reminderId: string }
@@ -177,4 +180,5 @@ export interface ApplyRoomCommandOptions {
   now?: string | Date;
   random?: () => number;
   expiresAt?: string;
+  roleCatalog?: RoleDefinition[];
 }

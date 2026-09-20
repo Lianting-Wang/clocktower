@@ -104,6 +104,7 @@ export function createRoomState(options: CreateRoomOptions): RoomState {
     votingSpeedMsDefault: DEFAULT_VOTING_SPEED_MS,
     fabledIds: [],
     bluffRoleIds: [],
+    rolesDistributed: false,
     edition: null,
     customScript: null,
     backgroundUrl: null,
@@ -204,6 +205,8 @@ export function applyRoomCommand(
       if (player.clientId && player.clientId !== command.clientId) {
         throw new Error("Seat is already claimed by another player.");
       }
+      const existing = room.players.find(seat => seat.clientId === command.clientId && seat.seatId !== player.seatId);
+      if (existing) throw new Error("请先从当前座位起身，再认领其他座位。");
       player.clientId = command.clientId;
       if (command.name?.trim()) {
         player.name = command.name.trim();
@@ -240,6 +243,7 @@ export function applyRoomCommand(
       if (typeof command.patch.isVoteless === "boolean") {
         player.isVoteless = command.patch.isVoteless;
       }
+      if (command.patch.roleId !== undefined) delete player.perceivedRoleId;
       if (command.patch.roleId === null) {
         delete player.roleId;
       } else if (typeof command.patch.roleId === "string") {
@@ -274,11 +278,15 @@ export function applyRoomCommand(
     }
 
     case "set_bluffs": {
-      room.bluffRoleIds = unique(command.bluffRoleIds).slice(0, 3);
+      validateBluffs(command.bluffRoleIds, room.players.map(player => player.roleId ?? ""), [...(options.roleCatalog ?? []), ...(room.customScript?.roles ?? [])], room.players.find(player => player.roleId === "drunk")?.perceivedRoleId);
+      room.bluffRoleIds = [...command.bluffRoleIds];
       break;
     }
 
     case "set_edition": {
+      room.rolesDistributed = false;
+      room.bluffRoleIds = [];
+      room.players.forEach(player => { delete player.roleId; delete player.perceivedRoleId; player.reminders = []; });
       room.edition = command.edition ? clone(command.edition) : null;
       room.customScript = null;
       if (!command.edition) {
@@ -289,6 +297,9 @@ export function applyRoomCommand(
     }
 
     case "set_custom_script": {
+      room.rolesDistributed = false;
+      room.bluffRoleIds = [];
+      room.players.forEach(player => { delete player.roleId; delete player.perceivedRoleId; player.reminders = []; });
       const override = normalizeCustomRoles(command.roles, command.fabled);
       override.edition = {
         ...override.edition,
@@ -305,12 +316,37 @@ export function applyRoomCommand(
       break;
     }
 
+    case "hide_roles": {
+      room.rolesDistributed = false;
+      break;
+    }
+
     case "distribute_roles": {
-      const seats = room.players.filter((player) => player.roleId !== "traveler");
+      const catalog = [...(options.roleCatalog ?? []), ...(room.customScript?.roles ?? [])];
+      const roles = new Map(catalog.map(role => [role.id, role]));
+      const seats = room.players;
+      if (!seats.length || command.roleIds.length !== seats.length || new Set(command.roleIds).size !== command.roleIds.length) {
+        throw new Error("预选角色必须与座位数一致，且不能重复。");
+      }
+      if (catalog.length && command.roleIds.some(id => !roles.has(id) || roles.get(id)!.team === "fabled" || (room.edition && !room.edition.roles.includes(id)))) {
+        throw new Error("请选择当前剧本中的角色。");
+      }
+      if (command.roleIds.includes("drunk") && (!command.drunkAsRoleId || roles.get(command.drunkAsRoleId)?.team !== "townsfolk" || command.roleIds.includes(command.drunkAsRoleId) || !room.edition?.roles.includes(command.drunkAsRoleId))) {
+        throw new Error("请为酒鬼选择一个未入场的镇民身份。");
+      }
+      const bluffs = command.bluffRoleIds ?? [];
+      validateBluffs(bluffs, command.roleIds, catalog, command.drunkAsRoleId);
+      const ordinaryCount = command.roleIds.filter(id => roles.get(id)?.team !== "traveler").length;
+      if (ordinaryCount >= 7 && command.roleIds.some(id => roles.get(id)?.team === "demon") && bluffs.length !== 3) throw new Error("请先为恶魔设置三个未入场的善良角色作为伪装。");
+      if (room.edition && bluffs.some(id => !room.edition!.roles.includes(id))) throw new Error("恶魔伪装必须来自当前剧本。");
       const shuffledRoles = shuffle(command.roleIds, random);
       seats.forEach((player, index) => {
-        player.roleId = shuffledRoles[index] ?? undefined;
+        player.roleId = shuffledRoles[index];
+        player.perceivedRoleId = player.roleId === "drunk" ? command.drunkAsRoleId : undefined;
+        player.reminders = [];
       });
+      room.bluffRoleIds = bluffs;
+      room.rolesDistributed = true;
       break;
     }
 
@@ -471,4 +507,11 @@ export function getNominationResult(
     threshold,
     passed: yesVotes >= threshold
   };
+}
+
+function validateBluffs(bluffs: string[], roleIds: string[], catalog: RoleDefinition[], drunkAsRoleId?: string): void {
+  const byId = new Map(catalog.map(role => [role.id, role]));
+  if ((bluffs.length !== 0 && bluffs.length !== 3) || new Set(bluffs).size !== bluffs.length || bluffs.some(id => roleIds.includes(id) || id === drunkAsRoleId || (catalog.length && !["townsfolk", "outsider"].includes(byId.get(id)?.team ?? "")))) {
+    throw new Error("请选择三个不同、未入场的善良角色作为恶魔伪装，或清空伪装。");
+  }
 }

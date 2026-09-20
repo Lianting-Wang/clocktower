@@ -7,7 +7,7 @@ import {
   syncCatalog,
   type SyncCatalogResult
 } from "@clocktower/content";
-import { exportRoomState } from "@clocktower/domain";
+import { roomView } from "@clocktower/domain";
 import {
   clientMessageSchema,
   createRoomRequestSchema,
@@ -40,7 +40,7 @@ export async function buildServer(config = loadConfig()) {
 
   const store = new SQLiteRoomStore(config.sqlitePath);
   const realtime = new LocalRealtimeAdapter();
-  const hub = new RoomHub(store, realtime, config.roomTtlHours);
+  const hub = new RoomHub(store, realtime, config.roomTtlHours, () => contentState.snapshot.catalog.roles);
   const contentPaths = resolveContentPaths(config.rootDir);
   const contentState: ContentManagerState = {
     status: "idle",
@@ -171,7 +171,7 @@ export async function buildServer(config = loadConfig()) {
           ? buildHostUrl(config.publicBaseUrl, room.id, room.hostSecret)
           : undefined,
       contentMode: config.contentMode,
-      room: exportRoomState(room)
+      room: roomView(room, { role, clientId: query.clientId }, contentState.snapshot.catalog.roles)
     });
     return reply.send(payload);
   });
@@ -209,6 +209,7 @@ export async function buildServer(config = loadConfig()) {
               return;
             }
 
+            if (joinedRoomId) hub.detachConnection(joinedRoomId, connectionId);
             joinedRoomId = room.id;
             connectionMeta = {
               connectionId,
@@ -222,7 +223,7 @@ export async function buildServer(config = loadConfig()) {
               send
             };
             hub.attachConnection(room.id, connectionMeta);
-            send({ type: "room_snapshot", room: exportRoomState(room) });
+            send({ type: "room_snapshot", room: roomView(room, connectionMeta, contentState.snapshot.catalog.roles) });
             send({
               type: "content_status",
               status: contentState.status,
@@ -242,6 +243,7 @@ export async function buildServer(config = loadConfig()) {
 
           switch (message.type) {
             case "claim_seat": {
+              if (connectionMeta.role === "spectator") throw new Error("观战者不能认领座位。");
               hub.applyCommand(
                 joinedRoomId,
                 {
@@ -309,7 +311,7 @@ export async function buildServer(config = loadConfig()) {
             }
 
             case "export_state": {
-              send({ type: "export_state", state: exportRoomState(room) });
+              send({ type: "export_state", state: roomView(room, connectionMeta, contentState.snapshot.catalog.roles) });
               break;
             }
 
@@ -364,7 +366,9 @@ function mapHostMessageToCommand(message: ReturnType<typeof clientMessageSchema.
     case "remove_seat":
       return { type: "remove_seat", seatId: message.seatId } as const;
     case "distribute_roles":
-      return { type: "distribute_roles", roleIds: message.roleIds } as const;
+      return { type: "distribute_roles", roleIds: message.roleIds, bluffRoleIds: message.bluffRoleIds, drunkAsRoleId: message.drunkAsRoleId } as const;
+    case "hide_roles":
+      return { type: "hide_roles" } as const;
     case "set_fabled":
       return { type: "set_fabled", fabledIds: message.fabledIds } as const;
     case "set_bluffs":

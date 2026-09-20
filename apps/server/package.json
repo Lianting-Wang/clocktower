@@ -9,7 +9,8 @@
     "build": "tsc -p tsconfig.json",
     "dev": "tsx watch src/index.ts",
     "start": "node dist/index.js",
-    "sync:content": "tsx src/scripts/syncContent.ts"
+    "sync:content": "tsx src/scripts/syncContent.ts",
+    "test": "vitest run"
   },
   "dependencies": {
     "@clocktower/content": "0.1.0",
