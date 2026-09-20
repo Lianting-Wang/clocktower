@@ -977,33 +977,6 @@ input[type="checkbox"] {
   display: none;
 }
 
-.token .ability {
-  position: absolute;
-  top: calc(100% + 35px);
-  left: 50%;
-  width: 230px;
-  max-width: 70vw;
-  transform: translateX(-50%);
-  padding: 12px;
-  background: #262c24;
-  border: 1px solid #646a55;
-  border-radius: 6px;
-  color: var(--ink);
-  font-size: 11px;
-  line-height: 1.8;
-  text-align: left;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  box-shadow: 0 8px 24px #0005;
-  z-index: 100;
-}
-
-.token:hover .ability, .token:focus-visible .ability {
-  opacity: 1;
-  visibility: visible;
-}
-
 .circle > li:has(.token:hover), .circle > li:focus-within {
   z-index: 45 !important;
 }

@@ -1,22 +1,27 @@
+# Dependencies and generated output
 node_modules
 dist
+coverage
+.vite
+*.tsbuildinfo
+*.log
+
+# Local settings and system metadata
 .DS_Store
 .env
 .env.local
 .env.*.local
-*.tsbuildinfo
+
+# Persistent local data
 data/assets/*
 !data/assets/.gitkeep
 data/content/*.runtime.json
 data/*.sqlite*
-apps/web/dist
-apps/server/dist
-apps/server/data
-coverage
-.vite
-*.log
+
+# Legacy locations and accidental source-directory build output
+/apps/server/data
+/archive
 packages/*/src/*.js
 packages/*/src/*.js.map
 packages/*/src/*.d.ts
 packages/*/src/*.d.ts.map
-archive

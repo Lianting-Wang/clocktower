@@ -13,8 +13,7 @@
   },
   "dependencies": {
     "@clocktower/domain": "0.1.0",
-    "@clocktower/protocol": "0.1.0",
-    "zod": "^3.24.1"
+    "@clocktower/protocol": "0.1.0"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",

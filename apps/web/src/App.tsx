@@ -369,8 +369,6 @@ function useRoomState() {
     createRoom,
     bootstrapRoom,
     sendMessage,
-    setSession,
-    setRoom,
     setError
   };
 }
@@ -411,8 +409,6 @@ export function App() {
     createRoom,
     bootstrapRoom,
     sendMessage,
-    setSession,
-    setRoom,
     setError
   } = useRoomState();
 
