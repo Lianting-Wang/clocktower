@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="zh-Hans-CN" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>梦殒春宵 - 钟楼百科</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"1cb4acf9d769d397eff7641d","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"梦殒春宵","wgTitle":"梦殒春宵","wgCurRevisionId":5102,"wgRevisionId":5102,"wgArticleId":8,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"zh-cn","wgPageContentModel":"wikitext","wgRelevantPageName":"梦殒春宵","wgRelevantArticleId":8,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":
+"loading","mediawiki.page.gallery.styles":"ready","skins.pivot.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.pivot.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"zh-cn"});
+});});</script>
+<link rel="stylesheet" href="/load.php?lang=zh-cn&amp;modules=mediawiki.page.gallery.styles%7Cskins.pivot.styles&amp;only=styles&amp;skin=pivot"/>
+<script async="" src="/load.php?lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=pivot"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?lang=zh-cn&amp;modules=site.styles&amp;only=styles&amp;skin=pivot"/>
+<meta name="generator" content="MediaWiki 1.37.2"/>
+<meta name="keywords" content="钟楼百科，染钟楼谜团，钟楼谜团百科，钟楼谜团角色大全，钟楼谜团规则说明，钟楼谜团教学，钟楼谜团说书人"/>
+<meta name="description" content="钟楼百科为您提供钟楼谜团游戏相关的所有规则、角色介绍，及游戏相关各方面资讯信息。"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0"/>
+<link rel="apple-touch-icon" sizes="180x180" href="../resources/assets/apple-touch-icon.png"/>
+<link rel="shortcut icon" href="../resources/assets/favicon-32x32.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="钟楼百科 (zh-cn)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://clocktower-wiki.gstonegames.com/api.php?action=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="钟楼百科的Atom feed" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-梦殒春宵 rootpage-梦殒春宵 skin-pivot action-view">
+<style>
+#p-tb, li[id^="t-"] {
+	display: none !important;
+}
+</style>
+
+		<!-- START PIVOTTEMPLATE -->
+		<div class="off-canvas-wrap docs-wrap" data-offcanvas="">
+			<!--<div class="top-lace">
+                            <img src="skins/pivot/assets/image/top_lace.png">
+                        </div>-->
+			<div class="inner-wrap">
+								<nav class="tab-bar hide-for-print">
+					<div class="head-nav">
+					                         			     <div class="head-nav-logo">
+						<div class="head-nav-logo-div">
+					           <a href="/index.php?title=%E9%A6%96%E9%A1%B5">
+							<img alt="钟楼百科" src="resources/assets/wiki_logo.png">
+						   </a>
+						</div>
+					     </div>
+                        		     <div class="head-nav-href large-10 medium-9">
+                            			  <div class="head-nav-href-div">
+                                			<ul>
+                                    			    <li ><a href="/index.php?title=%E9%A6%96%E9%A1%B5">首页</a></li>
+                                    			   <!-- <li ><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5&action=edit&redlink=1">讨论</a></li>-->
+							    <li><a href="/index.php?title=%E9%A6%96%E9%A1%B5#官方剧本">剧本</a></li>
+                                			</ul>
+                            			  </div>
+                            			  <div>
+                                		        <ul class="side-nav" style="display:flex;">
+							   <li class="has-form" style="margin-right:1.25em;">
+							     <form action="/index.php" id="searchform-sidebar" class="mw-search">
+							     	<div class="row collapse">
+								     <div class="small-12 columns">
+									<div id="search-img"><img src="skins/pivot/assets/image/search.png"></div>
+									<input type="search" name="search" placeholder="搜索钟楼百科" title="Search [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+								     </div>
+								</div>
+							     </form>
+							   </li>
+							   <li style="margin-top:0.25em;width:4em;">
+																     <a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&returnto=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" style="color:#222222;padding:0px !important;">登录</a>
+															   </li>
+							</ul>
+                            			  </div>
+                        		     </div>
+					</div>
+					<section id="left-nav-aside" class="left-small show-for-small">
+						<a href="#" class="left-off-canvas-toggle"><span id="menu-user"><i class="fa fa-navicon fa-lg"></i></span></a>
+					</section>
+					
+					<section id="middle-nav" class="middle tab-bar-section" style="display:none;">
+						<div class="title"><a href="/index.php?title=%E9%A6%96%E9%A1%B5">
+					<span class="show-for-medium-up">钟楼百科</span>
+						<span class="show-for-small-only">
+												钟楼百科</span></a></div>
+					</section>
+					
+					<section id="right-nav-aside" class="right-small">
+					<a href="#" class="right-off-canvas-toggle"><span id="menu-user"><i class="fa fa-navicon fa-lg"></i></span></a>
+					</section>
+				</nav>
+								    <aside class="left-off-canvas-menu">
+      					<ul class="off-canvas-list">
+						
+								<li class="has-form" style="display: none;">
+									<form action="/index.php" id="searchform-sidebar" class="mw-search">
+										<div class="row collapse">
+											<div class="small-12 columns">
+												<input type="search" name="search" placeholder="搜索" title="Search [alt-shift-f]" accesskey="f" id="" autocomplete="off">
+											</div>
+										</div>
+									</form>
+								</li>
+								
+							<li><label class="sidebar" id="p-游戏信息">游戏信息</label></li><li id="n-规则概要" class="mw-list-item"><a href="/index.php?title=%E8%A7%84%E5%88%99%E6%A6%82%E8%A6%81">规则概要</a></li><li id="n-重要细节" class="mw-list-item"><a href="/index.php?title=%E9%87%8D%E8%A6%81%E7%BB%86%E8%8A%82">重要细节</a></li><li id="n-术语汇总" class="mw-list-item"><a href="/index.php?title=%E6%9C%AF%E8%AF%AD%E6%B1%87%E6%80%BB">术语汇总</a></li><li id="n-给说书人的建议" class="mw-list-item"><a href="/index.php?title=%E7%BB%99%E8%AF%B4%E4%B9%A6%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE">给说书人的建议</a></li><li id="n-相克规则" class="mw-list-item"><a href="/index.php?title=%E7%9B%B8%E5%85%8B%E8%A7%84%E5%88%99">相克规则</a></li><li><label class="sidebar" id="p-角色">角色</label></li><li id="n-暗流涌动" class="mw-list-item"><a href="/index.php?title=%E6%9A%97%E6%B5%81%E6%B6%8C%E5%8A%A8">暗流涌动</a></li><li id="n-黯月初升" class="mw-list-item"><a href="/index.php?title=%E9%BB%AF%E6%9C%88%E5%88%9D%E5%8D%87">黯月初升</a></li><li id="n-梦殒春宵" class="mw-list-item"><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5">梦殒春宵</a></li><li id="n-旅行者" class="mw-list-item"><a href="/index.php?title=%E6%97%85%E8%A1%8C%E8%80%85">旅行者</a></li><li id="n-传奇角色" class="mw-list-item"><a href="/index.php?title=%E4%BC%A0%E5%A5%87%E8%A7%92%E8%89%B2">传奇角色</a></li><li id="n-实验性角色" class="mw-list-item"><a href="/index.php?title=%E5%AE%9E%E9%AA%8C%E6%80%A7%E8%A7%92%E8%89%B2">实验性角色</a></li><li id="n-奇遇角色" class="mw-list-item"><a href="/index.php?title=%E5%A5%87%E9%81%87%E8%A7%92%E8%89%B2">奇遇角色</a></li><li id="n-华灯初上" class="mw-list-item"><a href="/index.php?title=%E5%8D%8E%E7%81%AF%E5%88%9D%E4%B8%8A">华灯初上</a></li><li id="n-角色能力类别总览" class="mw-list-item"><a href="/index.php?title=%E8%A7%92%E8%89%B2%E8%83%BD%E5%8A%9B%E7%B1%BB%E5%88%AB%E6%80%BB%E8%A7%88">角色能力类别总览</a></li><li><label class="sidebar" id="p-其他">其他</label></li><li id="n-最近更改" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9">最近更改</a></li><li><label class="sidebar" id="p-tb">工具</label></li><li id="t-whatlinkshere" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" title="所有链接至本页面的wiki页面列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-specialpages" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink" class="mw-list-item"><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5&amp;oldid=5102" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info" class="mw-list-item"><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5&amp;action=info" title="关于此页面的更多信息">页面信息</a></li>						</ul>
+					</aside>
+					
+					<aside class="right-off-canvas-menu">
+					  <ul class="off-canvas-list">
+													<li id="pt-login" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" title="我们建议您登录，不过这不是强制的[o]" accesskey="o">登录</a></li>												  </ul>
+					</aside>
+
+					<section id="main-section" class="main-section" >
+					
+						<div id="page-content">
+
+							<div id="mw-js-message" style="display:none;"></div>
+
+							<div class="row" style="position: relative;">
+								
+								<div id="sidebar" class="large-2 medium-3 columns hide-for-small hide-for-print">
+										<div style="position: absolute; bottom: 0px; left: 0px;width:80%;">
+                                                                        		<img src="skins/pivot/assets/image/flower3.png" style="max-width: 100%;">
+                                                                     		</div>
+										<ul class="side-nav">
+											<li class="name logo" style="display: none;">
+											<a href="/index.php?title=%E9%A6%96%E9%A1%B5">
+												<img alt="钟楼百科" src="/resources/assets/wiki_logo_head.png" style="max-width: 100%;height: auto;display: inline-block; vertical-align: middle;"></a>		
+											</li>
+											<li class="has-form" style="display:none;">
+												<form action="/index.php" id="searchform-offCanvas" class="mw-search">
+													<div class="row collapse">
+														<div class="small-12 columns">
+															<input type="search" name="search" placeholder="在钟楼百科搜索" title="Search [alt-shift-f]" accesskey="f" class="mw-searchInput" autocomplete="off">
+														</div>
+													</div>
+												</form>
+											</li>
+								
+											<li><label class="sidebar" id="p-游戏信息">游戏信息</label></li><li id="n-规则概要" class="mw-list-item"><a href="/index.php?title=%E8%A7%84%E5%88%99%E6%A6%82%E8%A6%81">规则概要</a></li><li id="n-重要细节" class="mw-list-item"><a href="/index.php?title=%E9%87%8D%E8%A6%81%E7%BB%86%E8%8A%82">重要细节</a></li><li id="n-术语汇总" class="mw-list-item"><a href="/index.php?title=%E6%9C%AF%E8%AF%AD%E6%B1%87%E6%80%BB">术语汇总</a></li><li id="n-给说书人的建议" class="mw-list-item"><a href="/index.php?title=%E7%BB%99%E8%AF%B4%E4%B9%A6%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE">给说书人的建议</a></li><li id="n-相克规则" class="mw-list-item"><a href="/index.php?title=%E7%9B%B8%E5%85%8B%E8%A7%84%E5%88%99">相克规则</a></li><li><label class="sidebar" id="p-角色">角色</label></li><li id="n-暗流涌动" class="mw-list-item"><a href="/index.php?title=%E6%9A%97%E6%B5%81%E6%B6%8C%E5%8A%A8">暗流涌动</a></li><li id="n-黯月初升" class="mw-list-item"><a href="/index.php?title=%E9%BB%AF%E6%9C%88%E5%88%9D%E5%8D%87">黯月初升</a></li><li id="n-梦殒春宵" class="mw-list-item"><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5">梦殒春宵</a></li><li id="n-旅行者" class="mw-list-item"><a href="/index.php?title=%E6%97%85%E8%A1%8C%E8%80%85">旅行者</a></li><li id="n-传奇角色" class="mw-list-item"><a href="/index.php?title=%E4%BC%A0%E5%A5%87%E8%A7%92%E8%89%B2">传奇角色</a></li><li id="n-实验性角色" class="mw-list-item"><a href="/index.php?title=%E5%AE%9E%E9%AA%8C%E6%80%A7%E8%A7%92%E8%89%B2">实验性角色</a></li><li id="n-奇遇角色" class="mw-list-item"><a href="/index.php?title=%E5%A5%87%E9%81%87%E8%A7%92%E8%89%B2">奇遇角色</a></li><li id="n-华灯初上" class="mw-list-item"><a href="/index.php?title=%E5%8D%8E%E7%81%AF%E5%88%9D%E4%B8%8A">华灯初上</a></li><li id="n-角色能力类别总览" class="mw-list-item"><a href="/index.php?title=%E8%A7%92%E8%89%B2%E8%83%BD%E5%8A%9B%E7%B1%BB%E5%88%AB%E6%80%BB%E8%A7%88">角色能力类别总览</a></li><li><label class="sidebar" id="p-其他">其他</label></li><li id="n-最近更改" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9">最近更改</a></li><li><label class="sidebar" id="p-tb">工具</label></li><li id="t-whatlinkshere" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" title="所有链接至本页面的wiki页面列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-specialpages" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink" class="mw-list-item"><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5&amp;oldid=5102" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info" class="mw-list-item"><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5&amp;action=info" title="关于此页面的更多信息">页面信息</a></li>										</ul>
+								</div>
+
+								<div id="p-cactions" class="large-10 medium-9 columns">
+								     <div style="position: absolute;bottom: 7em;right: 0px;width: 15%;max-width: 243px;"> 
+									<img src="skins/pivot/assets/image/flower4.png" style="max-width: 100%;">
+								     </div>
+								     <div style="position: absolute;top: 0px;right: 0px;width: 17%;max-width: 265px;">
+									<img src="skins/pivot/assets/image/flower2.png" style="max-width: 100%;">
+								     </div>
+								     <div class="button-module" style="display:none;">
+                                                                          <ul>
+                                                                             <li style="margin-left: -1em;"><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5"><input type="button" class=button-choose value="阅读"></a></li>
+                                                                             <li><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5&action=history"><input type="button"  value="查看历史" style="width: 96px;"></a></li>
+                                                                             <li>
+										<a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5&action=edit">
+										   <input type="button"
+										    value="查看源代码" style="width: 102px">
+										</a>
+									     </li>
+									  </ul>
+                                                                     </div>
+								     <div id="p-cactions-div">
+									<div class="row">
+										<div class="large-12 columns">
+												<!-- Output page indicators -->
+												<div class="mw-indicators">
+</div>
+												<!-- If user is logged in output echo location -->
+																								<!--[if lt IE 9]>
+												<div id="siteNotice" class="sitenotice">钟楼百科 may not look as expected in this version of Internet Explorer. We recommend you upgrade to a newer version of Internet Explorer or switch to a browser like Firefox or Chrome.</div>
+												<![endif]-->
+
+																																		</div>
+									</div>
+								
+																		<div id="content" style="position: relative;">
+									<h1 class="title">梦殒春宵</h1>
+																				<h3 id="tagline">来自钟楼百科</h3>																		<div id="contentSub" class="clear_both"></div>
+									<div id="bodyContent" class="mw-bodytext">
+									<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="zh-Hans-CN" dir="ltr"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" /><div class="toctitle" lang="zh-Hans-CN" dir="ltr"><h2 id="mw-toc-heading">目录</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#背景故事"><span class="tocnumber">1</span> <span class="toctext">背景故事</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#简要介绍"><span class="tocnumber">2</span> <span class="toctext">简要介绍</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#镇民"><span class="tocnumber">3</span> <span class="toctext">镇民</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#外来者"><span class="tocnumber">4</span> <span class="toctext">外来者</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#爪牙"><span class="tocnumber">5</span> <span class="toctext">爪牙</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#恶魔"><span class="tocnumber">6</span> <span class="toctext">恶魔</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#旅行者"><span class="tocnumber">7</span> <span class="toctext">旅行者</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#包含于卡牌版中的实验性角色"><span class="tocnumber">8</span> <span class="toctext">包含于卡牌版中的实验性角色</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#夜晚顺序表"><span class="tocnumber">9</span> <span class="toctext">夜晚顺序表</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#给新手说书人的推荐配置（八人游戏）"><span class="tocnumber">10</span> <span class="toctext">给新手说书人的推荐配置（八人游戏）</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".E8.83.8C.E6.99.AF.E6.95.85.E4.BA.8B"></span><span class="mw-headline" id="背景故事">背景故事</span></h2>
+<p><i>生机勃勃的春天已然过去，温暖迷人的夏天悄然来临。园丁在公园和窗栏上精心培育，让百花齐放，一望无际。鸟儿在歌唱，艺术家们拿起了画笔，哲学家在熙熙攘攘的酒馆里思索人生的终极奥秘，城镇周围搭建起老旧的帐篷预示着马戏团即将开启。</i>
+</p><p><i>在人们沉湎于纸醉金迷和灯红酒绿时，黑暗势力却悄然崛起。女巫和异教徒们潜藏在郊区的宏伟遗迹之间，在地下洞穴中密谋着渗透城镇，而那些在宴会中狂欢的鸦木布拉夫居民们却浑然不知。</i>
+</p><p><i>良辰已至……</i>
+</p><p><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" title="梦殒春宵"><img alt="Snv.png" src="/images/thumb/a/ac/Snv.png/300px-Snv.png" decoding="async" width="300" height="300" srcset="/images/thumb/a/ac/Snv.png/450px-Snv.png 1.5x, /images/thumb/a/ac/Snv.png/600px-Snv.png 2x" /></a>
+</p>
+<h2><span id=".E7.AE.80.E8.A6.81.E4.BB.8B.E7.BB.8D"></span><span class="mw-headline" id="简要介绍">简要介绍</span></h2>
+<p>《梦殒春宵》是前三个剧本套装中最疯狂的一个。善良的角色每晚都能得到惊人的信息。然而，邪恶阵营能够带来的威胁也多种多样，并且可以制造巨大的混乱。角色能力会让阵营发生变化，而玩家的角色也会发生变化。甚至是邪恶阵营也会在游戏中晕头转向，敌我不分。这也是疯狂机制第一次出现在游戏中，它为游戏增添了新的变数。
+</p><p><b>难度：中等。</b>推荐给狂野的、想要游戏充满惊喜的玩家，以及想要挑战极限伪装和虚张声势的玩家。
+</p><p>在游玩《梦殒春宵》时……
+</p><p>善良玩家拥有的信息量几乎超过了他们能够处理的极限，与《暗流涌动》不同，《暗流涌动》中的善良阵营大部分时间都可以相信他们获取的大部分信息，而《梦殒春宵》中的善良阵营需要弄清楚哪个恶魔存在于游戏中，才能开始明白到底发生了什么。
+</p><p>当<a href="/index.php?title=%E6%96%B9%E5%8F%A4" title="方古">方古</a>在游戏中时，寻找恶魔就变成了追逐战，因为它随时可能转移到一名毫无戒心的外来者身上，逃离尘埃遍布的小镇。当<a href="/index.php?title=%E8%AF%BA-%E8%BE%BE%E9%B2%BA" title="诺-达鲺">诺-达鲺</a>在游戏中时，会有两名镇民中毒，但是如果善良阵营能够推断出是哪两名镇民中毒，他们就能借此机会找到恶魔。当<a href="/index.php?title=%E4%BA%A1%E9%AA%A8%E9%AD%94" title="亡骨魔">亡骨魔</a>在游戏中时，如果爪牙在夜晚死亡，镇民会中毒。当<a href="/index.php?title=%E6%B6%A1%E6%B5%81" title="涡流">涡流</a>在游戏中时，所有的信息都是错误的。一旦善良阵营察觉到哪些信息是正确的，哪些信息是错误的，他们就可以追溯并扭转他们曾以为清楚明白的事情，并重新审视那些有价值的信息。
+</p><p>让局面更加混乱的是，在游戏的大部分时间里，外来者通常会隐瞒和伪装自己的角色。甚至可能某些镇民也会这么做。一名外来者的死亡可能为善良阵营带来巨大的劣势，所以，聪明的恶魔通常会想尽快杀死他们。
+</p><p>邪恶玩家会想要尽快杀死或者以其他方式消除最危险的镇民带来的威胁。恶魔每晚只能发起一次攻击，但是爪牙们如果很聪明的话，诸如<a href="/index.php?title=%E9%BA%BB%E8%84%B8%E5%B7%AB%E5%A9%86" title="麻脸巫婆">麻脸巫婆</a>、<a href="/index.php?title=%E5%A5%B3%E5%B7%AB" title="女巫">女巫</a>、<a href="/index.php?title=%E6%B4%97%E8%84%91%E5%B8%88" title="洗脑师">洗脑师</a>，都能够协助消灭善良阵营的玩家。邪恶玩家们还应该考虑向其他玩家提供正确还是错误的信息，因为其他玩家可能会根据这些信息，针对他们认为存在的恶魔种类进行一场反向推理。
+</p>
+<h2><span id=".E9.95.87.E6.B0.91"></span><span class="mw-headline" id="镇民">镇民</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%92%9F%E8%A1%A8%E5%8C%A0"><img alt="" src="/images/thumb/7/74/Clockmaker.png/120px-Clockmaker.png" decoding="async" width="120" height="120" srcset="/images/thumb/7/74/Clockmaker.png/180px-Clockmaker.png 1.5x, /images/thumb/7/74/Clockmaker.png/240px-Clockmaker.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%92%9F%E8%A1%A8%E5%8C%A0" title="钟表匠">钟表匠</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E7%AD%91%E6%A2%A6%E5%B8%88"><img alt="" src="/images/thumb/2/29/Dreamer.png/120px-Dreamer.png" decoding="async" width="120" height="120" srcset="/images/thumb/2/29/Dreamer.png/180px-Dreamer.png 1.5x, /images/thumb/2/29/Dreamer.png/240px-Dreamer.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E7%AD%91%E6%A2%A6%E5%B8%88" title="筑梦师">筑梦师</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E8%88%9E%E8%9B%87%E4%BA%BA"><img alt="" src="/images/thumb/a/ab/Snakecharmer.png/120px-Snakecharmer.png" decoding="async" width="120" height="120" srcset="/images/thumb/a/ab/Snakecharmer.png/180px-Snakecharmer.png 1.5x, /images/thumb/a/ab/Snakecharmer.png/240px-Snakecharmer.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E8%88%9E%E8%9B%87%E4%BA%BA" title="舞蛇人">舞蛇人</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%95%B0%E5%AD%A6%E5%AE%B6"><img alt="" src="/images/thumb/0/06/Mathematician.png/120px-Mathematician.png" decoding="async" width="120" height="120" srcset="/images/thumb/0/06/Mathematician.png/180px-Mathematician.png 1.5x, /images/thumb/0/06/Mathematician.png/240px-Mathematician.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%95%B0%E5%AD%A6%E5%AE%B6" title="数学家">数学家</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%8D%96%E8%8A%B1%E5%A5%B3%E5%AD%A9"><img alt="" src="/images/thumb/5/5b/Flowergirl.png/120px-Flowergirl.png" decoding="async" width="120" height="120" srcset="/images/thumb/5/5b/Flowergirl.png/180px-Flowergirl.png 1.5x, /images/thumb/5/5b/Flowergirl.png/240px-Flowergirl.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%8D%96%E8%8A%B1%E5%A5%B3%E5%AD%A9" title="卖花女孩">卖花女孩</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%9F%8E%E9%95%87%E5%85%AC%E5%91%8A%E5%91%98"><img alt="" src="/images/thumb/b/b7/Towncrier.png/120px-Towncrier.png" decoding="async" width="120" height="120" srcset="/images/thumb/b/b7/Towncrier.png/180px-Towncrier.png 1.5x, /images/thumb/b/b7/Towncrier.png/240px-Towncrier.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%9F%8E%E9%95%87%E5%85%AC%E5%91%8A%E5%91%98" title="城镇公告员">城镇公告员</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E7%A5%9E%E8%B0%95%E8%80%85"><img alt="" src="/images/thumb/1/17/Oracle.png/120px-Oracle.png" decoding="async" width="120" height="120" srcset="/images/thumb/1/17/Oracle.png/180px-Oracle.png 1.5x, /images/thumb/1/17/Oracle.png/240px-Oracle.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E7%A5%9E%E8%B0%95%E8%80%85" title="神谕者">神谕者</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%8D%9A%E5%AD%A6%E8%80%85"><img alt="" src="/images/thumb/5/53/Savant.png/120px-Savant.png" decoding="async" width="120" height="120" srcset="/images/thumb/5/53/Savant.png/180px-Savant.png 1.5x, /images/thumb/5/53/Savant.png/240px-Savant.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%8D%9A%E5%AD%A6%E8%80%85" title="博学者">博学者</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%A5%B3%E8%A3%81%E7%BC%9D"><img alt="" src="/images/thumb/a/ae/Seamstress.png/120px-Seamstress.png" decoding="async" width="120" height="120" srcset="/images/thumb/a/ae/Seamstress.png/180px-Seamstress.png 1.5x, /images/thumb/a/ae/Seamstress.png/240px-Seamstress.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%A5%B3%E8%A3%81%E7%BC%9D" title="女裁缝">女裁缝</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%93%B2%E5%AD%A6%E5%AE%B6"><img alt="" src="/images/thumb/e/e0/Philosopher.png/120px-Philosopher.png" decoding="async" width="120" height="120" srcset="/images/thumb/e/e0/Philosopher.png/180px-Philosopher.png 1.5x, /images/thumb/e/e0/Philosopher.png/240px-Philosopher.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%93%B2%E5%AD%A6%E5%AE%B6" title="哲学家">哲学家</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E8%89%BA%E6%9C%AF%E5%AE%B6"><img alt="" src="/images/thumb/a/a5/Artist.png/120px-Artist.png" decoding="async" width="120" height="120" srcset="/images/thumb/a/a5/Artist.png/180px-Artist.png 1.5x, /images/thumb/a/a5/Artist.png/240px-Artist.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E8%89%BA%E6%9C%AF%E5%AE%B6" title="艺术家">艺术家</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%9D%82%E8%80%8D%E8%89%BA%E4%BA%BA"><img alt="" src="/images/thumb/b/be/Juggler.png/120px-Juggler.png" decoding="async" width="120" height="120" srcset="/images/thumb/b/be/Juggler.png/180px-Juggler.png 1.5x, /images/thumb/b/be/Juggler.png/240px-Juggler.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%9D%82%E8%80%8D%E8%89%BA%E4%BA%BA" title="杂耍艺人">杂耍艺人</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E8%B4%A4%E8%80%85"><img alt="" src="/images/thumb/f/f8/Sage.png/120px-Sage.png" decoding="async" width="120" height="120" srcset="/images/thumb/f/f8/Sage.png/180px-Sage.png 1.5x, /images/thumb/f/f8/Sage.png/240px-Sage.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E8%B4%A4%E8%80%85" title="贤者">贤者</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E5.A4.96.E6.9D.A5.E8.80.85"></span><span class="mw-headline" id="外来者">外来者</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E7%95%B8%E5%BD%A2%E7%A7%80%E6%BC%94%E5%91%98"><img alt="" src="/images/thumb/5/58/Mutant.png/120px-Mutant.png" decoding="async" width="120" height="120" srcset="/images/thumb/5/58/Mutant.png/180px-Mutant.png 1.5x, /images/thumb/5/58/Mutant.png/240px-Mutant.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E7%95%B8%E5%BD%A2%E7%A7%80%E6%BC%94%E5%91%98" title="畸形秀演员">畸形秀演员</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%BF%83%E4%B8%8A%E4%BA%BA"><img alt="" src="/images/thumb/c/c2/Sweetheart.png/120px-Sweetheart.png" decoding="async" width="120" height="120" srcset="/images/thumb/c/c2/Sweetheart.png/180px-Sweetheart.png 1.5x, /images/thumb/c/c2/Sweetheart.png/240px-Sweetheart.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%BF%83%E4%B8%8A%E4%BA%BA" title="心上人">心上人</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E7%90%86%E5%8F%91%E5%B8%88"><img alt="" src="/images/thumb/3/3a/Barber.png/120px-Barber.png" decoding="async" width="120" height="120" srcset="/images/thumb/3/3a/Barber.png/180px-Barber.png 1.5x, /images/thumb/3/3a/Barber.png/240px-Barber.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E7%90%86%E5%8F%91%E5%B8%88" title="理发师">理发师</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%91%86%E7%93%9C"><img alt="" src="/images/thumb/f/f6/Klutz.png/120px-Klutz.png" decoding="async" width="120" height="120" srcset="/images/thumb/f/f6/Klutz.png/180px-Klutz.png 1.5x, /images/thumb/f/f6/Klutz.png/240px-Klutz.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%91%86%E7%93%9C" title="呆瓜">呆瓜</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E7.88.AA.E7.89.99"></span><span class="mw-headline" id="爪牙">爪牙</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%95%9C%E5%83%8F%E5%8F%8C%E5%AD%90"><img alt="" src="/images/thumb/8/8e/Eviltwin.png/120px-Eviltwin.png" decoding="async" width="120" height="120" srcset="/images/thumb/8/8e/Eviltwin.png/180px-Eviltwin.png 1.5x, /images/thumb/8/8e/Eviltwin.png/240px-Eviltwin.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%95%9C%E5%83%8F%E5%8F%8C%E5%AD%90" title="镜像双子">镜像双子</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%A5%B3%E5%B7%AB"><img alt="" src="/images/thumb/e/e6/Witch.png/120px-Witch.png" decoding="async" width="120" height="120" srcset="/images/thumb/e/e6/Witch.png/180px-Witch.png 1.5x, /images/thumb/e/e6/Witch.png/240px-Witch.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%A5%B3%E5%B7%AB" title="女巫">女巫</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%B4%97%E8%84%91%E5%B8%88"><img alt="" src="/images/thumb/4/4d/Cerenovus.png/120px-Cerenovus.png" decoding="async" width="120" height="120" srcset="/images/thumb/4/4d/Cerenovus.png/180px-Cerenovus.png 1.5x, /images/thumb/4/4d/Cerenovus.png/240px-Cerenovus.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%B4%97%E8%84%91%E5%B8%88" title="洗脑师">洗脑师</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%BA%BB%E8%84%B8%E5%B7%AB%E5%A9%86"><img alt="" src="/images/thumb/d/de/Pithag.png/120px-Pithag.png" decoding="async" width="120" height="120" srcset="/images/thumb/d/de/Pithag.png/180px-Pithag.png 1.5x, /images/thumb/d/de/Pithag.png/240px-Pithag.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%BA%BB%E8%84%B8%E5%B7%AB%E5%A9%86" title="麻脸巫婆">麻脸巫婆</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E6.81.B6.E9.AD.94"></span><span class="mw-headline" id="恶魔">恶魔</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%96%B9%E5%8F%A4"><img alt="" src="/images/thumb/9/97/Fanggu.png/120px-Fanggu.png" decoding="async" width="120" height="120" srcset="/images/thumb/9/97/Fanggu.png/180px-Fanggu.png 1.5x, /images/thumb/9/97/Fanggu.png/240px-Fanggu.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%96%B9%E5%8F%A4" title="方古">方古</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E4%BA%A1%E9%AA%A8%E9%AD%94"><img alt="" src="/images/thumb/f/fc/Vigormortis.png/120px-Vigormortis.png" decoding="async" width="120" height="120" srcset="/images/thumb/f/fc/Vigormortis.png/180px-Vigormortis.png 1.5x, /images/thumb/f/fc/Vigormortis.png/240px-Vigormortis.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E4%BA%A1%E9%AA%A8%E9%AD%94" title="亡骨魔">亡骨魔</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E8%AF%BA-%E8%BE%BE%E9%B2%BA"><img alt="" src="/images/thumb/1/16/Nodashii.png/120px-Nodashii.png" decoding="async" width="120" height="120" srcset="/images/thumb/1/16/Nodashii.png/180px-Nodashii.png 1.5x, /images/thumb/1/16/Nodashii.png/240px-Nodashii.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E8%AF%BA-%E8%BE%BE%E9%B2%BA" title="诺-达鲺">诺-达鲺</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%B6%A1%E6%B5%81"><img alt="" src="/images/thumb/7/78/Vortox.png/120px-Vortox.png" decoding="async" width="120" height="120" srcset="/images/thumb/7/78/Vortox.png/180px-Vortox.png 1.5x, /images/thumb/7/78/Vortox.png/240px-Vortox.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%B6%A1%E6%B5%81" title="涡流">涡流</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E6.97.85.E8.A1.8C.E8.80.85"></span><span class="mw-headline" id="旅行者">旅行者</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%80%AA%E5%92%96"><img alt="" src="/images/thumb/d/d5/Deviant.png/120px-Deviant.png" decoding="async" width="120" height="120" srcset="/images/thumb/d/d5/Deviant.png/180px-Deviant.png 1.5x, /images/thumb/d/d5/Deviant.png/240px-Deviant.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%80%AA%E5%92%96" title="怪咖">怪咖</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%9B%86%E9%AA%A8%E8%80%85"><img alt="" src="/images/thumb/4/48/Bonecollector.png/120px-Bonecollector.png" decoding="async" width="120" height="120" srcset="/images/thumb/4/48/Bonecollector.png/180px-Bonecollector.png 1.5x, /images/thumb/4/48/Bonecollector.png/240px-Bonecollector.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%9B%86%E9%AA%A8%E8%80%85" title="集骨者">集骨者</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%92%96%E5%95%A1%E5%B8%88"><img alt="" src="/images/thumb/0/05/Barista.png/120px-Barista.png" decoding="async" width="120" height="120" srcset="/images/thumb/0/05/Barista.png/180px-Barista.png 1.5x, /images/thumb/0/05/Barista.png/240px-Barista.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%92%96%E5%95%A1%E5%B8%88" title="咖啡师">咖啡师</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%B5%81%E8%8E%BA"><img alt="" src="/images/thumb/8/89/Harlot.png/120px-Harlot.png" decoding="async" width="120" height="120" srcset="/images/thumb/8/89/Harlot.png/180px-Harlot.png 1.5x, /images/thumb/8/89/Harlot.png/240px-Harlot.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%B5%81%E8%8E%BA" title="流莺">流莺</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%B1%A0%E5%A4%AB"><img alt="" src="/images/thumb/f/fb/Butcher.png/120px-Butcher.png" decoding="async" width="120" height="120" srcset="/images/thumb/f/fb/Butcher.png/180px-Butcher.png 1.5x, /images/thumb/f/fb/Butcher.png/240px-Butcher.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%B1%A0%E5%A4%AB" title="屠夫">屠夫</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E5.8C.85.E5.90.AB.E4.BA.8E.E5.8D.A1.E7.89.8C.E7.89.88.E4.B8.AD.E7.9A.84.E5.AE.9E.E9.AA.8C.E6.80.A7.E8.A7.92.E8.89.B2"></span><span class="mw-headline" id="包含于卡牌版中的实验性角色">包含于卡牌版中的实验性角色</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%8D%8A%E5%85%BD%E4%BA%BA"><img alt="" src="/images/thumb/c/c1/Lycanthrope.png/120px-Lycanthrope.png" decoding="async" width="120" height="120" srcset="/images/thumb/c/c1/Lycanthrope.png/180px-Lycanthrope.png 1.5x, /images/thumb/c/c1/Lycanthrope.png/240px-Lycanthrope.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%8D%8A%E5%85%BD%E4%BA%BA" title="半兽人">半兽人</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%B7%A5%E7%A8%8B%E5%B8%88"><img alt="" src="/images/thumb/d/d8/Engineer.png/120px-Engineer.png" decoding="async" width="120" height="120" srcset="/images/thumb/d/d8/Engineer.png/180px-Engineer.png 1.5x, /images/thumb/d/d8/Engineer.png/240px-Engineer.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%B7%A5%E7%A8%8B%E5%B8%88" title="工程师">工程师</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%86%9C%E5%A4%AB"><img alt="" src="/images/thumb/3/3d/Farmer.png/120px-Farmer.png" decoding="async" width="120" height="120" srcset="/images/thumb/3/3d/Farmer.png/180px-Farmer.png 1.5x, /images/thumb/3/3d/Farmer.png/240px-Farmer.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%86%9C%E5%A4%AB" title="农夫">农夫</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%A4%B1%E5%BF%86%E8%80%85"><img alt="" src="/images/thumb/5/55/Amnesiac.png/120px-Amnesiac.png" decoding="async" width="120" height="120" srcset="/images/thumb/5/55/Amnesiac.png/180px-Amnesiac.png 1.5x, /images/thumb/5/55/Amnesiac.png/240px-Amnesiac.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%A4%B1%E5%BF%86%E8%80%85" title="失忆者">失忆者</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%97%A0%E7%A5%9E%E8%AE%BA%E8%80%85"><img alt="" src="/images/thumb/d/d7/Atheist.png/120px-Atheist.png" decoding="async" width="120" height="120" srcset="/images/thumb/d/d7/Atheist.png/180px-Atheist.png 1.5x, /images/thumb/d/d7/Atheist.png/240px-Atheist.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%97%A0%E7%A5%9E%E8%AE%BA%E8%80%85" title="无神论者">无神论者</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E7%BD%82%E7%B2%9F%E7%A7%8D%E6%A4%8D%E8%80%85"><img alt="" src="/images/thumb/4/42/Poppygrower.png/120px-Poppygrower.png" decoding="async" width="120" height="120" srcset="/images/thumb/4/42/Poppygrower.png/180px-Poppygrower.png 1.5x, /images/thumb/4/42/Poppygrower.png/240px-Poppygrower.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E7%BD%82%E7%B2%9F%E7%A7%8D%E6%A4%8D%E8%80%85" title="罂粟种植者">罂粟种植者</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E8%A7%A3%E8%B0%9C%E5%A4%A7%E5%B8%88"><img alt="" src="/images/thumb/1/1b/Puzzlemaster.png/120px-Puzzlemaster.png" decoding="async" width="120" height="120" srcset="/images/thumb/1/1b/Puzzlemaster.png/180px-Puzzlemaster.png 1.5x, /images/thumb/1/1b/Puzzlemaster.png/240px-Puzzlemaster.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E8%A7%A3%E8%B0%9C%E5%A4%A7%E5%B8%88" title="解谜大师">解谜大师</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%BC%82%E7%AB%AF%E5%88%86%E5%AD%90"><img alt="" src="/images/thumb/8/81/Heretic.png/120px-Heretic.png" decoding="async" width="120" height="120" srcset="/images/thumb/8/81/Heretic.png/180px-Heretic.png 1.5x, /images/thumb/8/81/Heretic.png/240px-Heretic.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%BC%82%E7%AB%AF%E5%88%86%E5%AD%90" title="异端分子">异端分子</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%94%BF%E5%AE%A2"><img alt="" src="/images/thumb/9/91/Politician.png/120px-Politician.png" decoding="async" width="120" height="120" srcset="/images/thumb/9/91/Politician.png/180px-Politician.png 1.5x, /images/thumb/9/91/Politician.png/240px-Politician.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%94%BF%E5%AE%A2" title="政客">政客</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E7%B2%BE%E7%A5%9E%E7%97%85%E6%82%A3%E8%80%85"><img alt="" src="/images/thumb/6/63/Psychopath.png/120px-Psychopath.png" decoding="async" width="120" height="120" srcset="/images/thumb/6/63/Psychopath.png/180px-Psychopath.png 1.5x, /images/thumb/6/63/Psychopath.png/240px-Psychopath.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E7%B2%BE%E7%A5%9E%E7%97%85%E6%82%A3%E8%80%85" title="精神病患者">精神病患者</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%81%90%E6%83%A7%E4%B9%8B%E7%81%B5"><img alt="" src="/images/thumb/7/77/Fearmonger.png/120px-Fearmonger.png" decoding="async" width="120" height="120" srcset="/images/thumb/7/77/Fearmonger.png/180px-Fearmonger.png 1.5x, /images/thumb/7/77/Fearmonger.png/240px-Fearmonger.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%81%90%E6%83%A7%E4%B9%8B%E7%81%B5" title="恐惧之灵">恐惧之灵</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%9A%B4%E4%B9%B1"><img alt="" src="/images/thumb/c/c0/Riot.png/120px-Riot.png" decoding="async" width="120" height="120" srcset="/images/thumb/c/c0/Riot.png/180px-Riot.png 1.5x, /images/thumb/c/c0/Riot.png/240px-Riot.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%9A%B4%E4%B9%B1" title="暴乱">暴乱</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%93%88%E8%BF%AA%E5%AF%82%E4%BA%9A"><img alt="" src="/images/thumb/0/09/Alhadikhia.png/120px-Alhadikhia.png" decoding="async" width="120" height="120" srcset="/images/thumb/0/09/Alhadikhia.png/180px-Alhadikhia.png 1.5x, /images/thumb/0/09/Alhadikhia.png/240px-Alhadikhia.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%93%88%E8%BF%AA%E5%AF%82%E4%BA%9A" title="哈迪寂亚">哈迪寂亚</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E5.A4.9C.E6.99.9A.E9.A1.BA.E5.BA.8F.E8.A1.A8"></span><span class="mw-headline" id="夜晚顺序表">夜晚顺序表</span></h2>
+<ul><li><b>首个夜晚</b></li></ul>
+<p><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" title="梦殒春宵"><img alt="Dusk.png" src="/images/thumb/5/5d/Dusk.png/50px-Dusk.png" decoding="async" width="50" height="50" srcset="/images/thumb/5/5d/Dusk.png/75px-Dusk.png 1.5x, /images/thumb/5/5d/Dusk.png/100px-Dusk.png 2x" /></a>	检查所有玩家是否闭上眼睛。部分旅行者和传奇角色会在这时行动。
+</p><p><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" title="梦殒春宵"><img alt="Mi.png" src="/images/thumb/8/85/Mi.png/50px-Mi.png" decoding="async" width="50" height="50" srcset="/images/thumb/8/85/Mi.png/75px-Mi.png 1.5x, /images/thumb/8/85/Mi.png/100px-Mi.png 2x" /></a>	如果有七名或更多玩家，唤醒所有爪牙：展示“他是恶魔”信息标记。指向恶魔。
+</p><p><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" title="梦殒春宵"><img alt="Di.png" src="/images/thumb/1/18/Di.png/50px-Di.png" decoding="async" width="50" height="50" srcset="/images/thumb/1/18/Di.png/75px-Di.png 1.5x, /images/thumb/1/18/Di.png/100px-Di.png 2x" /></a>	如果有七名或更多玩家，唤醒恶魔：展示“他们是你的爪牙”信息标记。指向所有爪牙。展示“这些角色不在场”信息标记。展示三个不在场的善良角色。
+</p><p><a href="/index.php?title=%E5%93%B2%E5%AD%A6%E5%AE%B6" title="哲学家"><img alt="Philosopher.png" src="/images/thumb/e/e0/Philosopher.png/50px-Philosopher.png" decoding="async" width="50" height="50" srcset="/images/thumb/e/e0/Philosopher.png/75px-Philosopher.png 1.5x, /images/thumb/e/e0/Philosopher.png/100px-Philosopher.png 2x" /></a>	哲学家可以选择一个善良角色。如果选择的角色不在场，将哲学家的角色标记替换成对应角色，并标记“是哲学家”，否则标记该角色对应的玩家醉酒。从现在开始，你需要以哲学家获得能力的那种角色的行动方式来唤醒哲学家。
+</p><p><a href="/index.php?title=%E8%88%9E%E8%9B%87%E4%BA%BA" title="舞蛇人"><img alt="Snakecharmer.png" src="/images/thumb/a/ab/Snakecharmer.png/50px-Snakecharmer.png" decoding="async" width="50" height="50" srcset="/images/thumb/a/ab/Snakecharmer.png/75px-Snakecharmer.png 1.5x, /images/thumb/a/ab/Snakecharmer.png/100px-Snakecharmer.png 2x" /></a>	让舞蛇人选择一名玩家。如果舞蛇人选中了恶魔：展示“你是”信息标记和恶魔角色标记。用拇指向下代表他阵营变为邪恶。在魔典中交换舞蛇人和恶魔的角色标记。让原来的舞蛇人重新入睡。唤醒原来的恶魔。对老恶魔展示“你是”信息标记和舞蛇人角色标记，并用拇指向上代表他阵营变为善良。
+</p><p><a href="/index.php?title=%E9%95%9C%E5%83%8F%E5%8F%8C%E5%AD%90" title="镜像双子"><img alt="Eviltwin.png" src="/images/thumb/8/8e/Eviltwin.png/50px-Eviltwin.png" decoding="async" width="50" height="50" srcset="/images/thumb/8/8e/Eviltwin.png/75px-Eviltwin.png 1.5x, /images/thumb/8/8e/Eviltwin.png/100px-Eviltwin.png 2x" /></a>	唤醒镜像双子和他的对立双子，让他们进行眼神接触。对镜像双子展示对立双子的角色标记，并对对立双子展示镜像双子的角色标记。
+</p><p><a href="/index.php?title=%E5%A5%B3%E5%B7%AB" title="女巫"><img alt="Witch.png" src="/images/thumb/e/e6/Witch.png/50px-Witch.png" decoding="async" width="50" height="50" srcset="/images/thumb/e/e6/Witch.png/75px-Witch.png 1.5x, /images/thumb/e/e6/Witch.png/100px-Witch.png 2x" /></a>	让女巫选择一名玩家。标记那名玩家被诅咒。
+</p><p><a href="/index.php?title=%E6%B4%97%E8%84%91%E5%B8%88" title="洗脑师"><img alt="Cerenovus.png" src="/images/thumb/4/4d/Cerenovus.png/50px-Cerenovus.png" decoding="async" width="50" height="50" srcset="/images/thumb/4/4d/Cerenovus.png/75px-Cerenovus.png 1.5x, /images/thumb/4/4d/Cerenovus.png/100px-Cerenovus.png 2x" /></a>	让洗脑师选择一名玩家和一个善良角色。标记那名玩家疯狂。让洗脑师重新入睡。唤醒洗脑师的目标。对这名玩家展示“该角色的能力对你生效”信息标记，洗脑师角色标记，该玩家需要疯狂证明的角色标记。
+</p><p><a href="/index.php?title=%E9%92%9F%E8%A1%A8%E5%8C%A0" title="钟表匠"><img alt="Clockmaker.png" src="/images/thumb/7/74/Clockmaker.png/50px-Clockmaker.png" decoding="async" width="50" height="50" srcset="/images/thumb/7/74/Clockmaker.png/75px-Clockmaker.png 1.5x, /images/thumb/7/74/Clockmaker.png/100px-Clockmaker.png 2x" /></a>	给他展示数字手势来告诉他恶魔与爪牙之间最近的距离。
+</p><p><a href="/index.php?title=%E7%AD%91%E6%A2%A6%E5%B8%88" title="筑梦师"><img alt="Dreamer.png" src="/images/thumb/2/29/Dreamer.png/50px-Dreamer.png" decoding="async" width="50" height="50" srcset="/images/thumb/2/29/Dreamer.png/75px-Dreamer.png 1.5x, /images/thumb/2/29/Dreamer.png/100px-Dreamer.png 2x" /></a>	让筑梦师指向一名玩家。对他展示善良和邪恶的角色标记各一个，其中一个是属于该玩家的角色。
+</p><p><a href="/index.php?title=%E5%A5%B3%E8%A3%81%E7%BC%9D" title="女裁缝"><img alt="Seamstress.png" src="/images/thumb/a/ae/Seamstress.png/50px-Seamstress.png" decoding="async" width="50" height="50" srcset="/images/thumb/a/ae/Seamstress.png/75px-Seamstress.png 1.5x, /images/thumb/a/ae/Seamstress.png/100px-Seamstress.png 2x" /></a>	女裁缝可以选择除自己以外的两名玩家。如果她这么做了，对她点头或摇头示意这两名玩家是否为同一阵营，随后标记女裁缝失去能力。之后的夜晚无需再唤醒女裁缝。
+</p><p><a href="/index.php?title=%E6%95%B0%E5%AD%A6%E5%AE%B6" title="数学家"><img alt="Mathematician.png" src="/images/thumb/0/06/Mathematician.png/50px-Mathematician.png" decoding="async" width="50" height="50" srcset="/images/thumb/0/06/Mathematician.png/75px-Mathematician.png 1.5x, /images/thumb/0/06/Mathematician.png/100px-Mathematician.png 2x" /></a>	给他展示数字手势来告诉他在首个夜晚里有多少玩家的角色能力受他人影响而未正常生效。
+</p><p><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" title="梦殒春宵"><img alt="Dawn.png" src="/images/thumb/8/8e/Dawn.png/50px-Dawn.png" decoding="async" width="50" height="50" srcset="/images/thumb/8/8e/Dawn.png/75px-Dawn.png 1.5x, /images/thumb/8/8e/Dawn.png/100px-Dawn.png 2x" /></a>	等待数秒。让所有玩家睁眼。
+</p>
+<ul><li><b>其他夜晚</b></li></ul>
+<p><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" title="梦殒春宵"><img alt="Dusk.png" src="/images/thumb/5/5d/Dusk.png/50px-Dusk.png" decoding="async" width="50" height="50" srcset="/images/thumb/5/5d/Dusk.png/75px-Dusk.png 1.5x, /images/thumb/5/5d/Dusk.png/100px-Dusk.png 2x" /></a>	检查所有玩家是否闭上眼睛。部分旅行者和传奇角色会在这时行动。
+</p><p><a href="/index.php?title=%E5%93%B2%E5%AD%A6%E5%AE%B6" title="哲学家"><img alt="Philosopher.png" src="/images/thumb/e/e0/Philosopher.png/50px-Philosopher.png" decoding="async" width="50" height="50" srcset="/images/thumb/e/e0/Philosopher.png/75px-Philosopher.png 1.5x, /images/thumb/e/e0/Philosopher.png/100px-Philosopher.png 2x" /></a>	哲学家可以选择一个角色。如果选择的角色不在场，将哲学家的角色标记替换成对应角色，并标记“是哲学家”，否则标记该角色对应的玩家醉酒。从现在开始，你需要以哲学家获得能力的那种角色的行动方式来唤醒哲学家。
+</p><p><a href="/index.php?title=%E8%88%9E%E8%9B%87%E4%BA%BA" title="舞蛇人"><img alt="Snakecharmer.png" src="/images/thumb/a/ab/Snakecharmer.png/50px-Snakecharmer.png" decoding="async" width="50" height="50" srcset="/images/thumb/a/ab/Snakecharmer.png/75px-Snakecharmer.png 1.5x, /images/thumb/a/ab/Snakecharmer.png/100px-Snakecharmer.png 2x" /></a>	让舞蛇人选择一名玩家。如果舞蛇人选中了恶魔：展示“你是”信息标记和恶魔角色标记。用拇指向下代表他阵营变为邪恶。在魔典中交换舞蛇人和恶魔的角色标记。让原来的舞蛇人重新入睡。唤醒原来的恶魔。对老恶魔展示“你是”信息标记和舞蛇人角色标记，并用拇指向上代表他阵营变为善良。
+</p><p><a href="/index.php?title=%E5%A5%B3%E5%B7%AB" title="女巫"><img alt="Witch.png" src="/images/thumb/e/e6/Witch.png/50px-Witch.png" decoding="async" width="50" height="50" srcset="/images/thumb/e/e6/Witch.png/75px-Witch.png 1.5x, /images/thumb/e/e6/Witch.png/100px-Witch.png 2x" /></a>	让女巫选择一名玩家。标记那名玩家被诅咒。
+</p><p><a href="/index.php?title=%E6%B4%97%E8%84%91%E5%B8%88" title="洗脑师"><img alt="Cerenovus.png" src="/images/thumb/4/4d/Cerenovus.png/50px-Cerenovus.png" decoding="async" width="50" height="50" srcset="/images/thumb/4/4d/Cerenovus.png/75px-Cerenovus.png 1.5x, /images/thumb/4/4d/Cerenovus.png/100px-Cerenovus.png 2x" /></a>	让洗脑师选择一名玩家和一个善良角色。标记那名玩家疯狂。让洗脑师重新入睡。唤醒洗脑师的目标。对这名玩家展示“该角色的能力对你生效”信息标记，洗脑师角色标记，该玩家需要疯狂证明的角色标记。
+</p><p><a href="/index.php?title=%E9%BA%BB%E8%84%B8%E5%B7%AB%E5%A9%86" title="麻脸巫婆"><img alt="Pithag.png" src="/images/thumb/d/de/Pithag.png/50px-Pithag.png" decoding="async" width="50" height="50" srcset="/images/thumb/d/de/Pithag.png/75px-Pithag.png 1.5x, /images/thumb/d/de/Pithag.png/100px-Pithag.png 2x" /></a>	让麻脸巫婆选择一名玩家和一个角色。如果她选择的角色不在场：让麻脸巫婆重新入睡。唤醒她的目标玩家。对该玩家展示“你是”信息标记和他的新角色标记。
+</p><p><a href="/index.php?title=%E6%96%B9%E5%8F%A4" title="方古"><img alt="Fanggu.png" src="/images/thumb/9/97/Fanggu.png/50px-Fanggu.png" decoding="async" width="50" height="50" srcset="/images/thumb/9/97/Fanggu.png/75px-Fanggu.png 1.5x, /images/thumb/9/97/Fanggu.png/100px-Fanggu.png 2x" /></a>	让方古选择一名玩家。标记那名玩家死亡。如果他选择了外来者，且“限一次”标记未放置在魔典中：用备用的方古角色标记替换那名外来者的角色标记。让方古重新入睡。唤醒方古的目标玩家。对该玩家展示“你是”信息标记和方古角色标记，并用拇指向下代表他阵营变为邪恶。将“限一次”标记放置在魔典中央。标记原本的方古玩家死亡，且他选择的玩家不会被标记为死亡。
+</p><p><a href="/index.php?title=%E4%BA%A1%E9%AA%A8%E9%AD%94" title="亡骨魔"><img alt="Vigormortis.png" src="/images/thumb/f/fc/Vigormortis.png/50px-Vigormortis.png" decoding="async" width="50" height="50" srcset="/images/thumb/f/fc/Vigormortis.png/75px-Vigormortis.png 1.5x, /images/thumb/f/fc/Vigormortis.png/100px-Vigormortis.png 2x" /></a>	让亡骨魔选择一名玩家。标记那名玩家死亡。如果该玩家是爪牙，标记该玩家保留能力，并标记与该玩家邻近的镇民玩家之一中毒。
+</p><p><a href="/index.php?title=%E8%AF%BA-%E8%BE%BE%E9%B2%BA" title="诺-达鲺"><img alt="Nodashii.png" src="/images/thumb/1/16/Nodashii.png/50px-Nodashii.png" decoding="async" width="50" height="50" srcset="/images/thumb/1/16/Nodashii.png/75px-Nodashii.png 1.5x, /images/thumb/1/16/Nodashii.png/100px-Nodashii.png 2x" /></a>	让诺-达鲺选择一名玩家。标记那名玩家死亡。
+</p><p><a href="/index.php?title=%E6%B6%A1%E6%B5%81" title="涡流"><img alt="Vortox.png" src="/images/thumb/7/78/Vortox.png/50px-Vortox.png" decoding="async" width="50" height="50" srcset="/images/thumb/7/78/Vortox.png/75px-Vortox.png 1.5x, /images/thumb/7/78/Vortox.png/100px-Vortox.png 2x" /></a>	让涡流选择一名玩家。标记那名玩家死亡。
+</p><p><a href="/index.php?title=%E7%90%86%E5%8F%91%E5%B8%88" title="理发师"><img alt="Barber.png" src="/images/thumb/3/3a/Barber.png/50px-Barber.png" decoding="async" width="50" height="50" srcset="/images/thumb/3/3a/Barber.png/75px-Barber.png 1.5x, /images/thumb/3/3a/Barber.png/100px-Barber.png 2x" /></a>	如果理发师今天死亡了，唤醒恶魔并展示“该角色的效果对你生效”信息标记和理发师角色标记。如果恶魔选择了两名玩家，将这两名玩家分别独自唤醒。对他们展示“你是”信息标记和他们的新角色标记。
+</p><p><a href="/index.php?title=%E5%BF%83%E4%B8%8A%E4%BA%BA" title="心上人"><img alt="Sweetheart.png" src="/images/thumb/c/c2/Sweetheart.png/50px-Sweetheart.png" decoding="async" width="50" height="50" srcset="/images/thumb/c/c2/Sweetheart.png/75px-Sweetheart.png 1.5x, /images/thumb/c/c2/Sweetheart.png/100px-Sweetheart.png 2x" /></a>	如果心上人死亡，会有一名玩家立刻醉酒。如果你还没有让这件事情发生，那么现在为任意一位玩家放置醉酒标记。
+</p><p><a href="/index.php?title=%E8%B4%A4%E8%80%85" title="贤者"><img alt="Sage.png" src="/images/thumb/f/f8/Sage.png/50px-Sage.png" decoding="async" width="50" height="50" srcset="/images/thumb/f/f8/Sage.png/75px-Sage.png 1.5x, /images/thumb/f/f8/Sage.png/100px-Sage.png 2x" /></a>	如果恶魔杀死了贤者，唤醒贤者并指向两名玩家，其中一名玩家是杀死他的恶魔。
+</p><p><a href="/index.php?title=%E7%AD%91%E6%A2%A6%E5%B8%88" title="筑梦师"><img alt="Dreamer.png" src="/images/thumb/2/29/Dreamer.png/50px-Dreamer.png" decoding="async" width="50" height="50" srcset="/images/thumb/2/29/Dreamer.png/75px-Dreamer.png 1.5x, /images/thumb/2/29/Dreamer.png/100px-Dreamer.png 2x" /></a>	让筑梦师指向一名玩家。对他展示善良和邪恶的角色标记各一个，其中一个是属于该玩家的角色。
+</p><p><a href="/index.php?title=%E5%8D%96%E8%8A%B1%E5%A5%B3%E5%AD%A9" title="卖花女孩"><img alt="Flowergirl.png" src="/images/thumb/5/5b/Flowergirl.png/50px-Flowergirl.png" decoding="async" width="50" height="50" srcset="/images/thumb/5/5b/Flowergirl.png/75px-Flowergirl.png 1.5x, /images/thumb/5/5b/Flowergirl.png/100px-Flowergirl.png 2x" /></a>	对她点头或摇头来示意今天白天是否有恶魔投过票。
+</p><p><a href="/index.php?title=%E5%9F%8E%E9%95%87%E5%85%AC%E5%91%8A%E5%91%98" title="城镇公告员"><img alt="Towncrier.png" src="/images/thumb/b/b7/Towncrier.png/50px-Towncrier.png" decoding="async" width="50" height="50" srcset="/images/thumb/b/b7/Towncrier.png/75px-Towncrier.png 1.5x, /images/thumb/b/b7/Towncrier.png/100px-Towncrier.png 2x" /></a>	对他点头或摇头示意今天白天是否有爪牙发起过提名。
+</p><p><a href="/index.php?title=%E7%A5%9E%E8%B0%95%E8%80%85" title="神谕者"><img alt="Oracle.png" src="/images/thumb/1/17/Oracle.png/50px-Oracle.png" decoding="async" width="50" height="50" srcset="/images/thumb/1/17/Oracle.png/75px-Oracle.png 1.5x, /images/thumb/1/17/Oracle.png/100px-Oracle.png 2x" /></a>	给他展示数字手势来告诉他当前已死亡的玩家中有多少玩家是邪恶的。
+</p><p><a href="/index.php?title=%E5%A5%B3%E8%A3%81%E7%BC%9D" title="女裁缝"><img alt="Seamstress.png" src="/images/thumb/a/ae/Seamstress.png/50px-Seamstress.png" decoding="async" width="50" height="50" srcset="/images/thumb/a/ae/Seamstress.png/75px-Seamstress.png 1.5x, /images/thumb/a/ae/Seamstress.png/100px-Seamstress.png 2x" /></a>	女裁缝可以选择除自己以外的两名玩家。如果她这么做了，对她点头或摇头示意这两名玩家是否为同一阵营，随后标记女裁缝失去能力。之后的夜晚无需再唤醒女裁缝。
+</p><p><a href="/index.php?title=%E6%9D%82%E8%80%8D%E8%89%BA%E4%BA%BA" title="杂耍艺人"><img alt="Juggler.png" src="/images/thumb/b/be/Juggler.png/50px-Juggler.png" decoding="async" width="50" height="50" srcset="/images/thumb/b/be/Juggler.png/75px-Juggler.png 1.5x, /images/thumb/b/be/Juggler.png/100px-Juggler.png 2x" /></a>	给他展示数字手势来告诉他他当天白天猜测正确的次数。
+</p><p><a href="/index.php?title=%E6%95%B0%E5%AD%A6%E5%AE%B6" title="数学家"><img alt="Mathematician.png" src="/images/thumb/0/06/Mathematician.png/50px-Mathematician.png" decoding="async" width="50" height="50" srcset="/images/thumb/0/06/Mathematician.png/75px-Mathematician.png 1.5x, /images/thumb/0/06/Mathematician.png/100px-Mathematician.png 2x" /></a>	给他展示数字手势来告诉他从上个黎明到数学家醒来前有多少玩家的角色能力受他人影响而未正常生效。
+</p><p><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5" title="梦殒春宵"><img alt="Dawn.png" src="/images/thumb/8/8e/Dawn.png/50px-Dawn.png" decoding="async" width="50" height="50" srcset="/images/thumb/8/8e/Dawn.png/75px-Dawn.png 1.5x, /images/thumb/8/8e/Dawn.png/100px-Dawn.png 2x" /></a>	等待数秒。让所有玩家睁眼，并立即说出有谁死亡。
+</p>
+<h2><span id=".E7.BB.99.E6.96.B0.E6.89.8B.E8.AF.B4.E4.B9.A6.E4.BA.BA.E7.9A.84.E6.8E.A8.E8.8D.90.E9.85.8D.E7.BD.AE.EF.BC.88.E5.85.AB.E4.BA.BA.E6.B8.B8.E6.88.8F.EF.BC.89"></span><span class="mw-headline" id="给新手说书人的推荐配置（八人游戏）">给新手说书人的推荐配置（八人游戏）</span></h2>
+<p>如果这是你第一次主持《梦殒春宵》，想要使用这个剧本最简洁，直白的角色，可以考虑在游戏中加入这些角色：
+</p><p><b>1.<a href="/index.php?title=%E9%92%9F%E8%A1%A8%E5%8C%A0" title="钟表匠">钟表匠</a>、<a href="/index.php?title=%E7%A5%9E%E8%B0%95%E8%80%85" title="神谕者">神谕者</a>、<a href="/index.php?title=%E5%A5%B3%E8%A3%81%E7%BC%9D" title="女裁缝">女裁缝</a>、<a href="/index.php?title=%E8%89%BA%E6%9C%AF%E5%AE%B6" title="艺术家">艺术家</a>、<a href="/index.php?title=%E6%9D%82%E8%80%8D%E8%89%BA%E4%BA%BA" title="杂耍艺人">杂耍艺人</a>、<a href="/index.php?title=%E5%91%86%E7%93%9C" title="呆瓜">呆瓜</a>、<a href="/index.php?title=%E5%A5%B3%E5%B7%AB" title="女巫">女巫</a>、<a href="/index.php?title=%E8%AF%BA-%E8%BE%BE%E9%B2%BA" title="诺-达鲺">诺-达鲺</a></b>
+</p><p>你提供给钟表匠、神谕者和杂耍艺人的信息很容易计算和理解。玩家将选择如何使用他们的女裁缝、艺术家、杂耍艺人和呆瓜的能力。记住哪名玩家被女巫诅咒，哪名玩家因诺-达鲺中毒，你就能够主持好这场游戏。
+</p><p>如果你想通过更复杂的角色和交互来尝试更独特的游戏风格，你可以考虑在游戏中安排这些角色（适用于八人游戏）或稍作修改以适应你的风格：
+</p><p><b>2.<a href="/index.php?title=%E8%88%9E%E8%9B%87%E4%BA%BA" title="舞蛇人">舞蛇人</a>，<a href="/index.php?title=%E7%AD%91%E6%A2%A6%E5%B8%88" title="筑梦师">筑梦师</a>，<a href="/index.php?title=%E5%8D%96%E8%8A%B1%E5%A5%B3%E5%AD%A9" title="卖花女孩">卖花女孩</a>，<a href="/index.php?title=%E5%8D%9A%E5%AD%A6%E8%80%85" title="博学者">博学者</a>，<a href="/index.php?title=%E7%90%86%E5%8F%91%E5%B8%88" title="理发师">理发师</a>，<a href="/index.php?title=%E5%91%86%E7%93%9C" title="呆瓜">呆瓜</a>，<a href="/index.php?title=%E9%BA%BB%E8%84%B8%E5%B7%AB%E5%A9%86" title="麻脸巫婆">麻脸巫婆</a>，<a href="/index.php?title=%E6%96%B9%E5%8F%A4" title="方古">方古</a></b>
+</p><p>这个配置聚焦于角色的变换。舞蛇人和方古会使恶魔变为另一名玩家，麻脸巫婆能够创造新角色。理发师也可能会造成角色交换，使场上的局面更复杂化。呆瓜可就可怜了，他将必须从一片混乱中找到一名善良玩家！
+</p><p><b>3.<a href="/index.php?title=%E5%9F%8E%E9%95%87%E5%85%AC%E5%91%8A%E5%91%98" title="城镇公告员">城镇公告员</a>，<a href="/index.php?title=%E5%A5%B3%E8%A3%81%E7%BC%9D" title="女裁缝">女裁缝</a>，<a href="/index.php?title=%E5%93%B2%E5%AD%A6%E5%AE%B6" title="哲学家">哲学家</a>，<a href="/index.php?title=%E8%89%BA%E6%9C%AF%E5%AE%B6" title="艺术家">艺术家</a>，<a href="/index.php?title=%E6%9D%82%E8%80%8D%E8%89%BA%E4%BA%BA" title="杂耍艺人">杂耍艺人</a>，<a href="/index.php?title=%E8%B4%A4%E8%80%85" title="贤者">贤者</a>，<a href="/index.php?title=%E9%95%9C%E5%83%8F%E5%8F%8C%E5%AD%90" title="镜像双子">镜像双子</a>，<a href="/index.php?title=%E4%BA%A1%E9%AA%A8%E9%AD%94" title="亡骨魔">亡骨魔</a></b>
+</p><p>这场游戏将聚焦于正邪两立的双子，善良阵营拥有着惊人的信息量，来让他们分辨真假双子。但是亡骨魔可以及时杀死一名双子，来让信息出现漏洞，并在推理过程中制造混乱与困惑。如果善良阵营在寻找邪恶双子中花费太多精力，这可能会导致他们无法及时找到恶魔。深谋远虑和平衡信息是他们获胜关键。
+</p><p><b>4.<a href="/index.php?title=%E9%92%9F%E8%A1%A8%E5%8C%A0" title="钟表匠">钟表匠</a>，<a href="/index.php?title=%E6%95%B0%E5%AD%A6%E5%AE%B6" title="数学家">数学家</a>，<a href="/index.php?title=%E5%9F%8E%E9%95%87%E5%85%AC%E5%91%8A%E5%91%98" title="城镇公告员">城镇公告员</a>，<a href="/index.php?title=%E5%8D%9A%E5%AD%A6%E8%80%85" title="博学者">博学者</a>，<a href="/index.php?title=%E8%89%BA%E6%9C%AF%E5%AE%B6" title="艺术家">艺术家</a>，<a href="/index.php?title=%E5%BF%83%E4%B8%8A%E4%BA%BA" title="心上人">心上人</a>，<a href="/index.php?title=%E5%A5%B3%E5%B7%AB" title="女巫">女巫</a>，<a href="/index.php?title=%E8%AF%BA-%E8%BE%BE%E9%B2%BA" title="诺-达鲺">诺-达鲺</a></b>
+</p><p>这个配置和第一个配置有些许相似，但是加入了数学家，城镇公告员，博学者和心上人。对于诺-达鲺来说，有很多高收益的下毒目标，不过博学者和数学家如果足够聪明的话，他们很快就能发现谁中毒了。女巫相当具有威胁性，特别是在存在心上人的游戏里。但是钟表匠和艺术家愿意配合的话，他们可以很快找到第二名邪恶玩家的位置。这个配置更适合善思而谨慎的玩家。
+</p><p><b>5.<a href="/index.php?title=%E9%92%9F%E8%A1%A8%E5%8C%A0" title="钟表匠">钟表匠</a>，<a href="/index.php?title=%E5%93%B2%E5%AD%A6%E5%AE%B6" title="哲学家">哲学家</a>，<a href="/index.php?title=%E5%8D%96%E8%8A%B1%E5%A5%B3%E5%AD%A9" title="卖花女孩">卖花女孩</a>，<a href="/index.php?title=%E6%95%B0%E5%AD%A6%E5%AE%B6" title="数学家">数学家</a>，<a href="/index.php?title=%E8%B4%A4%E8%80%85" title="贤者">贤者</a>，<a href="/index.php?title=%E7%95%B8%E5%BD%A2%E7%A7%80%E6%BC%94%E5%91%98" title="畸形秀演员">畸形秀演员</a>，<a href="/index.php?title=%E6%B4%97%E8%84%91%E5%B8%88" title="洗脑师">洗脑师</a>，<a href="/index.php?title=%E6%B6%A1%E6%B5%81" title="涡流">涡流</a></b>
+</p><p>准备好来一场狂野的游戏了吗！涡流将使各个关键的角色都获取错误信息，洗脑师和畸形秀演员将导致场面的混乱并散播猜疑，你需要提前了解疯狂机制，以及这两个角色的细微差异，但是如果这两名玩家也提前吃透了疯狂的玩法，这局游戏可能会变得有些愚昧。这个配置倾向于不同寻常的伪装，令人困惑的指证，以及一种戏剧性的体验。
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20261015131703
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.146 seconds
+Real time usage: 0.329 seconds
+Preprocessor visited node count: 144/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 23051/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key gstone_wiki:pcache:idhash:8-0!canonical and timestamp 20261015131703 and revision id 5102. Serialized with JSON.
+ -->
+</div></div><div class="printfooter">
+取自“<a dir="ltr" href="https://clocktower-wiki.gstonegames.com/index.php?title=梦殒春宵&amp;oldid=5102">https://clocktower-wiki.gstonegames.com/index.php?title=梦殒春宵&amp;oldid=5102</a>”</div>
+									<div class="clear_both"></div>
+									</div>
+									</div>
+									<div id="categories" class="row">
+										<div class="small-12 columns">
+											<div class="group"><div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div></div>
+																					</div>
+									</div>	
+													
+									<footer class="row" style="display:none;">
+
+										<div id="footer">
+											<div id="div-footer-left" class="small-12 medium-8 large-9 columns">
+											<ul id="footer-left">
+																									<li id="footer-lastmod"> 此页面最后编辑于2025年2月21日 (星期五) 22:02。</li>
+																									<li id="footer-privacy"><a href="/index.php?title=Gs_wiki:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="Gs wiki:隐私政策">隐私政策</a></li>
+																									<li id="footer-about"><a href="/index.php?title=Gs_wiki:%E5%85%B3%E4%BA%8E" title="Gs wiki:关于">关于钟楼百科</a></li>
+																									<li id="footer-disclaimer"><a href="/index.php?title=Gs_wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Gs wiki:免责声明">免责声明</a></li>
+																					
+											</ul>
+											</div>	
+											<div id="footer-right-icons" class="small-12 medium-4 large-3 columns hide-for-print">
+											<ul id="footer-right">
+												<li class="social-follow hide-for-print">
+																									</li>
+																									<li class="poweredby">														<a href="https://www.mediawiki.org/">Powered by MediaWiki</a>																											</li>
+																							</ul>
+											</div>		
+										</div>			
+									</footer>
+								     </div>
+								</div>
+						</div>
+					</div>
+						
+				</section>
+				
+			</div>
+   			<div class="footer-logo">
+			    <div style="display: inline-block;width: 35%;">
+				<img src="skins/pivot/assets/image/logo.png">
+			    </div>
+			    <div class="footer-icon-code">
+			      <div class="footer-icon">
+				<li>
+			            <img src="skins/pivot/assets/image/wechat.png">
+                                    <img src="skins/pivot/assets/image/wechat_code.png" class="footer-code">
+				</li>
+				<li>
+				   <img src="skins/pivot/assets/image/qq.png">
+				   <img src="skins/pivot/assets/image/qq_code.png" class="footer-code">
+				</li>
+				<li>
+				   <img src="skins/pivot/assets/image/roast.png">
+				   <img src="skins/pivot/assets/image/roast_code.png" class="footer-code">
+				</li>
+			      </div>
+			    </div>
+                        </div>
+			<!--<div class="footer-lace">
+			    <img src="skins/pivot/assets/image/bottom_lace.png">
+			</div>-->
+		</div>
+		<div>
+			<a class="exit-off-canvas"></a>	
+		</div>
+
+		
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.146","walltime":"0.329","ppvisitednodes":{"value":144,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":23051,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20261015131703","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":574});});</script>
+			
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?861bd0d3fc6753c22987c5449265e59c";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+	</body>
+<script>
+  var screen_height = window.screen.height;
+  document.getElementById('p-cactions').style.minHeight = screen_height+'px';
+</script>
+</html>
+

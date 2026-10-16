@@ -1,0 +1,1 @@
+mw.loader.implement("mediawiki.cldr@erqtv",function($,jQuery,require,module){(function(){'use strict';mw.cldr={getPluralForm:function(number,pluralRules){var i,pluralRuleParser=require('mediawiki.libs.pluralruleparser');for(i=0;i<pluralRules.length;i++){if(pluralRuleParser(pluralRules[i],number)){break;}}return i;}};}());});

@@ -1,0 +1,6 @@
+[
+  {"id":"_meta","name":"离线导入验证","author":"Local QA"},
+  {"id":"chef"},
+  {"id":"imp"},
+  {"id":"local_example","name":"测试角色","team":"townsfolk","ability":"仅用于验证本地 JSON 导入。","image":"/assets/oss.gstonegames.com/data_file/clocktower/web/icons/good.png","firstNight":1,"otherNight":0,"reminders":["测试标记"],"remindersGlobal":[],"setup":false}
+]

@@ -1,0 +1,1 @@
+mw.loader.implement("site.styles@nfdts",null,{"css":[]});

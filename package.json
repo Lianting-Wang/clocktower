@@ -1,0 +1,22 @@
+{
+  "name": "clocktower-local",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "官方中文魔典的固定快照与独立联机服务",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "snapshot": "python3 scripts/manage_snapshot.py",
+    "rebuild": "python3 scripts/manage_snapshot.py --offline",
+    "audit": "python3 scripts/audit.py && python3 scripts/content_audit.py",
+    "test": "node --test test/*.test.js",
+    "snapshot:content": "python3 scripts/content_snapshot.py"
+  },
+  "dependencies": {
+    "ws": "8.22.0"
+  }
+}

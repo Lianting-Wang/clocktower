@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="zh-Hans-CN" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>天才在左 - 钟楼百科</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"408c870c4a24fd1e3cfdc0c7","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"天才在左","wgTitle":"天才在左","wgCurRevisionId":5889,"wgRevisionId":5889,"wgArticleId":728,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"zh-cn","wgPageContentModel":"wikitext","wgRelevantPageName":"天才在左","wgRelevantArticleId":728,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":
+"loading","mediawiki.page.gallery.styles":"ready","skins.pivot.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","mediawiki.toc","skins.pivot.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"zh-cn"});
+});});</script>
+<link rel="stylesheet" href="/load.php?lang=zh-cn&amp;modules=mediawiki.page.gallery.styles%7Cskins.pivot.styles&amp;only=styles&amp;skin=pivot"/>
+<script async="" src="/load.php?lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=pivot"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?lang=zh-cn&amp;modules=site.styles&amp;only=styles&amp;skin=pivot"/>
+<meta name="generator" content="MediaWiki 1.37.2"/>
+<meta name="keywords" content="钟楼百科，染钟楼谜团，钟楼谜团百科，钟楼谜团角色大全，钟楼谜团规则说明，钟楼谜团教学，钟楼谜团说书人"/>
+<meta name="description" content="钟楼百科为您提供钟楼谜团游戏相关的所有规则、角色介绍，及游戏相关各方面资讯信息。"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0"/>
+<link rel="apple-touch-icon" sizes="180x180" href="../resources/assets/apple-touch-icon.png"/>
+<link rel="shortcut icon" href="../resources/assets/favicon-32x32.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="钟楼百科 (zh-cn)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://clocktower-wiki.gstonegames.com/api.php?action=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="钟楼百科的Atom feed" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-天才在左 rootpage-天才在左 skin-pivot action-view">
+<style>
+#p-tb, li[id^="t-"] {
+	display: none !important;
+}
+</style>
+
+		<!-- START PIVOTTEMPLATE -->
+		<div class="off-canvas-wrap docs-wrap" data-offcanvas="">
+			<!--<div class="top-lace">
+                            <img src="skins/pivot/assets/image/top_lace.png">
+                        </div>-->
+			<div class="inner-wrap">
+								<nav class="tab-bar hide-for-print">
+					<div class="head-nav">
+					                         			     <div class="head-nav-logo">
+						<div class="head-nav-logo-div">
+					           <a href="/index.php?title=%E9%A6%96%E9%A1%B5">
+							<img alt="钟楼百科" src="resources/assets/wiki_logo.png">
+						   </a>
+						</div>
+					     </div>
+                        		     <div class="head-nav-href large-10 medium-9">
+                            			  <div class="head-nav-href-div">
+                                			<ul>
+                                    			    <li ><a href="/index.php?title=%E9%A6%96%E9%A1%B5">首页</a></li>
+                                    			   <!-- <li ><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6&action=edit&redlink=1">讨论</a></li>-->
+							    <li><a href="/index.php?title=%E9%A6%96%E9%A1%B5#官方剧本">剧本</a></li>
+                                			</ul>
+                            			  </div>
+                            			  <div>
+                                		        <ul class="side-nav" style="display:flex;">
+							   <li class="has-form" style="margin-right:1.25em;">
+							     <form action="/index.php" id="searchform-sidebar" class="mw-search">
+							     	<div class="row collapse">
+								     <div class="small-12 columns">
+									<div id="search-img"><img src="skins/pivot/assets/image/search.png"></div>
+									<input type="search" name="search" placeholder="搜索钟楼百科" title="Search [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+								     </div>
+								</div>
+							     </form>
+							   </li>
+							   <li style="margin-top:0.25em;width:4em;">
+																     <a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&returnto=%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6" style="color:#222222;padding:0px !important;">登录</a>
+															   </li>
+							</ul>
+                            			  </div>
+                        		     </div>
+					</div>
+					<section id="left-nav-aside" class="left-small show-for-small">
+						<a href="#" class="left-off-canvas-toggle"><span id="menu-user"><i class="fa fa-navicon fa-lg"></i></span></a>
+					</section>
+					
+					<section id="middle-nav" class="middle tab-bar-section" style="display:none;">
+						<div class="title"><a href="/index.php?title=%E9%A6%96%E9%A1%B5">
+					<span class="show-for-medium-up">钟楼百科</span>
+						<span class="show-for-small-only">
+												钟楼百科</span></a></div>
+					</section>
+					
+					<section id="right-nav-aside" class="right-small">
+					<a href="#" class="right-off-canvas-toggle"><span id="menu-user"><i class="fa fa-navicon fa-lg"></i></span></a>
+					</section>
+				</nav>
+								    <aside class="left-off-canvas-menu">
+      					<ul class="off-canvas-list">
+						
+								<li class="has-form" style="display: none;">
+									<form action="/index.php" id="searchform-sidebar" class="mw-search">
+										<div class="row collapse">
+											<div class="small-12 columns">
+												<input type="search" name="search" placeholder="搜索" title="Search [alt-shift-f]" accesskey="f" id="" autocomplete="off">
+											</div>
+										</div>
+									</form>
+								</li>
+								
+							<li><label class="sidebar" id="p-游戏信息">游戏信息</label></li><li id="n-规则概要" class="mw-list-item"><a href="/index.php?title=%E8%A7%84%E5%88%99%E6%A6%82%E8%A6%81">规则概要</a></li><li id="n-重要细节" class="mw-list-item"><a href="/index.php?title=%E9%87%8D%E8%A6%81%E7%BB%86%E8%8A%82">重要细节</a></li><li id="n-术语汇总" class="mw-list-item"><a href="/index.php?title=%E6%9C%AF%E8%AF%AD%E6%B1%87%E6%80%BB">术语汇总</a></li><li id="n-给说书人的建议" class="mw-list-item"><a href="/index.php?title=%E7%BB%99%E8%AF%B4%E4%B9%A6%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE">给说书人的建议</a></li><li id="n-相克规则" class="mw-list-item"><a href="/index.php?title=%E7%9B%B8%E5%85%8B%E8%A7%84%E5%88%99">相克规则</a></li><li><label class="sidebar" id="p-角色">角色</label></li><li id="n-暗流涌动" class="mw-list-item"><a href="/index.php?title=%E6%9A%97%E6%B5%81%E6%B6%8C%E5%8A%A8">暗流涌动</a></li><li id="n-黯月初升" class="mw-list-item"><a href="/index.php?title=%E9%BB%AF%E6%9C%88%E5%88%9D%E5%8D%87">黯月初升</a></li><li id="n-梦殒春宵" class="mw-list-item"><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5">梦殒春宵</a></li><li id="n-旅行者" class="mw-list-item"><a href="/index.php?title=%E6%97%85%E8%A1%8C%E8%80%85">旅行者</a></li><li id="n-传奇角色" class="mw-list-item"><a href="/index.php?title=%E4%BC%A0%E5%A5%87%E8%A7%92%E8%89%B2">传奇角色</a></li><li id="n-实验性角色" class="mw-list-item"><a href="/index.php?title=%E5%AE%9E%E9%AA%8C%E6%80%A7%E8%A7%92%E8%89%B2">实验性角色</a></li><li id="n-奇遇角色" class="mw-list-item"><a href="/index.php?title=%E5%A5%87%E9%81%87%E8%A7%92%E8%89%B2">奇遇角色</a></li><li id="n-华灯初上" class="mw-list-item"><a href="/index.php?title=%E5%8D%8E%E7%81%AF%E5%88%9D%E4%B8%8A">华灯初上</a></li><li id="n-角色能力类别总览" class="mw-list-item"><a href="/index.php?title=%E8%A7%92%E8%89%B2%E8%83%BD%E5%8A%9B%E7%B1%BB%E5%88%AB%E6%80%BB%E8%A7%88">角色能力类别总览</a></li><li><label class="sidebar" id="p-其他">其他</label></li><li id="n-最近更改" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9">最近更改</a></li><li><label class="sidebar" id="p-tb">工具</label></li><li id="t-whatlinkshere" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6" title="所有链接至本页面的wiki页面列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-specialpages" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink" class="mw-list-item"><a href="/index.php?title=%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6&amp;oldid=5889" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info" class="mw-list-item"><a href="/index.php?title=%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6&amp;action=info" title="关于此页面的更多信息">页面信息</a></li>						</ul>
+					</aside>
+					
+					<aside class="right-off-canvas-menu">
+					  <ul class="off-canvas-list">
+													<li id="pt-login" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6" title="我们建议您登录，不过这不是强制的[o]" accesskey="o">登录</a></li>												  </ul>
+					</aside>
+
+					<section id="main-section" class="main-section" >
+					
+						<div id="page-content">
+
+							<div id="mw-js-message" style="display:none;"></div>
+
+							<div class="row" style="position: relative;">
+								
+								<div id="sidebar" class="large-2 medium-3 columns hide-for-small hide-for-print">
+										<div style="position: absolute; bottom: 0px; left: 0px;width:80%;">
+                                                                        		<img src="skins/pivot/assets/image/flower3.png" style="max-width: 100%;">
+                                                                     		</div>
+										<ul class="side-nav">
+											<li class="name logo" style="display: none;">
+											<a href="/index.php?title=%E9%A6%96%E9%A1%B5">
+												<img alt="钟楼百科" src="/resources/assets/wiki_logo_head.png" style="max-width: 100%;height: auto;display: inline-block; vertical-align: middle;"></a>		
+											</li>
+											<li class="has-form" style="display:none;">
+												<form action="/index.php" id="searchform-offCanvas" class="mw-search">
+													<div class="row collapse">
+														<div class="small-12 columns">
+															<input type="search" name="search" placeholder="在钟楼百科搜索" title="Search [alt-shift-f]" accesskey="f" class="mw-searchInput" autocomplete="off">
+														</div>
+													</div>
+												</form>
+											</li>
+								
+											<li><label class="sidebar" id="p-游戏信息">游戏信息</label></li><li id="n-规则概要" class="mw-list-item"><a href="/index.php?title=%E8%A7%84%E5%88%99%E6%A6%82%E8%A6%81">规则概要</a></li><li id="n-重要细节" class="mw-list-item"><a href="/index.php?title=%E9%87%8D%E8%A6%81%E7%BB%86%E8%8A%82">重要细节</a></li><li id="n-术语汇总" class="mw-list-item"><a href="/index.php?title=%E6%9C%AF%E8%AF%AD%E6%B1%87%E6%80%BB">术语汇总</a></li><li id="n-给说书人的建议" class="mw-list-item"><a href="/index.php?title=%E7%BB%99%E8%AF%B4%E4%B9%A6%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE">给说书人的建议</a></li><li id="n-相克规则" class="mw-list-item"><a href="/index.php?title=%E7%9B%B8%E5%85%8B%E8%A7%84%E5%88%99">相克规则</a></li><li><label class="sidebar" id="p-角色">角色</label></li><li id="n-暗流涌动" class="mw-list-item"><a href="/index.php?title=%E6%9A%97%E6%B5%81%E6%B6%8C%E5%8A%A8">暗流涌动</a></li><li id="n-黯月初升" class="mw-list-item"><a href="/index.php?title=%E9%BB%AF%E6%9C%88%E5%88%9D%E5%8D%87">黯月初升</a></li><li id="n-梦殒春宵" class="mw-list-item"><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5">梦殒春宵</a></li><li id="n-旅行者" class="mw-list-item"><a href="/index.php?title=%E6%97%85%E8%A1%8C%E8%80%85">旅行者</a></li><li id="n-传奇角色" class="mw-list-item"><a href="/index.php?title=%E4%BC%A0%E5%A5%87%E8%A7%92%E8%89%B2">传奇角色</a></li><li id="n-实验性角色" class="mw-list-item"><a href="/index.php?title=%E5%AE%9E%E9%AA%8C%E6%80%A7%E8%A7%92%E8%89%B2">实验性角色</a></li><li id="n-奇遇角色" class="mw-list-item"><a href="/index.php?title=%E5%A5%87%E9%81%87%E8%A7%92%E8%89%B2">奇遇角色</a></li><li id="n-华灯初上" class="mw-list-item"><a href="/index.php?title=%E5%8D%8E%E7%81%AF%E5%88%9D%E4%B8%8A">华灯初上</a></li><li id="n-角色能力类别总览" class="mw-list-item"><a href="/index.php?title=%E8%A7%92%E8%89%B2%E8%83%BD%E5%8A%9B%E7%B1%BB%E5%88%AB%E6%80%BB%E8%A7%88">角色能力类别总览</a></li><li><label class="sidebar" id="p-其他">其他</label></li><li id="n-最近更改" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9">最近更改</a></li><li><label class="sidebar" id="p-tb">工具</label></li><li id="t-whatlinkshere" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6" title="所有链接至本页面的wiki页面列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-specialpages" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink" class="mw-list-item"><a href="/index.php?title=%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6&amp;oldid=5889" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info" class="mw-list-item"><a href="/index.php?title=%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6&amp;action=info" title="关于此页面的更多信息">页面信息</a></li>										</ul>
+								</div>
+
+								<div id="p-cactions" class="large-10 medium-9 columns">
+								     <div style="position: absolute;bottom: 7em;right: 0px;width: 15%;max-width: 243px;"> 
+									<img src="skins/pivot/assets/image/flower4.png" style="max-width: 100%;">
+								     </div>
+								     <div style="position: absolute;top: 0px;right: 0px;width: 17%;max-width: 265px;">
+									<img src="skins/pivot/assets/image/flower2.png" style="max-width: 100%;">
+								     </div>
+								     <div class="button-module" style="display:none;">
+                                                                          <ul>
+                                                                             <li style="margin-left: -1em;"><a href="/index.php?title=%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6"><input type="button" class=button-choose value="阅读"></a></li>
+                                                                             <li><a href="/index.php?title=%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6&action=history"><input type="button"  value="查看历史" style="width: 96px;"></a></li>
+                                                                             <li>
+										<a href="/index.php?title=%E5%A4%A9%E6%89%8D%E5%9C%A8%E5%B7%A6&action=edit">
+										   <input type="button"
+										    value="查看源代码" style="width: 102px">
+										</a>
+									     </li>
+									  </ul>
+                                                                     </div>
+								     <div id="p-cactions-div">
+									<div class="row">
+										<div class="large-12 columns">
+												<!-- Output page indicators -->
+												<div class="mw-indicators">
+</div>
+												<!-- If user is logged in output echo location -->
+																								<!--[if lt IE 9]>
+												<div id="siteNotice" class="sitenotice">钟楼百科 may not look as expected in this version of Internet Explorer. We recommend you upgrade to a newer version of Internet Explorer or switch to a browser like Firefox or Chrome.</div>
+												<![endif]-->
+
+																																		</div>
+									</div>
+								
+																		<div id="content" style="position: relative;">
+									<h1 class="title">天才在左</h1>
+																				<h3 id="tagline">来自钟楼百科</h3>																		<div id="contentSub" class="clear_both"></div>
+									<div id="bodyContent" class="mw-bodytext">
+									<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="zh-Hans-CN" dir="ltr"><div class="mw-parser-output"><p>天才在左是“快速上手剧本”系列剧本之一，目的是为了让玩家可以快速体验包含<a href="/index.php?title=%E8%85%B9%E8%AF%AD%E5%B8%88" title="腹语师">腹语师</a>的游戏。
+</p><p>剧本中三个奇遇角色均可选择性加入游玩。
+</p><p>异术士的推荐任务：
+</p><p>镇民玩家：提名你顺时针方向上更近的爪牙数量名玩家
+</p><p>外来者玩家：提名并处决你逆时针方向上更近的爪牙数量名玩家
+</p><p>爪牙玩家：提名并处决你顺时针方向上更近的外来者数量名玩家
+</p><p>恶魔玩家：提名你逆时针方向上更近的爪牙玩家
+</p>
+<div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" /><div class="toctitle" lang="zh-Hans-CN" dir="ltr"><h2 id="mw-toc-heading">目录</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#镇民"><span class="tocnumber">1</span> <span class="toctext">镇民</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#外来者"><span class="tocnumber">2</span> <span class="toctext">外来者</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#爪牙"><span class="tocnumber">3</span> <span class="toctext">爪牙</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#恶魔"><span class="tocnumber">4</span> <span class="toctext">恶魔</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#旅行者"><span class="tocnumber">5</span> <span class="toctext">旅行者</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="#传奇角色"><span class="tocnumber">6</span> <span class="toctext">传奇角色</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#奇遇角色"><span class="tocnumber">7</span> <span class="toctext">奇遇角色</span></a></li>
+</ul>
+</div>
+
+<h2><span id=".E9.95.87.E6.B0.91"></span><span class="mw-headline" id="镇民">镇民</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%98%B4%E9%98%B3%E5%B8%88"><img alt="" src="/images/thumb/d/d2/Yinyangshi.png/120px-Yinyangshi.png" decoding="async" width="120" height="120" srcset="/images/thumb/d/d2/Yinyangshi.png/180px-Yinyangshi.png 1.5x, /images/thumb/d/d2/Yinyangshi.png/240px-Yinyangshi.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%98%B4%E9%98%B3%E5%B8%88" title="阴阳师">阴阳师</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%92%A6%E5%A4%A9%E7%9B%91"><img alt="" src="/images/thumb/1/13/Qintianjian.png/120px-Qintianjian.png" decoding="async" width="120" height="120" srcset="/images/thumb/1/13/Qintianjian.png/180px-Qintianjian.png 1.5x, /images/thumb/1/13/Qintianjian.png/240px-Qintianjian.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%92%A6%E5%A4%A9%E7%9B%91" title="钦天监">钦天监</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%B0%8F%E7%B2%BE%E7%81%B5"><img alt="" src="/images/thumb/2/22/Pixie.png/120px-Pixie.png" decoding="async" width="120" height="120" srcset="/images/thumb/2/22/Pixie.png/180px-Pixie.png 1.5x, /images/thumb/2/22/Pixie.png/240px-Pixie.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%B0%8F%E7%B2%BE%E7%81%B5" title="小精灵">小精灵</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E4%BE%8D%E5%A5%B3"><img alt="" src="/images/thumb/0/00/Chambermaid.png/120px-Chambermaid.png" decoding="async" width="120" height="120" srcset="/images/thumb/0/00/Chambermaid.png/180px-Chambermaid.png 1.5x, /images/thumb/0/00/Chambermaid.png/240px-Chambermaid.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E4%BE%8D%E5%A5%B3" title="侍女">侍女</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%B0%B4%E6%89%8B"><img alt="" src="/images/thumb/c/ce/Sailor.png/120px-Sailor.png" decoding="async" width="120" height="120" srcset="/images/thumb/c/ce/Sailor.png/180px-Sailor.png 1.5x, /images/thumb/c/ce/Sailor.png/240px-Sailor.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%B0%B4%E6%89%8B" title="水手">水手</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E8%B5%8C%E5%BE%92"><img alt="" src="/images/thumb/8/8a/Gambler.png/120px-Gambler.png" decoding="async" width="120" height="120" srcset="/images/thumb/8/8a/Gambler.png/180px-Gambler.png 1.5x, /images/thumb/8/8a/Gambler.png/240px-Gambler.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E8%B5%8C%E5%BE%92" title="赌徒">赌徒</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%8D%8A%E5%85%BD%E4%BA%BA"><img alt="" src="/images/thumb/c/c1/Lycanthrope.png/120px-Lycanthrope.png" decoding="async" width="120" height="120" srcset="/images/thumb/c/c1/Lycanthrope.png/180px-Lycanthrope.png 1.5x, /images/thumb/c/c1/Lycanthrope.png/240px-Lycanthrope.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%8D%8A%E5%85%BD%E4%BA%BA" title="半兽人">半兽人</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%80%A0%E8%B0%A3%E8%80%85"><img alt="" src="/images/thumb/a/a4/Gossip.png/120px-Gossip.png" decoding="async" width="120" height="120" srcset="/images/thumb/a/a4/Gossip.png/180px-Gossip.png 1.5x, /images/thumb/a/a4/Gossip.png/240px-Gossip.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%80%A0%E8%B0%A3%E8%80%85" title="造谣者">造谣者</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%8F%98%E8%84%B8%E5%B8%88"><img alt="" src="/images/thumb/4/49/Bianlianshi.png/120px-Bianlianshi.png" decoding="async" width="120" height="120" srcset="/images/thumb/4/49/Bianlianshi.png/180px-Bianlianshi.png 1.5x, /images/thumb/4/49/Bianlianshi.png/240px-Bianlianshi.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%8F%98%E8%84%B8%E5%B8%88" title="变脸师">变脸师</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%85%AC%E4%B8%BB"><img alt="" src="/images/thumb/f/f2/Princess.png/120px-Princess.png" decoding="async" width="120" height="120" srcset="/images/thumb/f/f2/Princess.png/180px-Princess.png 1.5x, /images/thumb/f/f2/Princess.png/240px-Princess.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%85%AC%E4%B8%BB" title="公主">公主</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E8%8C%B6%E8%89%BA%E5%B8%88"><img alt="" src="/images/thumb/b/bc/Tealady.png/120px-Tealady.png" decoding="async" width="120" height="120" srcset="/images/thumb/b/bc/Tealady.png/180px-Tealady.png 1.5x, /images/thumb/b/bc/Tealady.png/240px-Tealady.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E8%8C%B6%E8%89%BA%E5%B8%88" title="茶艺师">茶艺师</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%B7%A1%E5%B1%B1%E4%BA%BA"><img alt="" src="/images/thumb/7/75/Huntsman.png/120px-Huntsman.png" decoding="async" width="120" height="120" srcset="/images/thumb/7/75/Huntsman.png/180px-Huntsman.png 1.5x, /images/thumb/7/75/Huntsman.png/240px-Huntsman.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%B7%A1%E5%B1%B1%E4%BA%BA" title="巡山人">巡山人</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%95%99%E6%8E%88"><img alt="" src="/images/thumb/b/b1/Professor.png/120px-Professor.png" decoding="async" width="120" height="120" srcset="/images/thumb/b/b1/Professor.png/180px-Professor.png 1.5x, /images/thumb/b/b1/Professor.png/240px-Professor.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%95%99%E6%8E%88" title="教授">教授</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E5.A4.96.E6.9D.A5.E8.80.85"></span><span class="mw-headline" id="外来者">外来者</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%9C%A3%E5%BE%92"><img alt="" src="/images/thumb/b/bc/Saint.png/120px-Saint.png" decoding="async" width="120" height="120" srcset="/images/thumb/b/bc/Saint.png/180px-Saint.png 1.5x, /images/thumb/b/bc/Saint.png/240px-Saint.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%9C%A3%E5%BE%92" title="圣徒">圣徒</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E8%90%BD%E9%9A%BE%E5%B0%91%E5%A5%B3"><img alt="" src="/images/thumb/b/b6/Damsel.png/120px-Damsel.png" decoding="async" width="120" height="120" srcset="/images/thumb/b/b6/Damsel.png/180px-Damsel.png 1.5x, /images/thumb/b/b6/Damsel.png/240px-Damsel.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E8%90%BD%E9%9A%BE%E5%B0%91%E5%A5%B3" title="落难少女">落难少女</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%9A%90%E5%A3%AB"><img alt="" src="/images/thumb/1/1e/Hermit.png/120px-Hermit.png" decoding="async" width="120" height="120" srcset="/images/thumb/1/1e/Hermit.png/180px-Hermit.png 1.5x, /images/thumb/1/1e/Hermit.png/240px-Hermit.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%9A%90%E5%A3%AB" title="隐士">隐士</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%80%86%E8%87%A3"><img alt="" src="/images/thumb/5/51/Nichen.png/120px-Nichen.png" decoding="async" width="120" height="120" srcset="/images/thumb/5/51/Nichen.png/180px-Nichen.png 1.5x, /images/thumb/5/51/Nichen.png/240px-Nichen.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%80%86%E8%87%A3" title="逆臣">逆臣</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E7.88.AA.E7.89.99"></span><span class="mw-headline" id="爪牙">爪牙</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%AD%94%E9%AC%BC%E4%BB%A3%E8%A8%80%E4%BA%BA"><img alt="" src="/images/thumb/5/5d/Devilsadvocate.png/120px-Devilsadvocate.png" decoding="async" width="120" height="120" srcset="/images/thumb/5/5d/Devilsadvocate.png/180px-Devilsadvocate.png 1.5x, /images/thumb/5/5d/Devilsadvocate.png/240px-Devilsadvocate.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%AD%94%E9%AC%BC%E4%BB%A3%E8%A8%80%E4%BA%BA" title="魔鬼代言人">魔鬼代言人</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%B9%B0%E8%BA%AB%E5%A5%B3%E5%A6%96"><img alt="" src="/images/thumb/1/1b/Harpy.png/120px-Harpy.png" decoding="async" width="120" height="120" srcset="/images/thumb/1/1b/Harpy.png/180px-Harpy.png 1.5x, /images/thumb/1/1b/Harpy.png/240px-Harpy.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%B9%B0%E8%BA%AB%E5%A5%B3%E5%A6%96" title="鹰身女妖">鹰身女妖</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%8F%AC%E5%94%A4%E5%B8%88"><img alt="" src="/images/thumb/2/2f/Summoner.png/120px-Summoner.png" decoding="async" width="120" height="120" srcset="/images/thumb/2/2f/Summoner.png/180px-Summoner.png 1.5x, /images/thumb/2/2f/Summoner.png/240px-Summoner.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%8F%AC%E5%94%A4%E5%B8%88" title="召唤师">召唤师</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%85%BB%E8%9B%8A%E4%BA%BA"><img alt="" src="/images/thumb/8/80/Yangguren.png/120px-Yangguren.png" decoding="async" width="120" height="120" srcset="/images/thumb/8/80/Yangguren.png/180px-Yangguren.png 1.5x, /images/thumb/8/80/Yangguren.png/240px-Yangguren.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%85%BB%E8%9B%8A%E4%BA%BA" title="养蛊人">养蛊人</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E6.81.B6.E9.AD.94"></span><span class="mw-headline" id="恶魔">恶魔</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%B2%99%E5%B7%B4%E6%B4%9B%E6%96%AF"><img alt="" src="/images/thumb/5/5c/Shabaloth.png/120px-Shabaloth.png" decoding="async" width="120" height="120" srcset="/images/thumb/5/5c/Shabaloth.png/180px-Shabaloth.png 1.5x, /images/thumb/5/5c/Shabaloth.png/240px-Shabaloth.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%B2%99%E5%B7%B4%E6%B4%9B%E6%96%AF" title="沙巴洛斯">沙巴洛斯</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E7%8F%80"><img alt="" src="/images/thumb/b/bf/Po.png/120px-Po.png" decoding="async" width="120" height="120" srcset="/images/thumb/b/bf/Po.png/180px-Po.png 1.5x, /images/thumb/b/bf/Po.png/240px-Po.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E7%8F%80" title="珀">珀</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%A5%A5%E8%B5%AB"><img alt="" src="/images/thumb/9/96/Ojo.png/120px-Ojo.png" decoding="async" width="120" height="120" srcset="/images/thumb/9/96/Ojo.png/180px-Ojo.png 1.5x, /images/thumb/9/96/Ojo.png/240px-Ojo.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%A5%A5%E8%B5%AB" title="奥赫">奥赫</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E6.97.85.E8.A1.8C.E8.80.85"></span><span class="mw-headline" id="旅行者">旅行者</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%9B%BF%E7%BD%AA%E7%BE%8A"><img alt="" src="/images/thumb/0/0b/Scapegoat.png/120px-Scapegoat.png" decoding="async" width="120" height="120" srcset="/images/thumb/0/0b/Scapegoat.png/180px-Scapegoat.png 1.5x, /images/thumb/0/0b/Scapegoat.png/240px-Scapegoat.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%9B%BF%E7%BD%AA%E7%BE%8A" title="替罪羊">替罪羊</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%B3%95%E5%AE%98"><img alt="" src="/images/thumb/8/8a/Judge.png/120px-Judge.png" decoding="async" width="120" height="120" srcset="/images/thumb/8/8a/Judge.png/180px-Judge.png 1.5x, /images/thumb/8/8a/Judge.png/240px-Judge.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%B3%95%E5%AE%98" title="法官">法官</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E9%9B%86%E9%AA%A8%E8%80%85"><img alt="" src="/images/thumb/4/48/Bonecollector.png/120px-Bonecollector.png" decoding="async" width="120" height="120" srcset="/images/thumb/4/48/Bonecollector.png/180px-Bonecollector.png 1.5x, /images/thumb/4/48/Bonecollector.png/240px-Bonecollector.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E9%9B%86%E9%AA%A8%E8%80%85" title="集骨者">集骨者</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E6%B5%81%E8%8E%BA"><img alt="" src="/images/thumb/8/89/Harlot.png/120px-Harlot.png" decoding="async" width="120" height="120" srcset="/images/thumb/8/89/Harlot.png/180px-Harlot.png 1.5x, /images/thumb/8/89/Harlot.png/240px-Harlot.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E6%B5%81%E8%8E%BA" title="流莺">流莺</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%B1%A0%E5%A4%AB"><img alt="" src="/images/thumb/f/fb/Butcher.png/120px-Butcher.png" decoding="async" width="120" height="120" srcset="/images/thumb/f/fb/Butcher.png/180px-Butcher.png 1.5x, /images/thumb/f/fb/Butcher.png/240px-Butcher.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%B1%A0%E5%A4%AB" title="屠夫">屠夫</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E4.BC.A0.E5.A5.87.E8.A7.92.E8.89.B2"></span><span class="mw-headline" id="传奇角色">传奇角色</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%9C%A3%E6%B4%81%E4%B9%8B%E9%AD%82"><img alt="" src="/images/thumb/9/9f/Spiritofivory.png/120px-Spiritofivory.png" decoding="async" width="120" height="120" srcset="/images/thumb/9/9f/Spiritofivory.png/180px-Spiritofivory.png 1.5x, /images/thumb/9/9f/Spiritofivory.png/240px-Spiritofivory.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%9C%A3%E6%B4%81%E4%B9%8B%E9%AD%82" title="圣洁之魂">圣洁之魂</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<h2><span id=".E5.A5.87.E9.81.87.E8.A7.92.E8.89.B2"></span><span class="mw-headline" id="奇遇角色">奇遇角色</span></h2>
+<ul class="gallery mw-gallery-nolines" style="max-width: 1036px;">
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E8%85%B9%E8%AF%AD%E5%B8%88"><img alt="" src="/images/thumb/3/35/Ventriloquist.png/120px-Ventriloquist.png" decoding="async" width="120" height="120" srcset="/images/thumb/3/35/Ventriloquist.png/180px-Ventriloquist.png 1.5x, /images/thumb/3/35/Ventriloquist.png/240px-Ventriloquist.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E8%85%B9%E8%AF%AD%E5%B8%88" title="腹语师">腹语师</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%8D%B0%E5%BA%A6%E6%95%99%E6%95%99%E5%BE%92"><img alt="" src="/images/thumb/b/b4/Hindu.png/120px-Hindu.png" decoding="async" width="120" height="120" srcset="/images/thumb/b/b4/Hindu.png/180px-Hindu.png 1.5x, /images/thumb/b/b4/Hindu.png/240px-Hindu.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%8D%B0%E5%BA%A6%E6%95%99%E6%95%99%E5%BE%92" title="印度教教徒">印度教教徒</a>
+</p>
+			</div>
+		</div></li>
+		<li class="gallerybox" style="width: 255px"><div style="width: 255px">
+			<div class="thumb" style="width: 250px;"><div style="margin:0px auto;"><a href="/index.php?title=%E5%BC%82%E6%9C%AF%E5%A3%AB"><img alt="" src="/images/thumb/8/81/Zenomancer.png/120px-Zenomancer.png" decoding="async" width="120" height="120" srcset="/images/thumb/8/81/Zenomancer.png/180px-Zenomancer.png 1.5x, /images/thumb/8/81/Zenomancer.png/240px-Zenomancer.png 2x" /></a></div></div>
+			<div class="gallerytext">
+<p><a href="/index.php?title=%E5%BC%82%E6%9C%AF%E5%A3%AB" title="异术士">异术士</a>
+</p>
+			</div>
+		</div></li>
+</ul>
+<!-- 
+NewPP limit report
+Cached time: 20261015195902
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.069 seconds
+Real time usage: 0.196 seconds
+Preprocessor visited node count: 88/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 17732/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key gstone_wiki:pcache:idhash:728-0!canonical and timestamp 20261015195902 and revision id 5889. Serialized with JSON.
+ -->
+</div></div><div class="printfooter">
+取自“<a dir="ltr" href="https://clocktower-wiki.gstonegames.com/index.php?title=天才在左&amp;oldid=5889">https://clocktower-wiki.gstonegames.com/index.php?title=天才在左&amp;oldid=5889</a>”</div>
+									<div class="clear_both"></div>
+									</div>
+									</div>
+									<div id="categories" class="row">
+										<div class="small-12 columns">
+											<div class="group"><div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div></div>
+																					</div>
+									</div>	
+													
+									<footer class="row" style="display:none;">
+
+										<div id="footer">
+											<div id="div-footer-left" class="small-12 medium-8 large-9 columns">
+											<ul id="footer-left">
+																									<li id="footer-lastmod"> 此页面最后编辑于2026年2月13日 (星期五) 09:46。</li>
+																									<li id="footer-privacy"><a href="/index.php?title=Gs_wiki:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="Gs wiki:隐私政策">隐私政策</a></li>
+																									<li id="footer-about"><a href="/index.php?title=Gs_wiki:%E5%85%B3%E4%BA%8E" title="Gs wiki:关于">关于钟楼百科</a></li>
+																									<li id="footer-disclaimer"><a href="/index.php?title=Gs_wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Gs wiki:免责声明">免责声明</a></li>
+																					
+											</ul>
+											</div>	
+											<div id="footer-right-icons" class="small-12 medium-4 large-3 columns hide-for-print">
+											<ul id="footer-right">
+												<li class="social-follow hide-for-print">
+																									</li>
+																									<li class="poweredby">														<a href="https://www.mediawiki.org/">Powered by MediaWiki</a>																											</li>
+																							</ul>
+											</div>		
+										</div>			
+									</footer>
+								     </div>
+								</div>
+						</div>
+					</div>
+						
+				</section>
+				
+			</div>
+   			<div class="footer-logo">
+			    <div style="display: inline-block;width: 35%;">
+				<img src="skins/pivot/assets/image/logo.png">
+			    </div>
+			    <div class="footer-icon-code">
+			      <div class="footer-icon">
+				<li>
+			            <img src="skins/pivot/assets/image/wechat.png">
+                                    <img src="skins/pivot/assets/image/wechat_code.png" class="footer-code">
+				</li>
+				<li>
+				   <img src="skins/pivot/assets/image/qq.png">
+				   <img src="skins/pivot/assets/image/qq_code.png" class="footer-code">
+				</li>
+				<li>
+				   <img src="skins/pivot/assets/image/roast.png">
+				   <img src="skins/pivot/assets/image/roast_code.png" class="footer-code">
+				</li>
+			      </div>
+			    </div>
+                        </div>
+			<!--<div class="footer-lace">
+			    <img src="skins/pivot/assets/image/bottom_lace.png">
+			</div>-->
+		</div>
+		<div>
+			<a class="exit-off-canvas"></a>	
+		</div>
+
+		
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.069","walltime":"0.196","ppvisitednodes":{"value":88,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":17732,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20261015195902","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":581});});</script>
+			
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?861bd0d3fc6753c22987c5449265e59c";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+	</body>
+<script>
+  var screen_height = window.screen.height;
+  document.getElementById('p-cactions').style.minHeight = screen_height+'px';
+</script>
+</html>
+

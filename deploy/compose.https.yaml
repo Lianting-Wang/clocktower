@@ -1,0 +1,22 @@
+# Run from the repository root:
+# DOMAIN=clocktower.example.com docker compose -f compose.yaml -f deploy/compose.https.yaml up -d --build
+services:
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN to your real hostname}
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      clocktower:
+        condition: service_healthy
+volumes:
+  caddy-data:
+  caddy-config:

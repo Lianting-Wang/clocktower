@@ -1,0 +1,13 @@
+services:
+  clocktower:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    init: true
+    volumes:
+      - room-owners:/app/state
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  room-owners:

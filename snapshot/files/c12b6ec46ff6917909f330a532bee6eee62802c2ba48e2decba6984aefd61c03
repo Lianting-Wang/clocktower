@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="zh-Hans-CN" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>持续检测型能力 - 钟楼百科</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"zh","wgMonthNames":["","1月","2月","3月","4月","5月","6月","7月","8月","9月","10月","11月","12月"],"wgRequestId":"44379e37b048e47190f5caf6","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"持续检测型能力","wgTitle":"持续检测型能力","wgCurRevisionId":6329,"wgRevisionId":6329,"wgArticleId":153,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgPageContentLanguage":"zh-cn","wgPageContentModel":"wikitext","wgRelevantPageName":"持续检测型能力","wgRelevantArticleId":153,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[]};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":
+"ready","user.options":"loading","skins.pivot.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.ready","skins.pivot.js"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});mw.user.options.set({"variant":"zh-cn"});
+});});</script>
+<link rel="stylesheet" href="/load.php?lang=zh-cn&amp;modules=skins.pivot.styles&amp;only=styles&amp;skin=pivot"/>
+<script async="" src="/load.php?lang=zh-cn&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=pivot"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?lang=zh-cn&amp;modules=site.styles&amp;only=styles&amp;skin=pivot"/>
+<meta name="generator" content="MediaWiki 1.37.2"/>
+<meta name="keywords" content="钟楼百科，染钟楼谜团，钟楼谜团百科，钟楼谜团角色大全，钟楼谜团规则说明，钟楼谜团教学，钟楼谜团说书人"/>
+<meta name="description" content="钟楼百科为您提供钟楼谜团游戏相关的所有规则、角色介绍，及游戏相关各方面资讯信息。"/>
+<meta name="format-detection" content="telephone=no"/>
+<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0"/>
+<link rel="apple-touch-icon" sizes="180x180" href="../resources/assets/apple-touch-icon.png"/>
+<link rel="shortcut icon" href="../resources/assets/favicon-32x32.png"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="钟楼百科 (zh-cn)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://clocktower-wiki.gstonegames.com/api.php?action=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="钟楼百科的Atom feed" href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-持续检测型能力 rootpage-持续检测型能力 skin-pivot action-view">
+<style>
+#p-tb, li[id^="t-"] {
+	display: none !important;
+}
+</style>
+
+		<!-- START PIVOTTEMPLATE -->
+		<div class="off-canvas-wrap docs-wrap" data-offcanvas="">
+			<!--<div class="top-lace">
+                            <img src="skins/pivot/assets/image/top_lace.png">
+                        </div>-->
+			<div class="inner-wrap">
+								<nav class="tab-bar hide-for-print">
+					<div class="head-nav">
+					                         			     <div class="head-nav-logo">
+						<div class="head-nav-logo-div">
+					           <a href="/index.php?title=%E9%A6%96%E9%A1%B5">
+							<img alt="钟楼百科" src="resources/assets/wiki_logo.png">
+						   </a>
+						</div>
+					     </div>
+                        		     <div class="head-nav-href large-10 medium-9">
+                            			  <div class="head-nav-href-div">
+                                			<ul>
+                                    			    <li ><a href="/index.php?title=%E9%A6%96%E9%A1%B5">首页</a></li>
+                                    			   <!-- <li ><a href="/index.php?title=%E8%AE%A8%E8%AE%BA:%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B&action=edit&redlink=1">讨论</a></li>-->
+							    <li><a href="/index.php?title=%E9%A6%96%E9%A1%B5#官方剧本">剧本</a></li>
+                                			</ul>
+                            			  </div>
+                            			  <div>
+                                		        <ul class="side-nav" style="display:flex;">
+							   <li class="has-form" style="margin-right:1.25em;">
+							     <form action="/index.php" id="searchform-sidebar" class="mw-search">
+							     	<div class="row collapse">
+								     <div class="small-12 columns">
+									<div id="search-img"><img src="skins/pivot/assets/image/search.png"></div>
+									<input type="search" name="search" placeholder="搜索钟楼百科" title="Search [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+								     </div>
+								</div>
+							     </form>
+							   </li>
+							   <li style="margin-top:0.25em;width:4em;">
+																     <a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&returnto=%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B" style="color:#222222;padding:0px !important;">登录</a>
+															   </li>
+							</ul>
+                            			  </div>
+                        		     </div>
+					</div>
+					<section id="left-nav-aside" class="left-small show-for-small">
+						<a href="#" class="left-off-canvas-toggle"><span id="menu-user"><i class="fa fa-navicon fa-lg"></i></span></a>
+					</section>
+					
+					<section id="middle-nav" class="middle tab-bar-section" style="display:none;">
+						<div class="title"><a href="/index.php?title=%E9%A6%96%E9%A1%B5">
+					<span class="show-for-medium-up">钟楼百科</span>
+						<span class="show-for-small-only">
+												钟楼百科</span></a></div>
+					</section>
+					
+					<section id="right-nav-aside" class="right-small">
+					<a href="#" class="right-off-canvas-toggle"><span id="menu-user"><i class="fa fa-navicon fa-lg"></i></span></a>
+					</section>
+				</nav>
+								    <aside class="left-off-canvas-menu">
+      					<ul class="off-canvas-list">
+						
+								<li class="has-form" style="display: none;">
+									<form action="/index.php" id="searchform-sidebar" class="mw-search">
+										<div class="row collapse">
+											<div class="small-12 columns">
+												<input type="search" name="search" placeholder="搜索" title="Search [alt-shift-f]" accesskey="f" id="" autocomplete="off">
+											</div>
+										</div>
+									</form>
+								</li>
+								
+							<li><label class="sidebar" id="p-游戏信息">游戏信息</label></li><li id="n-规则概要" class="mw-list-item"><a href="/index.php?title=%E8%A7%84%E5%88%99%E6%A6%82%E8%A6%81">规则概要</a></li><li id="n-重要细节" class="mw-list-item"><a href="/index.php?title=%E9%87%8D%E8%A6%81%E7%BB%86%E8%8A%82">重要细节</a></li><li id="n-术语汇总" class="mw-list-item"><a href="/index.php?title=%E6%9C%AF%E8%AF%AD%E6%B1%87%E6%80%BB">术语汇总</a></li><li id="n-给说书人的建议" class="mw-list-item"><a href="/index.php?title=%E7%BB%99%E8%AF%B4%E4%B9%A6%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE">给说书人的建议</a></li><li id="n-相克规则" class="mw-list-item"><a href="/index.php?title=%E7%9B%B8%E5%85%8B%E8%A7%84%E5%88%99">相克规则</a></li><li><label class="sidebar" id="p-角色">角色</label></li><li id="n-暗流涌动" class="mw-list-item"><a href="/index.php?title=%E6%9A%97%E6%B5%81%E6%B6%8C%E5%8A%A8">暗流涌动</a></li><li id="n-黯月初升" class="mw-list-item"><a href="/index.php?title=%E9%BB%AF%E6%9C%88%E5%88%9D%E5%8D%87">黯月初升</a></li><li id="n-梦殒春宵" class="mw-list-item"><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5">梦殒春宵</a></li><li id="n-旅行者" class="mw-list-item"><a href="/index.php?title=%E6%97%85%E8%A1%8C%E8%80%85">旅行者</a></li><li id="n-传奇角色" class="mw-list-item"><a href="/index.php?title=%E4%BC%A0%E5%A5%87%E8%A7%92%E8%89%B2">传奇角色</a></li><li id="n-实验性角色" class="mw-list-item"><a href="/index.php?title=%E5%AE%9E%E9%AA%8C%E6%80%A7%E8%A7%92%E8%89%B2">实验性角色</a></li><li id="n-奇遇角色" class="mw-list-item"><a href="/index.php?title=%E5%A5%87%E9%81%87%E8%A7%92%E8%89%B2">奇遇角色</a></li><li id="n-华灯初上" class="mw-list-item"><a href="/index.php?title=%E5%8D%8E%E7%81%AF%E5%88%9D%E4%B8%8A">华灯初上</a></li><li id="n-角色能力类别总览" class="mw-list-item"><a href="/index.php?title=%E8%A7%92%E8%89%B2%E8%83%BD%E5%8A%9B%E7%B1%BB%E5%88%AB%E6%80%BB%E8%A7%88">角色能力类别总览</a></li><li><label class="sidebar" id="p-其他">其他</label></li><li id="n-最近更改" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9">最近更改</a></li><li><label class="sidebar" id="p-tb">工具</label></li><li id="t-whatlinkshere" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B" title="所有链接至本页面的wiki页面列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-specialpages" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink" class="mw-list-item"><a href="/index.php?title=%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B&amp;oldid=6329" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info" class="mw-list-item"><a href="/index.php?title=%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B&amp;action=info" title="关于此页面的更多信息">页面信息</a></li>						</ul>
+					</aside>
+					
+					<aside class="right-off-canvas-menu">
+					  <ul class="off-canvas-list">
+													<li id="pt-login" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95&amp;returnto=%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B" title="我们建议您登录，不过这不是强制的[o]" accesskey="o">登录</a></li>												  </ul>
+					</aside>
+
+					<section id="main-section" class="main-section" >
+					
+						<div id="page-content">
+
+							<div id="mw-js-message" style="display:none;"></div>
+
+							<div class="row" style="position: relative;">
+								
+								<div id="sidebar" class="large-2 medium-3 columns hide-for-small hide-for-print">
+										<div style="position: absolute; bottom: 0px; left: 0px;width:80%;">
+                                                                        		<img src="skins/pivot/assets/image/flower3.png" style="max-width: 100%;">
+                                                                     		</div>
+										<ul class="side-nav">
+											<li class="name logo" style="display: none;">
+											<a href="/index.php?title=%E9%A6%96%E9%A1%B5">
+												<img alt="钟楼百科" src="/resources/assets/wiki_logo_head.png" style="max-width: 100%;height: auto;display: inline-block; vertical-align: middle;"></a>		
+											</li>
+											<li class="has-form" style="display:none;">
+												<form action="/index.php" id="searchform-offCanvas" class="mw-search">
+													<div class="row collapse">
+														<div class="small-12 columns">
+															<input type="search" name="search" placeholder="在钟楼百科搜索" title="Search [alt-shift-f]" accesskey="f" class="mw-searchInput" autocomplete="off">
+														</div>
+													</div>
+												</form>
+											</li>
+								
+											<li><label class="sidebar" id="p-游戏信息">游戏信息</label></li><li id="n-规则概要" class="mw-list-item"><a href="/index.php?title=%E8%A7%84%E5%88%99%E6%A6%82%E8%A6%81">规则概要</a></li><li id="n-重要细节" class="mw-list-item"><a href="/index.php?title=%E9%87%8D%E8%A6%81%E7%BB%86%E8%8A%82">重要细节</a></li><li id="n-术语汇总" class="mw-list-item"><a href="/index.php?title=%E6%9C%AF%E8%AF%AD%E6%B1%87%E6%80%BB">术语汇总</a></li><li id="n-给说书人的建议" class="mw-list-item"><a href="/index.php?title=%E7%BB%99%E8%AF%B4%E4%B9%A6%E4%BA%BA%E7%9A%84%E5%BB%BA%E8%AE%AE">给说书人的建议</a></li><li id="n-相克规则" class="mw-list-item"><a href="/index.php?title=%E7%9B%B8%E5%85%8B%E8%A7%84%E5%88%99">相克规则</a></li><li><label class="sidebar" id="p-角色">角色</label></li><li id="n-暗流涌动" class="mw-list-item"><a href="/index.php?title=%E6%9A%97%E6%B5%81%E6%B6%8C%E5%8A%A8">暗流涌动</a></li><li id="n-黯月初升" class="mw-list-item"><a href="/index.php?title=%E9%BB%AF%E6%9C%88%E5%88%9D%E5%8D%87">黯月初升</a></li><li id="n-梦殒春宵" class="mw-list-item"><a href="/index.php?title=%E6%A2%A6%E6%AE%92%E6%98%A5%E5%AE%B5">梦殒春宵</a></li><li id="n-旅行者" class="mw-list-item"><a href="/index.php?title=%E6%97%85%E8%A1%8C%E8%80%85">旅行者</a></li><li id="n-传奇角色" class="mw-list-item"><a href="/index.php?title=%E4%BC%A0%E5%A5%87%E8%A7%92%E8%89%B2">传奇角色</a></li><li id="n-实验性角色" class="mw-list-item"><a href="/index.php?title=%E5%AE%9E%E9%AA%8C%E6%80%A7%E8%A7%92%E8%89%B2">实验性角色</a></li><li id="n-奇遇角色" class="mw-list-item"><a href="/index.php?title=%E5%A5%87%E9%81%87%E8%A7%92%E8%89%B2">奇遇角色</a></li><li id="n-华灯初上" class="mw-list-item"><a href="/index.php?title=%E5%8D%8E%E7%81%AF%E5%88%9D%E4%B8%8A">华灯初上</a></li><li id="n-角色能力类别总览" class="mw-list-item"><a href="/index.php?title=%E8%A7%92%E8%89%B2%E8%83%BD%E5%8A%9B%E7%B1%BB%E5%88%AB%E6%80%BB%E8%A7%88">角色能力类别总览</a></li><li><label class="sidebar" id="p-其他">其他</label></li><li id="n-最近更改" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E6%9B%B4%E6%94%B9">最近更改</a></li><li><label class="sidebar" id="p-tb">工具</label></li><li id="t-whatlinkshere" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E9%93%BE%E5%85%A5%E9%A1%B5%E9%9D%A2/%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B" title="所有链接至本页面的wiki页面列表[j]" accesskey="j">链入页面</a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E6%9C%80%E8%BF%91%E9%93%BE%E5%87%BA%E6%9B%B4%E6%94%B9/%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B" rel="nofollow" title="链自本页的页面的最近更改[k]" accesskey="k">相关更改</a></li><li id="t-specialpages" class="mw-list-item"><a href="/index.php?title=%E7%89%B9%E6%AE%8A:%E7%89%B9%E6%AE%8A%E9%A1%B5%E9%9D%A2" title="所有特殊页面的列表[q]" accesskey="q">特殊页面</a></li><li id="t-print" class="mw-list-item"><a href="javascript:print();" rel="alternate" title="本页面的可打印版本[p]" accesskey="p">可打印版本</a></li><li id="t-permalink" class="mw-list-item"><a href="/index.php?title=%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B&amp;oldid=6329" title="本页面该版本的固定链接">固定链接</a></li><li id="t-info" class="mw-list-item"><a href="/index.php?title=%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B&amp;action=info" title="关于此页面的更多信息">页面信息</a></li>										</ul>
+								</div>
+
+								<div id="p-cactions" class="large-10 medium-9 columns">
+								     <div style="position: absolute;bottom: 7em;right: 0px;width: 15%;max-width: 243px;"> 
+									<img src="skins/pivot/assets/image/flower4.png" style="max-width: 100%;">
+								     </div>
+								     <div style="position: absolute;top: 0px;right: 0px;width: 17%;max-width: 265px;">
+									<img src="skins/pivot/assets/image/flower2.png" style="max-width: 100%;">
+								     </div>
+								     <div class="button-module" style="display:none;">
+                                                                          <ul>
+                                                                             <li style="margin-left: -1em;"><a href="/index.php?title=%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B"><input type="button" class=button-choose value="阅读"></a></li>
+                                                                             <li><a href="/index.php?title=%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B&action=history"><input type="button"  value="查看历史" style="width: 96px;"></a></li>
+                                                                             <li>
+										<a href="/index.php?title=%E6%8C%81%E7%BB%AD%E6%A3%80%E6%B5%8B%E5%9E%8B%E8%83%BD%E5%8A%9B&action=edit">
+										   <input type="button"
+										    value="查看源代码" style="width: 102px">
+										</a>
+									     </li>
+									  </ul>
+                                                                     </div>
+								     <div id="p-cactions-div">
+									<div class="row">
+										<div class="large-12 columns">
+												<!-- Output page indicators -->
+												<div class="mw-indicators">
+</div>
+												<!-- If user is logged in output echo location -->
+																								<!--[if lt IE 9]>
+												<div id="siteNotice" class="sitenotice">钟楼百科 may not look as expected in this version of Internet Explorer. We recommend you upgrade to a newer version of Internet Explorer or switch to a browser like Firefox or Chrome.</div>
+												<![endif]-->
+
+																																		</div>
+									</div>
+								
+																		<div id="content" style="position: relative;">
+									<h1 class="title">持续检测型能力</h1>
+																				<h3 id="tagline">来自钟楼百科</h3>																		<div id="contentSub" class="clear_both"></div>
+									<div id="bodyContent" class="mw-bodytext">
+									<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="zh-Hans-CN" dir="ltr"><div class="mw-parser-output"><p>&lt;&lt;返回<a href="/index.php?title=%E8%A7%92%E8%89%B2%E8%83%BD%E5%8A%9B%E7%B1%BB%E5%88%AB%E6%80%BB%E8%A7%88" title="角色能力类别总览">角色能力类别总览</a>
+</p>
+<h2><span id=".E8.83.BD.E5.8A.9B.E7.AE.80.E4.BB.8B"></span><span class="mw-headline" id="能力简介">能力简介</span></h2>
+<p>部分角色的能力，会持续性地对某一个条件进行检测，并根据检测结果产生不同的能力效果。
+</p><p>这部分的角色能力通常由“检测条件”与“产生效果”两个部分。当检测的前置条件满足时，就会根据能力产生相应的效果。
+</p><p>如果该角色的能力持续正常生效，则对于前置条件的检测则会持续进行，并根据当前的条件满足与否动态进行变化，并因此影响能力结果。
+</p>
+<h2><span id=".E8.8C.83.E4.BE.8B"></span><span class="mw-headline" id="范例">范例</span></h2>
+<pre><a href="/index.php?title=%E5%8D%A0%E5%8D%9C%E5%B8%88" title="占卜师">占卜师</a>的干扰项玩家转为了邪恶阵营。由于<a href="/index.php?title=%E5%8D%A0%E5%8D%9C%E5%B8%88" title="占卜师">占卜师</a>的能力需要持续有一位善良角色作为他的干扰项，因此此时说书人需要立即将占卜师的干扰项提示标记转移到任意一名其他的善良角色标记旁放置。
+</pre>
+<pre><a href="/index.php?title=%E5%93%B2%E5%AD%A6%E5%AE%B6" title="哲学家">哲学家</a>在使用完限次能力后，会持续检测他所选择的角色是否在场。一旦任何时候该角色在场了，该角色就会立即醉酒。
+</pre>
+<h2><span id=".E7.9B.B8.E5.85.B3.E8.A7.92.E8.89.B2"></span><span class="mw-headline" id="相关角色">相关角色</span></h2>
+<ul><li><b>暗流涌动</b>
+<ul><li><a href="/index.php?title=%E5%8D%A0%E5%8D%9C%E5%B8%88" title="占卜师">占卜师</a>（镇民）（检测条件：场上是否有一名善良阵营的玩家成为占卜师的干扰项；检测结果：若否，则将干扰项标记转移到任意一名善良阵营玩家的角色标记旁。）</li></ul></li></ul>
+<ul><li><b>黯月初升</b>
+<ul><li><a href="/index.php?title=%E8%8C%B6%E8%89%BA%E5%B8%88" title="茶艺师">茶艺师</a>（镇民）（检测条件：与茶艺师邻近的两名存活玩家是否均为善良阵营；检测结果：若是，则这两名玩家都不会死亡。）</li></ul></li></ul>
+<ul><li><b>梦殒春宵</b>
+<ul><li><a href="/index.php?title=%E5%93%B2%E5%AD%A6%E5%AE%B6" title="哲学家">哲学家</a>（镇民）（检测条件：哲学家是否使用了自己的能力且所选择的角色是否在场；检测结果：若均为是，则对应的角色醉酒。）</li>
+<li><a href="/index.php?title=%E5%A5%B3%E5%B7%AB" title="女巫">女巫</a>（爪牙）（检测条件：场上存活的玩家数量是否大于三名；检测结果：若否，则女巫失去能力。）</li>
+<li><a href="/index.php?title=%E4%BA%A1%E9%AA%A8%E9%AD%94" title="亡骨魔">亡骨魔</a>（恶魔）（检测条件1：被亡骨魔杀死的玩家是否仍为爪牙；检测结果：若否，则移除保留能力标记；检测条件2：该爪牙邻近的镇民玩家；检测结果：需要保证该爪牙某一顺时针或逆时针方向上，与之最邻近的镇民玩家会因为亡骨魔的能力而处于中毒状态。）</li>
+<li><a href="/index.php?title=%E8%AF%BA-%E8%BE%BE%E9%B2%BA" title="诺-达鲺">诺-达鲺</a>（恶魔）（检测条件：与诺-达鲺邻近的镇民玩家；检测结果：让这些邻近的镇民玩家中毒。）</li></ul></li></ul>
+<ul><li><b>实验性角色</b>
+<ul><li><a href="/index.php?title=%E6%9D%91%E5%A4%AB" title="村夫">村夫</a>（镇民）（检测条件：是否有超过一名村夫在场且尚未放置醉酒标记；检测结果：若是，则将村夫的醉酒标记放置到任意一名村夫的角色标记旁。）</li>
+<li><a href="/index.php?title=%E9%A3%9F%E4%BA%BA%E6%97%8F" title="食人族">食人族</a>（镇民）（检测条件：上一个因为处决而死亡的玩家的阵营和角色；检测结果：获得该玩家的角色能力；如果该玩家的阵营为邪恶，则会中毒直到下一次处决发生。）</li>
+<li><a href="/index.php?title=%E6%9D%82%E6%8A%80%E6%BC%94%E5%91%98" title="杂技演员">杂技演员</a>（镇民）（检测条件：杂技演员选择的玩家是否醉酒或中毒；检测结果：若是，杂技演员死亡。）</li>
+<li><a href="/index.php?title=%E5%8D%8A%E5%85%BD%E4%BA%BA" title="半兽人">半兽人</a>（镇民）（检测条件：场上是否有一名善良阵营的玩家被标记为失足；检测结果：若否，则将失足标记转移到任意一名善良阵营玩家的角色标记旁。）</li>
+<li><a href="/index.php?title=%E4%BC%A0%E6%95%99%E5%A3%AB" title="传教士">传教士</a>（镇民）（检测条件：因传教士而失去能力的爪牙玩家是否仍为爪牙；检测结果：若否，则移除失去能力标记。）</li>
+<li><a href="/index.php?title=%E7%A7%91%E5%AD%A6%E6%80%AA%E4%BA%BA" title="科学怪人">科学怪人</a>（爪牙）（检测条件1：当前获得善良角色能力的恶魔是否存活且仍是恶魔；检测结果：若是，则无事发生，否则检测是否有存活恶魔，若是则让该恶魔获得一个不在场的善良角色的能力，并让之前获得能力的恶魔失去能力；如果之前获得能力的恶魔获得的是死亡触发或死后能力保留的能力，则不会让该恶魔在死亡时失去能力；检测条件2：恶魔拥有的善良角色的能力对应的角色是否在场；检测结果：若是，则重新获得一个不在场的善良角色的能力。）</li>
+<li><a href="/index.php?title=%E7%97%A2%E8%9B%AD" title="痢蛭">痢蛭</a>（恶魔）（检测条件：被痢蛭在其首个夜晚选择的玩家——即被“寄生”的玩家是否处于死亡状态；检测结果：若是，则痢蛭死亡。）</li></ul></li></ul>
+<ul><li><b>华灯初上</b>
+<ul><li><a href="/index.php?title=%E7%86%8A%E5%AD%A9%E5%AD%90" title="熊孩子">熊孩子</a>（镇民）（检测条件：熊孩子当晚所选择的角色是否在场；检测结果：若是，则对应的角色产生错误信息。）</li>
+<li><a href="/index.php?title=%E6%88%8F%E5%AD%90" title="戏子">戏子</a>（镇民）（检测条件：检测是否有善良玩家角色是戏子或获得了戏子的能力；检测结果：若是，则所有善良玩家变成戏子）</li>
+<li><a href="/index.php?title=%E8%B5%B6%E5%B0%B8%E4%BA%BA" title="赶尸人">赶尸人</a>（爪牙）（检测条件：检测与赶尸人邻近的镇民玩家；检测结果：赶尸人的“首次死亡时进入活尸状态”能力对这些玩家生效。）</li>
+<li><a href="/index.php?title=%E6%B7%B7%E6%B2%8C" title="混沌">混沌</a>（恶魔）（检测条件：在混沌的中毒效果生效期间检测所有玩家的阵营；检测结果：让善良玩家中毒。)</li></ul></li></ul>
+<ul><li><b>山雨欲来</b>
+<ul><li><a href="/index.php?title=%E7%8B%B8%E7%8C%AB" title="狸猫">狸猫</a>（镇民）（检测条件：狸猫选择的玩家是否仍为善良角色；检测结果：若否，则移除太子标记。）</li>
+<li><a href="/index.php?title=%E6%8E%AE%E5%AE%A2" title="掮客">掮客</a>（镇民）（检测条件：掮客选择的两名玩家是否仍为同一阵营；检测结果：若否，则移除熟客标记。）</li>
+<li><a href="/index.php?title=%E9%85%92%E4%BF%9D" title="酒保">酒保</a>（外来者）（检测条件：与酒保邻近的非旅行者的善良玩家；检测结果：让这些玩家其中之一醉酒。）</li>
+<li><a href="/index.php?title=%E5%85%A5%E6%AE%93%E5%B8%88" title="入殓师">入殓师</a>（外来者）（检测条件：场上除旅行者外存活的玩家数量是否大于四名；检测结果：若否，则入殓师失去能力。）</li>
+<li><a href="/index.php?title=%E9%85%BF%E9%85%92%E5%B8%88" title="酿酒师">酿酒师</a>（爪牙）（检测条件：酿酒师所选择的角色是否在场且酿酒师给出的信息是否在合理范围内；检测结果：若是，则对应的角色在通过自身能力获取信息时会得知酿酒师给出的信息。）</li></ul></li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20261015200254
+Cache expiry: 86400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.017 seconds
+Real time usage: 0.029 seconds
+Preprocessor visited node count: 13/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key gstone_wiki:pcache:idhash:153-0!canonical and timestamp 20261015200254 and revision id 6329. Serialized with JSON.
+ -->
+</div></div><div class="printfooter">
+取自“<a dir="ltr" href="https://clocktower-wiki.gstonegames.com/index.php?title=持续检测型能力&amp;oldid=6329">https://clocktower-wiki.gstonegames.com/index.php?title=持续检测型能力&amp;oldid=6329</a>”</div>
+									<div class="clear_both"></div>
+									</div>
+									</div>
+									<div id="categories" class="row">
+										<div class="small-12 columns">
+											<div class="group"><div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div></div>
+																					</div>
+									</div>	
+													
+									<footer class="row" style="display:none;">
+
+										<div id="footer">
+											<div id="div-footer-left" class="small-12 medium-8 large-9 columns">
+											<ul id="footer-left">
+																									<li id="footer-lastmod"> 此页面最后编辑于2026年7月1日 (星期三) 20:55。</li>
+																									<li id="footer-privacy"><a href="/index.php?title=Gs_wiki:%E9%9A%90%E7%A7%81%E6%94%BF%E7%AD%96" title="Gs wiki:隐私政策">隐私政策</a></li>
+																									<li id="footer-about"><a href="/index.php?title=Gs_wiki:%E5%85%B3%E4%BA%8E" title="Gs wiki:关于">关于钟楼百科</a></li>
+																									<li id="footer-disclaimer"><a href="/index.php?title=Gs_wiki:%E5%85%8D%E8%B4%A3%E5%A3%B0%E6%98%8E" title="Gs wiki:免责声明">免责声明</a></li>
+																					
+											</ul>
+											</div>	
+											<div id="footer-right-icons" class="small-12 medium-4 large-3 columns hide-for-print">
+											<ul id="footer-right">
+												<li class="social-follow hide-for-print">
+																									</li>
+																									<li class="poweredby">														<a href="https://www.mediawiki.org/">Powered by MediaWiki</a>																											</li>
+																							</ul>
+											</div>		
+										</div>			
+									</footer>
+								     </div>
+								</div>
+						</div>
+					</div>
+						
+				</section>
+				
+			</div>
+   			<div class="footer-logo">
+			    <div style="display: inline-block;width: 35%;">
+				<img src="skins/pivot/assets/image/logo.png">
+			    </div>
+			    <div class="footer-icon-code">
+			      <div class="footer-icon">
+				<li>
+			            <img src="skins/pivot/assets/image/wechat.png">
+                                    <img src="skins/pivot/assets/image/wechat_code.png" class="footer-code">
+				</li>
+				<li>
+				   <img src="skins/pivot/assets/image/qq.png">
+				   <img src="skins/pivot/assets/image/qq_code.png" class="footer-code">
+				</li>
+				<li>
+				   <img src="skins/pivot/assets/image/roast.png">
+				   <img src="skins/pivot/assets/image/roast_code.png" class="footer-code">
+				</li>
+			      </div>
+			    </div>
+                        </div>
+			<!--<div class="footer-lace">
+			    <img src="skins/pivot/assets/image/bottom_lace.png">
+			</div>-->
+		</div>
+		<div>
+			<a class="exit-off-canvas"></a>	
+		</div>
+
+		
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.017","walltime":"0.029","ppvisitednodes":{"value":13,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20261015200254","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":655});});</script>
+			
+
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?861bd0d3fc6753c22987c5449265e59c";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+	</body>
+<script>
+  var screen_height = window.screen.height;
+  document.getElementById('p-cactions').style.minHeight = screen_height+'px';
+</script>
+</html>
+
