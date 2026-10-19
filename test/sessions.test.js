@@ -167,10 +167,10 @@ test('duplicate tab replacement, explicit leave, host release, removal and room 
 
 // Execute the actual browser adapter and captured base class against a small
 // Vuex-compatible store; this exercises reconnect races without a real phone.
-function frontend() {
+function frontend({ isSpectator = true, connect = true } = {}) {
   const bundle = readFileSync('public/assets/clocktower.gstonegames.com/grimoire/js/app.d63695fc.js', 'utf8');
   const sockets = [], timers = new Map(), listeners = {}, storage = new Map(); let timerId = 0, randomCounter = 0;
-  const store = { state: { session: { sessionId: '', playerId: 'p', isSpectator: true }, grimoire: { isSeat: false }, fabled: new Map(), players: { players: [{ name: 'P', id: 'p', seatKey: 's', role: { id: 'imp' } }], bluffs: [] }, roles: new Map([['chef', { id: 'chef' }]]) }, getters: { rolesJSONbyId: new Map() },
+  const store = { state: { session: { sessionId: '', playerId: 'p', isSpectator }, grimoire: { isSeat: false }, fabled: new Map(), players: { players: [{ name: 'P', id: 'p', seatKey: 's', role: { id: 'imp' } }], bluffs: [] }, roles: new Map([['chef', { id: 'chef' }]]) }, getters: { rolesJSONbyId: new Map() },
     commit(type, value) {
       const state = this.state;
       if (type === 'session/nomination') Object.assign(state.session, { nomination: false, votes: [], lockedVote: 0, isVoteInProgress: false });
@@ -200,7 +200,8 @@ function frontend() {
   runInNewContext(readFileSync('public/local-session.js', 'utf8'), context);
   const Base = runInNewContext(bundle.slice(bundle.indexOf('class Ct{'), bundle.indexOf('var Mt=')) + ';Ct', context);
   const Session = window.ClocktowerLocal.session(Base, { alert() {}, confirm(text, fn) { fn(); } });
-  const session = new Session(store); store.state.session.sessionId = 'abc'; session.connect('abc');
+  const session = new Session(store);
+  if (connect) { store.state.session.sessionId = 'abc'; session.connect('abc'); }
   return { session, sockets, store, timers, listeners, local: window.ClocktowerLocal, context };
 }
 
@@ -289,5 +290,123 @@ test('host restores seat order and public state while retaining private notes', 
   assert.equal(store.state.players.players[0].name, '服务端名字'); assert.equal(store.state.players.players[0].id, 'p'); assert.equal(store.state.grimoire.isNight, false);
   const snapshot = socket.sent.find(([type]) => type === 'gs')[1];
   assert.equal(snapshot.gamestate[0].seatKey, 's'); assert.equal(snapshot.gamestate[0].id, 'p'); assert.equal(snapshot.isNight, false);
+  session.closeTransport();
+});
+
+function roleExchange() {
+  const fixture = frontend({ isSpectator: false });
+  const { session, store, local, sockets } = fixture;
+  const bundle = readFileSync('public/assets/clocktower.gstonegames.com/grimoire/js/app.d63695fc.js', 'utf8');
+  const mutations = runInNewContext('(' + bundle.slice(bundle.indexOf('Pt={') + 3, bundle.indexOf(';var Vt=')) + ')');
+  store.state.session.isSpectator = false; session._isSpectator = false;
+  session._round = 'current'; session._ready = true; sockets[0].readyState = 1;
+  store.state.players.players = [
+    { name: '甲', pronouns: '他', id: 'p0', seatKey: 'seat0', role: { id: 'imp', name: '小恶魔', team: 'demon' }, reminders: [{ name: '中毒' }], isDead: true, isVoteless: true },
+    { name: '乙', pronouns: '她', id: 'p1', seatKey: 'seat1', role: { id: 'chef', name: '厨师', team: 'townsfolk' }, reminders: [{ name: '醉酒' }], isDead: false, isVoteless: false }
+  ];
+  session._gamestate = store.state.players.players.map(({ role, ...player }) => ({ ...player }));
+  const originalCommit = store.commit.bind(store);
+  let swaps = 0;
+  store.commit = (type, payload) => {
+    if (type !== 'players/swapRoles') return originalCommit(type, payload);
+    mutations.swapRoles(store.state.players, payload); swaps++;
+    session.sendSwappedRoles(payload);
+  };
+  const start = bundle.indexOf('D={') + 2;
+  const component = runInNewContext('(' + bundle.slice(start, bundle.indexOf('},U=D', start) + 1) + ')', {
+    window: { ClocktowerLocal: local }, k: {}, b: {}, z: {}, V: {}, a: { b: () => ({}), d: () => ({}) }
+  });
+  const view = { ...component.data(), $store: store };
+  Object.defineProperty(view, 'players', { get: () => store.state.players.players });
+  Object.defineProperty(view, 'session', { get: () => store.state.session });
+  for (const [name, method] of Object.entries(component.methods)) view[name] = method.bind(view);
+  return { ...fixture, view, component, bundle, mutations, swapCount: () => swaps };
+}
+
+test('role exchange selects directly on the town and changes only roles, distributing only when requested', () => {
+  const { session, store, sockets, view, swapCount, bundle } = roleExchange();
+  const [a, b] = store.state.players.players, first = { ...a }, second = { ...b };
+  view.handleTrigger(0, ['swapRoles']);
+  assert.equal(view.roleSwap, 0); assert.equal(view.roleSwapSelection.source, a); assert.equal(swapCount(), 0);
+  view.handleTrigger(1, ['swapRoles', b]);
+  assert.equal(view.roleSwap, -1); assert.equal(view.roleSwapSelection, null); assert.equal(swapCount(), 1);
+  assert.equal(store.state.players.players[0], a); assert.equal(store.state.players.players[1], b);
+  assert.equal(a.role, second.role); assert.equal(b.role, first.role);
+  for (const field of Object.keys(first).filter(field => field !== 'role')) assert.equal(a[field], first[field], field);
+  for (const field of Object.keys(second).filter(field => field !== 'role')) assert.equal(b[field], second[field], field);
+  assert.equal(sockets[0].sent?.length || 0, 0, 'hidden roles must not be broadcast or automatically distributed');
+  session.distributeRoles();
+  const [type, recipients] = sockets[0].sent.at(-1);
+  assert.equal(type, 'direct'); assert.equal(recipients.p0[1].value, 'chef'); assert.equal(recipients.p1[1].value, 'imp');
+  assert.equal(recipients.p0[1].index, 0); assert.equal(recipients.p1[1].index, 1);
+  assert.match(bundle, /case"players\/swapRoles":t\.sendSwappedRoles\(i\)/);
+  session.closeTransport();
+});
+
+test('role exchange preserves public traveler updates without exposing the hidden replacement', () => {
+  const { session, store, sockets, view } = roleExchange();
+  const [a, b] = store.state.players.players;
+  a.role = { id: 'beggar', name: '乞丐', team: 'traveler' };
+  session._gamestate[0].roleId = 'beggar';
+  view.swapRoles(0); view.swapRoles(1, b);
+  assert.deepEqual(sockets[0].sent.map(([type, payload]) => [type, payload.index, payload.value]), [['player', 0, ''], ['player', 1, 'beggar']]);
+  assert.equal(a.id, 'p0'); assert.equal(b.id, 'p1');
+  assert.ok(!JSON.stringify(sockets[0].sent).includes('chef'));
+  session.closeTransport();
+});
+
+test('role exchange cancellation, stale selection and spectator access never modify seats', () => {
+  const { session, store, view, swapCount } = roleExchange();
+  const [a, b] = store.state.players.players;
+  view.swapRoles(0); view.cancel(); view.swapRoles(1, b); assert.equal(swapCount(), 0);
+  view.swapRoles(0); view.swapRoles(0, a); assert.equal(swapCount(), 0);
+  view.swapRoles(0); session._round = 'new-round'; view.swapRoles(1, b); assert.equal(swapCount(), 0);
+  view.swapRoles(0); store.state.players.players[0] = { ...a }; view.swapRoles(1, b); assert.equal(swapCount(), 0);
+  view.swapRoles(0); store.state.players.players[0].role = { id: 'monk' }; view.swapRoles(1, b); assert.equal(swapCount(), 0);
+  view.swapRoles(0); store.state.session.isSpectator = true; view.swapRoles(1, b);
+  view.swapRoles(0); assert.equal(view.roleSwap, -1); assert.equal(swapCount(), 0);
+  assert.equal(a.role.id, 'imp'); assert.equal(b.role.id, 'chef');
+  session.closeTransport();
+});
+
+test('town selection modes are exclusive and cancel when the source seat disappears or the room changes', () => {
+  const { session, store, view, component, swapCount } = roleExchange();
+  view.swapPlayer(0); assert.equal(view.swap, 0);
+  view.swapRoles(1); assert.equal(view.swap, -1); assert.equal(view.roleSwap, 1);
+  view.movePlayer(0); assert.equal(view.roleSwap, -1); assert.equal(view.move, 0);
+  view.swapRoles(0); assert.equal(view.move, -1);
+  view.nominatePlayer(1); assert.equal(view.roleSwap, -1); assert.equal(view.nominate, 1);
+  view.swapRoles(0); assert.equal(view.nominate, -1);
+  store.state.players.players.reverse(); component.watch.players.call(view); assert.equal(view.roleSwap, 1);
+  store.state.players.players.pop(); component.watch.players.call(view); assert.equal(view.roleSwap, -1);
+  store.state.players.players.push({ name: '丙', role: {} });
+  view.swapRoles(0); assert.equal(view.roleSwap, 0); component.watch['session.sessionId'].call(view); assert.equal(view.roleSwap, -1);
+  assert.equal(swapCount(), 0);
+  session.closeTransport();
+});
+
+test('role exchange persists through the original browser save plugin, including offline use', () => {
+  const { session, store, view, bundle } = roleExchange();
+  store.state.session.sessionId = ''; session._ready = false;
+  view.swapRoles(0); view.swapRoles(1, store.state.players.players[1]);
+  const start = bundle.indexOf('var wt=') + 7;
+  const source = bundle.slice(start, bundle.indexOf(',Rt=i(', start));
+  const saved = new Map(); let subscriber;
+  const plugin = runInNewContext('(' + source + ')', { kt() {}, localStorage: { setItem(key, value) { saved.set(key, value); }, removeItem(key) { saved.delete(key); } } });
+  plugin({ subscribe(callback) { subscriber = callback; } });
+  subscriber({ type: 'players/swapRoles' }, store.state);
+  const players = JSON.parse(saved.get('players'));
+  assert.equal(players[0].role, 'chef'); assert.equal(players[1].role, 'imp');
+  assert.equal(players[0].id, 'p0'); assert.equal(players[1].id, 'p1');
+  assert.equal(players[0].seatKey, 'seat0'); assert.equal(players[1].name, '乙');
+  session.closeTransport();
+});
+
+test('offline storyteller pagehide and backgrounding preserve private roles for refresh', () => {
+  const { session, store, listeners, context, sockets } = frontend({ isSpectator: false, connect: false });
+  assert.equal(sockets.length, 0); assert.equal(session._isSpectator, false);
+  context.document.visibilityState = 'hidden'; listeners.visibilitychange();
+  assert.equal(store.state.players.players[0].role.id, 'imp');
+  listeners.pagehide(); assert.equal(store.state.players.players[0].role.id, 'imp');
   session.closeTransport();
 });

@@ -327,6 +327,9 @@ for url, item in resources.items():
     kind = kind_for(url, item)
     if kind in ('js', 'css', 'json'):
         text = rewrite(source.read_text(errors='replace'), url, kind)
+        if kind == 'css' and '/grimoire/css/app.' in url:
+            from session_patch import patch_session_css
+            text = patch_session_css(text)
         # Also correct the bundled fallback catalog and full role definitions
         # in preset scripts, preserving their original formatting. Scripts
         # using a different night-order scale (e.g. 17) are left as authored.

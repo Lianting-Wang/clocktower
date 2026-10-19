@@ -123,7 +123,7 @@
       "sha256": "240984fb1a6fbb5b2b57078df39954c8bf7e6b99e75886776cb481d6d1e88ff4",
       "bytes": 290228,
       "contentType": "text/css",
-      "localSha256": "3853f7b2e1454a1adddac3b125ca9db971ae6cdb87bc71ec8c8c217e13e77e96"
+      "localSha256": "7734b0844fb41af05d6d3beaa79831e3e6060ea15edf3d8ee71413b1434d9120"
     },
     "https://oss.gstonegames.com/data_file/clocktower/edition_icon/custom/d_3506486861_31c9a751.jpg": {
       "path": "/assets/oss.gstonegames.com/data_file/clocktower/edition_icon/custom/d_3506486861_31c9a751.jpg",
@@ -249,7 +249,7 @@
       "sha256": "d4a4e5bc92886ff8483d9181f439ecf268ac38af994f316ca5f33fee384e22bd",
       "bytes": 324425,
       "contentType": "application/javascript",
-      "localSha256": "3ff8e3de164af202b3e4ff7590efd55fd8df3c48d6051f0d3c2e3e5866ea259c"
+      "localSha256": "a781fb90f71e343779eab96e3b811228f5e0f232b7ead585d2095c8be9de1128"
     },
     "https://oss.gstonegames.com/data_file/clocktower/json/ct_edition_20042_56096.json": {
       "path": "/assets/oss.gstonegames.com/data_file/clocktower/json/ct_edition_20042_56096.json",
@@ -12861,7 +12861,7 @@
   },
   "generated": {
     "public/index.html": {
-      "sha256": "fe4774c14bd8d2122d2c0f9fff55b86ad30effb2de44d42743ef72fced1a75a0",
+      "sha256": "b80a3e2a26022b9fff6ae8edd5fa5fe424618c5defc685919911b92b775e2f92",
       "bytes": 4315
     },
     "public/local-runtime.js": {
@@ -12869,8 +12869,8 @@
       "bytes": 1919
     },
     "public/local-session.js": {
-      "sha256": "c236450645ba59bb6f8c04773b15d8557eb0d969056c4e73562cec13c6950ec7",
-      "bytes": 21778
+      "sha256": "3c9427912600c9138bf2c13fd36319fdc132c80305d38ff5bcd41a03fdb72160",
+      "bytes": 23444
     },
     "data/roles.json": {
       "sha256": "44319068267adb1bdb70250ecc088dd4cd62c004d15ea1532a7fdea9742b9838",

@@ -15,6 +15,21 @@
   let active;
   window.ClocktowerLocal = {
     roomFrom, invitation,
+    beginRoleSwap(source) {
+      if (!active || active._store.state.session.isSpectator || !active.players.includes(source) || active.players.length < 2) return null;
+      return { source, role: source.role, room: active.room, round: active._round };
+    },
+    completeRoleSwap(selection, target) {
+      if (!active || !selection || active._store.state.session.isSpectator || target === selection.source) return;
+      const { source, role, room, round } = selection;
+      // Keep the selection tied to this player and round while the storyteller
+      // picks a target directly on the town ring.
+      if (active.room !== room || active._round !== round || !active.players.includes(source) || !active.players.includes(target) || source.role !== role) {
+        active.notice('座位或角色已变化，请重新选择交换角色。'); return;
+      }
+      active._store.commit('players/swapRoles', [active.players.indexOf(source), active.players.indexOf(target)]);
+      active.status(room ? '角色已交换。需要同步玩家手机时，请点“发送角色”。' : '角色已交换。');
+    },
     copyInvite(room) {
       const url = new URL('/', location.origin); url.searchParams.set('room', room);
       navigator.clipboard.writeText(url.href);
@@ -29,6 +44,10 @@
       constructor(store) {
         super(store);
         active = this;
+        // The captured base defaults to spectator until connect(). An offline
+        // storyteller never connects, and must not have roles masked/saved as
+        // empty when pagehide runs during refresh.
+        this._isSpectator = store.state.session.isSpectator;
         this._dialogs = dialogs;
         this._ready = false;
         this._applying = false;
@@ -282,6 +301,13 @@
         if (['id', 'seatKey'].includes(payload.property) || this._applying || !this._ready) return;
         if (!this._gamestate[this.players.indexOf(payload.player)]) return;
         super.sendPlayer(payload);
+      }
+      sendSwappedRoles(indices) {
+        if (this._isSpectator || this._applying) return;
+        for (const index of indices) {
+          const player = this.players[index];
+          if (player) this.sendPlayer({ player, property: 'role', value: player.role });
+        }
       }
       _handlePing([peer = 0, latency] = []) {
         // Presence must never edit seat ownership.
